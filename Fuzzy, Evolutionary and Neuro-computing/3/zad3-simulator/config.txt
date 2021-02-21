@@ -1,0 +1,4 @@
+java -jar /home/doms/eclipse-workspace/NENR_LAB3/zad3-simulator/Prog2.jar
+1
+20
+10

@@ -1,0 +1,18 @@
+DISTANCE : CLOSE_RIGHT, CLOSE_LEFT, FAR -> -100,100
+VELOCITY : SLOW, FAST -> 0, 100
+GOAL : BAD, GOOD -> 0, 1
+AKCEL : SLOWDOWN, MAINTAIN, ACCELERATE, -100, 100
+DIRECTION: LEFT, MAINTAIN, RIGHT -> (-90, 90)
+------------
+AKCELERACIJA: 
+close = close_right ILI close_left
+AKO udalj = (close) I velocity = (fast) I goal = (any) ONDA akcel = slowdown
+AKO udalj = (far) I velocity = (slow) I goal = (good) ONDA akcel = accelerate
+AKO udalj = (any) I velocity = (fast) I goal = (bad) ONDA akcel = slowdown 
+AKO udalj = (far) I velocity = (fast) I goal = (good) ONDA akcel = maintain
+
+KORMILO:
+AKO udalj = (close_left) I velocity = (any) I goal = (any) ONDA direction = right
+AKO udalj = (close_right) I velocity = (any) I goal = (any) ONDA direction = left
+AKO udalj = (far) I velocity = (any) I goal = (good) ONDA direction = maintain 
+AKO udalj = (far) I velocity = (any) I goal = (bad) ONDA direction = left

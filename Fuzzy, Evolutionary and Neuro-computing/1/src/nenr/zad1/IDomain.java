@@ -1,0 +1,9 @@
+package nenr.zad1;
+
+public interface IDomain extends Iterable<DomainElement>{
+	int getCardinality();
+	IDomain getComponent(int component);
+	int getNumberOfComponents();
+	int IndexOfElement(DomainElement elem);
+	DomainElement elementForIndex(int index);
+}
