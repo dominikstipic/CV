@@ -1,5 +1,5 @@
 # Projects
-The repository contains some of the projects that I have been working on for the past few years. The field with whom I was mostly occupied during these years is deep learning and it's applications on computer vision and natural text. For each project, you will find source code and instructions for the task, some tasks have documentation for the implemented systems and further explanations. 
+This repository contains some of the projects on which I have been working on for the past few years. The field with whom I was mostly occupied during these years is deep learning and it's applications on computer vision and natural text. For each project you will find its source code and 
 
 **Mentorship projects**:
 * **The analysis of aerial imagery**:
@@ -14,11 +14,11 @@ I was experimenting with real-time semantic segmentation models which are design
 * the main contribution of the paper is feature analysis for the bot classification task and the creation of the classification model based on the BERT transformer architecture. Additionally, we have included exploratory data analysis of our Twitter dataset and evaluated our model on the gender prediction task in order to compare the difficulties of the two tasks.
 
 **Deep Learning Course**:
-1. Multiclass logistic regression, gradient descent
-2. Multilayer feedforward networks, PyTorch, MNIST
-3. Convolutional neural network: MNIST, CIFAR-10
-4. Recursive neural network - sentiment classification
-5. Generative models - GANs
+1. [Multiclass logistic regression, gradient descent](http://www.zemris.fer.hr/~ssegvic/du/lab0.shtml)
+2. [Multilayer feedforward networks, PyTorch, MNIST](http://www.zemris.fer.hr/~ssegvic/du/lab1.shtml)
+3. [Convolutional neural network: MNIST, CIFAR-10](https://dlunizg.github.io/lab2/)
+4. [Recursive neural network: sentiment classification](https://dlunizg.github.io/lab3/)
+5. [Generative models - GANs](https://dlunizg.github.io/lab4/)
 
 **Machine Learning Course**:
 1. Regression
