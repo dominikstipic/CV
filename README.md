@@ -2,6 +2,7 @@
 This repository contains some of the projects on which I have been working on for the past few years. The field with whom I was mostly occupied during these years is deep learning and it's applications on computer vision and natural text. For each project you will find its source code and 
 
 **Mentorship projects**:
+* BS thesis - [Convolutional Models for Person Localization in Sport Broadcasts](http://www.zemris.fer.hr/~ssegvic/project/pubs/stipic19bs.pdf)
 * **The analysis of aerial imagery**:
 The seminar where I was exploring the applications of satellite and aerial imagery and usage of the deep learning methods in them. 
 I experimented with semantic segmentation models, specifically fully convolutional models, on [Inria Aerial Image Labeling](https://paperswithcode.com/dataset/inria-aerial-image-labeling) dataset where the task was to segment houses. The main purpose of this seminar was to explore the literature on remote sensing and to get familiar with semantic segmentation methods and architectures. 
