@@ -20,7 +20,8 @@ I was experimenting with real-time semantic segmentation models which are design
 * the main contribution of the paper is feature analysis for the bot classification task and the creation of the classification model based on the BERT transformer architecture. Additionally, we have included exploratory data analysis of our Twitter dataset and evaluated our model on the gender prediction task in order to compare the difficulties of the two tasks.
 
 
-<img src="https://user-images.githubusercontent.com/40320696/109401038-91787c80-794c-11eb-97c3-308cac2b27d0.png" width="300" height="300">
+<img src="https://user-images.githubusercontent.com/40320696/109402516-da353300-7956-11eb-9068-7168604d7539.png" width="900" height="300">
+
 
 
 **Deep Learning Course**:
