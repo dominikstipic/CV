@@ -1,3 +1,4 @@
+
 # Projects
 This repository contains some of the projects on which I have been working on for the past few years. The field with whom I was mostly occupied during these years is deep learning and it's applications on computer vision and natural text. For each project you will find its source code and 
 
@@ -9,6 +10,7 @@ I experimented with semantic segmentation models, specifically fully convolution
 * **Real-time semantic segmentation models**:
 I was experimenting with real-time semantic segmentation models which are designed with the purpose to be used on embedding devices. This kind of models are great for experimentation because they have fewer parameters and great inference speed. The goals of this project were to get familiar with multiscale semantic segmentation architecture from [this](https://arxiv.org/abs/1903.08469) paper and to replicate results. To do that, I created [deep learning framework](https://github.com/dominikstipic/DSLearn) for easier experimentation and learning. This project is still under maintenance. 
 
+
 ![alt text](https://github.com/dominikstipic/CV/blob/main/Segmentation/camvid.gif)
 
 
@@ -16,6 +18,10 @@ I was experimenting with real-time semantic segmentation models which are design
 * **Are You Human? Detecting Bots on Twitter Using BERT**:
 * Link on paper: https://ieeexplore.ieee.org/document/9260074
 * the main contribution of the paper is feature analysis for the bot classification task and the creation of the classification model based on the BERT transformer architecture. Additionally, we have included exploratory data analysis of our Twitter dataset and evaluated our model on the gender prediction task in order to compare the difficulties of the two tasks.
+
+
+<img src="https://user-images.githubusercontent.com/40320696/109401038-91787c80-794c-11eb-97c3-308cac2b27d0.png" width="300" height="300">
+
 
 **Deep Learning Course**:
 1. [Multiclass logistic regression, gradient descent](http://www.zemris.fer.hr/~ssegvic/du/lab0.shtml)
@@ -41,3 +47,4 @@ I was experimenting with real-time semantic segmentation models which are design
 7. Neuro-evolutionary system for classification
 
 
+<img src="https://user-images.githubusercontent.com/40320696/109402330-5464b800-7955-11eb-822f-e622bd73d9d2.gif" width="900" height="450">
