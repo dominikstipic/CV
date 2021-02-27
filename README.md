@@ -9,6 +9,9 @@ I experimented with semantic segmentation models, specifically fully convolution
 * **Real-time semantic segmentation models**:
 I was experimenting with real-time semantic segmentation models which are designed with the purpose to be used on embedding devices. This kind of models are great for experimentation because they have fewer parameters and great inference speed. The goals of this project were to get familiar with multiscale semantic segmentation architecture from [this](https://arxiv.org/abs/1903.08469) paper and to replicate results. To do that, I created [deep learning framework](https://github.com/dominikstipic/DSLearn) for easier experimentation and learning. This project is still under maintenance. 
 
+![alt text](https://github.com/dominikstipic/CV/blob/main/Segmentation/camvid.gif)
+
+
 **Text Analysis and Retrieval**:
 * **Are You Human? Detecting Bots on Twitter Using BERT**:
 * Link on paper: https://ieeexplore.ieee.org/document/9260074
