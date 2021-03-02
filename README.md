@@ -38,6 +38,14 @@ I was experimenting with real-time semantic segmentation models which are design
 4. Ensemble learning and estimators
 5. Probabilistic graphical models, naive Bayes, model evaluation and grouping algorithms 
 
+**Java Course**:
+* 11 Java projects written for Marko Čupuć Java course
+
+**Design Patterns**:
+* 3 labaratory exercises
+* Projects are written in C, C++, Python and Java
+
+
 **Fuzzy, Evolutionary and Neuro-computing**:
 1. Fuzzy sets
 2. Fuzzy relations
