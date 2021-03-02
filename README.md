@@ -39,7 +39,7 @@ I was experimenting with real-time semantic segmentation models which are design
 5. Probabilistic graphical models, naive Bayes, model evaluation and grouping algorithms 
 
 **Java Course**:
-* 11 Java projects written for Marko Čupuć Java course
+* 11 Java projects written for Marko Čupić Java course
 
 **Design Patterns**:
 * 3 labaratory exercises
