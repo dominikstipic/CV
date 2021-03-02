@@ -1,0 +1,571 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0053)http://www.zemris.fer.hr/~ssegvic/ooup/ooup1lab.shtml -->
+<html class="gr__zemris_fer_hr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="stndz-style">div[class*="item-container-obpd"], a[data-redirect*="paid.outbrain.com"], a[onmousedown*="paid.outbrain.com"] { display: none !important; } a div[class*="item-container-ad"] { height: 0px !important; overflow: hidden !important; position: absolute !important; } div[data-item-syndicated="true"] { display: none !important; } .grv_is_sponsored { display: none !important; } .zergnet-widget-related { display: none !important; } </style>
+  
+  <link rel="stylesheet" type="text/css" href="./Prva laboratorijska vježba iz OOUP_files/ooup.css">
+  <title>Prva laboratorijska vježba iz OOUP</title>
+</head>
+
+<body data-gr-c-s-loaded="true">
+
+<h2>Prva laboratorijska vježba iz Oblikovnih obrazaca u programiranju:<br>
+dinamički polimorfizam u C-u, C++-u i strojnom kodu, konstrukcija objekata</h2>
+
+<h4 id="z1">1. Dinamički polimorfizam u C-u (20% bodova)</h4>
+
+Ova vježba razmatra ostvarivanje dinamičkog polimorfizma 
+u programskom jeziku C.
+
+Potrebno je napisati
+kod niže razine koji bi omogućio
+ispravno izvršavanje priložene ispitne funkcije.
+
+<pre>void testAnimals(void){
+  struct Animal* p1=createDog("Hamlet");
+  struct Animal* p2=createCat("Ofelija");
+  struct Animal* p3=createDog("Polonije");
+
+  animalPrintGreeting(p1);
+  animalPrintGreeting(p2);
+  animalPrintGreeting(p3);
+
+  animalPrintMenu(p1);
+  animalPrintMenu(p2);
+  animalPrintMenu(p3);
+
+  free(p1); free(p2); free(p3);
+}
+</pre>
+
+Prikazana ispitna funkcija treba generirati sljedeći ispis.
+
+<pre>  Hamlet pozdravlja: vau!
+  Ofelija pozdravlja: mijau!
+  Polonije pozdravlja: vau!
+  Hamlet voli kuhanu govedinu
+  Ofelija voli konzerviranu tunjevinu
+  Polonije voli kuhanu govedinu
+</pre>
+
+
+Pretpostavimo da su funkcije koje definiraju
+ponašanje konkretnih tipova zadane kako slijedi.
+
+<pre>char const* dogGreet(void){
+  return "vau!";
+}
+char const* dogMenu(void){
+  return "kuhanu govedinu";
+}
+char const* catGreet(void){
+  return "mijau!";
+}
+char const* catMenu(void){
+  return "konzerviranu tunjevinu";
+}
+</pre>
+
+Potrebno je oblikovati sljedeće elemente rješenja.
+<ul>
+<li>
+  Dvije tablice pokazivača na funkcije
+  koje definiraju ponašanje konkretnih tipova,
+  kao i kôd za njihovo incijaliziranje.
+  Prikladna deklaracija podatkovnog tipa 
+  za pohranjivanje elemenata tih dviju tablica bila bi:
+  <code>typedef char const* (*PTRFUN)();</code>
+</li><li>
+  Podatkovni tip struct <code>Animal</code> 
+  koji sadrži i) pokazivač na ime ljubimca
+  te ii) pokazivač na tablicu funkcija (vidi gore)
+  koja definira ponašanje odgovarajućeg konkretnog tipa.
+  Uputa: tablicu pokazivača mogli bismo
+  i umetnuti u tip <code>Animal</code>
+  ali obično preferiramo rješenje s pokazivačem
+  kako bismo što više smanjili
+  memorijski otisak polimorfnih objekata.
+</li><li>
+  Funkcije <code>animalPrintGreeting</code> i 
+  <code>animalPrintMenu</code>
+  koje generiraju specificirani ispis
+  pozivanjem odgovarajućeg elementa tablice funkcija
+  zadanog polimorfnog objekta.
+</li><li> 
+  <!--DONE razdvojiti alokaciju od inicijalizacije-->
+  <!--TODO ctors initialize data members and call virtual functions -->
+  Funkcije <code>constructDog</code> i <code>constructCat</code> koje primaju 
+  i) pokazivač na memorijski prostor u kojem treba stvoriti objekt
+  te ii) pokazivač na znakovni niz s imenom ljubimca.
+  Funkcije trebaju u zadanom memorijskom prostoru
+  inicijalizirati objekt odgovarajućeg konkretnog tipa.
+</li><li> 
+  Funkcije <code>createDog</code> i <code>createCat</code>
+  koje alociraju memoriju i pozivaju 
+  funkcije <code>constructDog</code> odnosno
+  <code>constructCat</code>.
+</li><li>
+  Uputa: nemojte komplicirati, službeno rješenje
+  ima manje od 70 redaka uredno formatiranog C-a.  
+</li></ul>
+
+Obratite pažnju na to da deklaracija <code>PTRFUN pfun;</code> 
+u C-u (ali ne i C++-u!) definira pokazivač na funkciju
+s nespecificiranim argumentima.
+To znači da <code>pfun</code> može pokazivati
+na bilo koju funkciju koja vraća <code>char const*</code>
+(<a href="http://stackoverflow.com/questions/5322958/is-it-possible-to-portably-define-a-function-that-accepts-any-number-of-argument">detalji</a>).
+Naravno, pri korištenju pokazivača <code>pfun</code>
+moramo paziti da broj i tipovi argumenata navedeni u pozivu
+odgovaraju argumentima funkcije na koju pokazivač pokazuje
+(u suprotnom ponašanje programa nije definirano).
+
+<p>
+Vaše rješenje mora biti takvo da memorijsko zauzeće 
+za svaki primjerak "razreda" (psa, mačke)
+ne ovisi o broju virtualnih metoda. Drugim riječima, dodavanje nove 
+virtualne metode ne smije <b>kod svakog primjerka</b> psa i mačke 
+povećati memorijsko zauzeće.
+
+</p><p>
+Pokažite da je konkretne objekte
+moguće kreirati i na gomili i na stogu
+(<a href="http://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap/">detalji</a>).
+Memorijski prostor na stogu zauzmite lokalnom varijablom,
+a za zauzimanje memorije na gomili pozovite <code>malloc</code>.
+
+</p><p>
+Napišite funkciju za stvaranje n pasa,
+gdje je n argument funkcije
+(npr. za potrebe vuče saonica).
+Pokažite kako bismo to ostvarili
+jednim pozivom funkcije <code>malloc</code>
+i potrebnim brojem poziva funkcije <code>constructDog</code>.
+
+<!--
+TODO: Podatkovni članovi specifični za psa.
+-->
+
+</p><p> 
+Nakon rješavanja zadatka, uspostavite vezu
+s terminologijom iz objektno orijentiranih jezika.
+Koji elementi vašeg rješenja bi korespondirali s
+podatkovnim članovima objekta, metodama,
+virtualnim metodama, konstruktorima,
+te virtualnim tablicama?
+
+</p><p> 
+Ako vas je objektno orijentirano programiranje u C-u očaralo
+i želite o tome znati više - pogledajte sljedeću 
+<a href="http://www.cs.rit.edu/~ats/books/ooc.pdf">knjigu</a>.
+Međutim, prije nego što donesete definitivnu odluku
+o prelasku s C++-a na C, preporučamo vam da ipak 
+razmislite o iznimkama, predlošcima, STL-u
+i novim mogućnostima koje nude standardi
+iz <a href="https://en.wikipedia.org/wiki/C%2B%2B14">2011</a>.
+ i <a href="https://en.wikipedia.org/wiki/C%2B%2B14">2014</a>. godine.
+
+
+
+
+
+</p><h4 id="z2">2. Virtualne tablice u C++-u (20% bodova)</h4>
+
+<!--TODO: virtualni destruktor -->
+Dan je kratak program napisan u programskom jeziku C++ koji koristi razrede,
+nasljeđivanje, statičke, virtualne i nevirtualne funkcije.
+
+<pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+class Unary_Function {
+  private:
+    int lower_bound;
+    int upper_bound;
+  public:
+    Unary_Function(int lb, int ub) : lower_bound(lb), upper_bound(ub) {};
+    virtual double value_at(double x) = 0;
+    virtual double negative_value_at(double x) {
+      return -value_at(x);
+    }
+    void tabulate() {
+      for(int x = lower_bound; x &lt;= upper_bound; x++) {
+        printf("f(%d)=%lf\n", x, value_at(x));
+      }
+    };
+    static bool same_functions_for_ints(Unary_Function *f1, Unary_Function *f2, double tolerance) {
+      if(f1-&gt;lower_bound != f2-&gt;lower_bound) return false;
+      if(f1-&gt;upper_bound != f2-&gt;upper_bound) return false;
+      for(int x = f1-&gt;lower_bound; x &lt;= f1-&gt;upper_bound; x++) {
+        double delta = f1-&gt;value_at(x) - f2-&gt;value_at(x);
+        if(delta &lt; 0) delta = -delta;
+        if(delta &gt; tolerance) return false;
+      }
+      return true;
+    };
+};
+
+class Square : public Unary_Function {
+  public:
+    Square(int lb, int ub) : Unary_Function(lb, ub) {};
+    virtual double value_at(double x) {
+      return x*x;
+    };
+};
+
+class Linear : public Unary_Function {
+  private:
+    double a;
+    double b;
+  public:
+    Linear(int lb, int ub, double a_coef, double b_coef) : Unary_Function(lb, ub), a(a_coef), b(b_coef) {};
+    virtual double value_at(double x) {
+      return a*x + b;
+    };
+};
+
+int main() {
+  Unary_Function *f1 = new Square(-2, 2);
+  f1-&gt;tabulate();
+  Unary_Function *f2 = new Linear(-2, 2, 5, -2);
+  f2-&gt;tabulate();
+  printf("f1==f2: %s\n", Unary_Function::same_functions_for_ints(f1, f2, 1E-6) ? "DA" : "NE");
+  printf("neg_val f2(1) = %lf\n", f2-&gt;negative_value_at(1.0));
+  delete f1;
+  delete f2;
+  return 0;
+}
+</pre>
+
+Zadaci.
+<ol>
+<li>Analizirajte napisani kod. Na papiru skicirajte dijagram razreda. 
+    Za svaki razred prikažite kako će izgledati njegova tablica
+    virtualnih funkcija.</li>
+<li>Napišite programsko ostvarenje u jeziku C koje predstavlja identičan
+    program. Pripazite kakve (i koliko) struktura podataka ćete koristiti,
+    gdje će biti pojedini podatkovni članovi i slično. Karakteristike
+    vašeg rješenja trebaju biti slične karakteristikama realizacije u C++-u,
+    u smislu lakoće nadogradnje.</li>
+</ol>
+
+
+
+
+
+
+<h4 id="z4">3. Memorijska cijena dinamičkog polimorfizma (10% bodova)</h4>
+
+Ova vježba razmatra memorijsku cijenu dinamičkog polimorfizma.
+Vježbu ćemo provesti u okviru jezika C++, ali analogni zaključci 
+bi vrijedili i u ostalim jezicima.
+
+Neka su zadani tipovi 
+<code>CoolClass</code> i <code>PlainOldClass</code> 
+kako slijedi.
+<pre>class CoolClass{
+public:
+  virtual void set(int x){x_=x;};
+  virtual int get(){return x_;};
+private:
+  int x_;
+};
+class PlainOldClass{
+public:
+  void set(int x){x_=x;};
+  int get(){return x_;};
+private:
+  int x_;
+};
+</pre>
+
+Ispitajte memorijske zahtjeve objekata dvaju tipova
+(pomoć: ispiši <code>sizeof(PlainOldClass)</code> i 
+               <code>sizeof(CoolClass)</code>).
+Objasnite dobivenu razliku.
+Ako dobijete rezultate koje ne možete objasniti,
+pročitajte kada i zašto prevoditelj
+<a href="https://en.wikipedia.org/wiki/Data_structure_alignment#Data_structure_padding">nadopunjava</a>
+objekte (engl. padding).
+
+<!--
+načini instanciranja objekata na hrpi odnosno stogu
+-->
+
+
+
+
+
+
+
+<h4 id="z5">4. Vremenska cijena dinamičkog polimorfizma (20% bodova)</h4>
+
+Ova vježba razmatra vremensku cijenu dinamičkog polimorfizma.
+Vježbu ćemo provesti u okviru jezika C++, ali analogni zaključci 
+bi vrijedili i u ostalim jezicima.
+
+Neka je zadana nova verzija razreda <code>CoolClass</code>
+te novi ispitni glavni program, 
+dok izvedbu razreda <code>PlainOldClass</code> 
+preuzimamo iz prethodnog zadatka.
+
+<pre>class Base{
+public:
+  //if in doubt, google "pure virtual"
+  virtual void set(int x)=0;
+  virtual int get()=0;
+};
+class CoolClass: public Base{
+public:
+  virtual void set(int x){x_=x;};
+  virtual int get(){return x_;};
+private:
+  int x_;
+};
+int main(){
+  PlainOldClass poc;
+  Base* pb=new CoolClass;
+  poc.set(42);
+  pb-&gt;set(42);
+}  
+</pre>
+
+<ol>
+<li>
+Pronađite dijelove assemblerskog kôda u kojima se odvija 
+alociranje memorije za objekte <code>poc</code> i <code>*pb</code>.
+</li><li>
+Objasnite razliku u načinu alociranja tih objekata.
+</li><li>
+Pronađite dio kôda u assemblerskom kôdu koji je zadužen za poziv konstruktora
+objekta <code>poc</code>.
+</li><li>
+Pronađite dio kôda u assemblerskom kôdu koji je zadužen za poziv konstruktora
+objekta <code>*pb</code>. 
+Razmotrite kako se točno izvršava taj kôd. Što se u njemu događa?
+</li><li>
+Promotrite kako je prevoditelj izveo pozive 
+<code>Base::set</code> i <code>PlainOldClass::set</code>.
+Objasni razliku između izvedbi tih dvaju poziva.
+Koji od ta dva poziva je moguće obaviti uz manje instrukcija?  
+Za koju od te dvije izvedbe bi optimirajući prevoditelj
+mogao generirati kôd bez instrukcije <code>CALL</code>
+odnosno umetanjem kôda (inlining)?
+</li><li>Pronađite asemblerski kôd za definiciju i inicijalizaciju 
+tablice virtualnih funkcija razreda <code>CoolClass</code>.</li>
+</ol>
+
+<p>
+<b>Upute za analizu strojnog koda</b>.
+Analizu strojnog kôda najlakše je započeti 
+traženjem konstanti koje se javljaju u programu (npr. 42).
+Veliku pomoć u dešifriranju dekoriranih imena identifikatora
+može vam pružiti alat <code>c++filt</code>
+(<a href="http://sourceware.org/binutils/docs-2.23.1/binutils/c_002b_002bfilt.html#c_002b_002bfilt">uputstvo</a>, 
+ <a href="http://demangler.com/">mrežno sučelje</a>).
+
+</p><p>
+<b>Upute za dobivanje strojnog koda na različitim platformama</b>.
+</p><ul><li>
+ g++ i Linux/Windows: prevedite datoteku s 
+ <code>g++ -O0 -S -masm=intel file.cpp</code>,
+ te potražite datoteku <code>file.s</code>;
+</li><li>
+ g++ i MacOS:
+ gcc za Appleova računala ne podržava opciju <code>-masm=intel</code>
+ pa je treba izostaviti i snaći se u AT&amp;T-jevoj sintaksi;
+</li><li>
+ clang i MacOS: prevođenje provesti naredbom:
+ <code>clang++ -O0 -S -mllvm --x86-asm-syntax=intel file.cpp</code>).
+</li><li>
+ MS Visual C: u iskočnom izborniku projekta odabrati
+ Project properties -&gt; Configuration Properties -&gt;
+ C/C++ -&gt; Output Files -&gt; Assembly Output -&gt;
+ Assembly With Source Code.
+ Datoteka sa strojnim kôdom bit će smještena
+ u izlaznom kazalu projeta.
+</li></ul>
+
+<p>
+<b>Kratki repetitorij strojnog koda za arhitekturu x86</b>.
+Osnova za strojni jezik danas sveprisutnih Intelovih računala
+nastala je u 70-im godinama prošlog stoljeća.
+Kako bi ostvarili kompatibilnost sa starim programima,
+nove generacije procesora podržavale su sve prethodnike
+te istovremeno uvodile nove instrukcijske podskupove.
+Moderna Intelova računala imaju preko 1000 instrukcija
+te istovremeno podržavaju 78 instrukcija procesora 8080.
+Stoga najčešće nema smisla učiti cijeli instrukcijski skup,
+nego je najbolje početi od jednostavnih instrukcija
+koje postoje i na arhitekturama koje ste upoznali u uvodnim kolegijima.
+Registri arhitekture x86 označavaju se s 
+<code>eax</code>, <code>ebx</code>, 
+<code>ecx</code>, <code>edx</code>, <code>esi</code>, 
+<code>edi</code>, <code>ebp</code> i <code>esp</code> (kazalo stoga),
+dok se 64-bitne verzije tih registara
+označavaju na način da slovo e zamijenimo s r 
+(npr. <code>rax</code>, <code>rbx</code> itd.).
+Na 64-bitnoj inačici dostupni su i dodatni registri 
+<code>r8</code>-<code>r15</code>.
+Većina instrukcija arhitekture x86 
+imaju jedan izvorišni i jedan odredišni operand.
+Izvorište može biti konstanta, memorijska adresa ili registar,
+dok odredište može biti memorijska lokacija ili registar
+(može biti najviše jedan memorijski operand).
+Obratite pažnju da se u originalnoj Intelovoj sintaksi
+prvo navodi odredišni operand,
+dok je u AT&amp;T-jevoj sintaksi obratno.
+Npr. instrukcija <code>mov DWORD PTR [esp+4], 42</code>  
+(Intelova sintaksa) konstantu 42 prebacuje na adresu esp+4,
+dok instrukcija <code>add esp, 44</code>
+uvećava <code>esp</code> za 44.
+Instrukcija <code>call x</code> poziva potprogram,
+pri čemu odredište <code>x</code> može biti zadano 
+konstantom (statički poziv potprograma) ili 
+registrom (tako se najčešće izvode dinamički pozivi).
+Povratak iz potprograma provodimo instrukcijom <code>ret</code>. 
+Onima koji žele saznati više preporučamo 
+<a href="http://www.zemris.fer.hr/~ssegvic/ar2/lab2.html">laboratorijske vježbe</a>
+Arhitekture računala 2 te sljedeće upute: 
+<a href="http://www.cs.cmu.edu/~fp/courses/15213-s07/misc/asm64-handout.pdf">1</a>,
+<a href="http://www.cs.virginia.edu/~evans/cs216/guides/x86.html">2</a>.
+
+
+
+
+
+</p><h4 id="z3">5. Ručno prozivanje virtualne tablice pokazivačima na funkcije (15% bodova)</h4>
+
+<!--
+<p><strong>Napomena</strong>:
+Ova vježba nije obavezna, ali slobodno je testirajte.
+-->
+
+<p>
+Cilj ove vježbe je pokazati da virtualne metode objekata
+možemo pozivati i bez korištenja njihovih simboličkih imena,
+pod pretpostavkom da se virtualna tablica
+nalazi na samom početku objekta.
+Ta pretpostavka vrijedi kod svih popularnih prevoditelja,
+a lako ju je testirati na način
+kojeg smo pokazali u prethodnoj vježbi.
+Neka je zadan je sljedeći kod:
+</p><pre>class B{
+public:
+  virtual int prva()=0;
+  virtual int druga()=0;
+};
+
+class D: public B{
+public:
+  virtual int prva(){return 0;}
+  virtual int druga(){return 42;}
+};
+</pre>
+
+Potrebno je napisati funkciju koja prima
+pokazivač <code>pb</code> na objekt razreda <code>B</code>
+te ispisuje povratne vrijednosti dvaju metoda,
+ali na način da u kodu ne navodimo simbolička imena
+<code>prva</code> i <code>druga</code>.
+Zadatak pokušajte riješiti korištenjem
+samo jednog operatora pretvorbe (engl. cast operator).
+
+<p>
+<strong>Pomoć</strong>.
+Deklaracije pokazivača najgore su projektirani dio jezika C.
+Zbog tog propusta deklariranje pokazivača na funkcije
+ponekad podsjeća na alkemiju ili igranje lota.
+Da bismo vam olakšali pogađanje dobitne kombinacije,
+dajemo vam nekoliko primjera:
+</p><pre>  // pfun pokazuje na funkciju bez parametara koja vraća int
+  int (*pfun)(); 
+  // odgovarajući operator pretvaranja izgleda ovako:
+  pfun = (int (*)()) 0; 
+</pre>
+Pogađanje deklaracija u C-u možete sebi olakšati
+i korištenjem automatiziranog
+<a href="http://cdecl.org/">prevoditelja</a>
+na engleski jezik.
+
+
+
+<h4 id="z6">6. Polimorfizam tijekom konstruiranja objekta (15% bodova)</h4>
+
+Ova vježba ukazuje na različito ponašanje polimorfnih poziva 
+tijekom i nakon završene konstrukcije objekta.
+Objasnite ispis programa analizirajući prevedeni strojni kod.
+Obratite pažnju na to tko, kada i gdje postavlja/modificira
+pokazivač na tablicu virtualnih funkcija.
+
+<pre>#include &lt;stdio.h&gt;
+
+class Base{
+public:
+  Base() {
+    metoda();
+  }
+
+  virtual void virtualnaMetoda() {
+    printf("ja sam bazna implementacija!\n");
+  }
+
+  void metoda() {
+    printf("Metoda kaze: ");
+    virtualnaMetoda();
+  }
+};
+
+class Derived: public Base{
+public:
+  Derived(): Base() {
+    metoda();
+  }
+  virtual void virtualnaMetoda() {
+    printf("ja sam izvedena implementacija!\n");
+  }
+};
+
+int main(){
+  Derived* pd=new Derived();
+  pd-&gt;metoda();
+}
+</pre>
+
+Napomena: Java i C# se u ovakvim situacijama 
+ponašaju različito od C++-a. 
+Međutim, polimorfni pozivi tijekom 
+trajanja konstrukcije osnovnih objekata 
+i u tim se jezicima smatraju lošom praksom.
+<a href="http://stackoverflow.com/questions/10404879/polymorphism-and-constructors">Proučite</a> 
+<a href="http://stackoverflow.com/questions/119506/virtual-member-call-in-a-constructor">zašto</a>.
+
+
+
+
+
+
+<div id="footer">
+<hr style="height:5px">
+  <table width="100%" style="margin-left:auto; margin-right:auto;">
+  <tbody><tr> <td style="width:100%; text-align:left" valign="top">
+    Izrađeno 
+    <a href="http://www.vim.org/">vi</a>-jem i
+    <a href="http://www.gedit.org/">gedit</a>om. 
+
+    <!--flastmod file="${DOCUMENT_NAME}"-->
+    Posljednja promjena: Thursday, 20-Apr-2017 17:53:26 CEST
+  </td></tr><tr> <td style="width:50%; text-align:left" valign="top">
+    Svi komentari su dobrodošli: 
+    <img src="./Prva laboratorijska vježba iz OOUP_files/email.png" alt="sinisa segvic at fer hr" width="150" style="vertical-align:text-bottom">
+    </td><td style="width:50%; text-align:right" valign="bottom">
+    <a href="http://www.zemris.fer.hr/~ssegvic/ooup">Povratak</a>
+  </td></tr></tbody></table>
+
+  <p>
+</p></div>
+
+
+
+
+
+</body><div><div class="gr_-editor gr-iframe-first-load" style="display: none;"><div class="gr_-editor_back"></div><iframe class="gr_-ifr gr-_dialog-content" src="./Prva laboratorijska vježba iz OOUP_files/saved_resource.html"></iframe></div></div><grammarly-card><div></div></grammarly-card><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>

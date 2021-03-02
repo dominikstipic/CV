@@ -1,0 +1,62 @@
+1.factorial() metoda baca iznimku za iskljuèivo negativne vrijednosti n ,a trebala bi takoðer i za brojeve veæe od 20.Za takve iznimke bi korisnik trebao dobiti iznimku direktno iz Factotorial metode.Tu bi specifikaciju trebalo upisati u     javadoc. Bilo bi bolje da si koristio konstante sa deskriptivnim imenima za granice intervala.
+
+2.informacije o broju i tipu parametra koje program oèekuje trebalo napisati u javadocu na razini razreda.
+
+
+			
+Opcenito:
+pripaziti na indentaciju koda.Postoje mjesta gdje nisi 'uvukao' kod.
+Po mom misljenju zadaca je zadovoljavajuce napravljena.
+
+
+----------------------------------------
+1.zadatak
+Metoda calculateFactorial(number) bi trebala dojaviti korisniku dali je unesen broj nedefiniran za tu operaciju ili se ne moze izracunati(overflow). Takoder to bi trebalo napisati u javadoc.
+Za granice intervala (1 do 20) bi trebalo koristiti deskriptivne konstante.Na primjer MIN_VALUE,MAX_VALUE.
+U javadoc na razini razreda je potrebno upisati koje i koliko argumenata program ocekuje.Takoder bi trebalo tamo pisati za koji korisnicev input program treba zavrsiti('kraj').
+
+2.
+Mislim da bi trebalo popraviti strukturu koda u metodi requestNumber(...).
+Konkretnije if-else blok bi stavio u try blok.
+try {
+	input = scanner.next();
+	double number = Double.parseDouble(input);
+				
+	if(number <= 0) {
+		System.out.println("Number can't be negative or zero,try again");
+	}
+	else {
+		return number;
+	}
+}catch(...){...}			
+
+
+
+
+3.zadatak
+AddNode() bi bilo bolje rijesiti rekurivnim postupkom.Mnogo je lakse procitati algoritam i skuziti ga.U javadocu addNode () bi trebalo upisati da metoda baca IllegalArgumentException()
+
+Dojam:
+Zadaca je dobro napisana i nisam imao velikih problema u citanju koda.
+
+------------------------------------------------------------------------
+
+1. zadatak 
+obavijest da se program izvodi sve dok korisnik ne unese 'kraj' bi trebala biti napisana u javadocu razreda.
+
+2. zadatak 
+Varijabla numberOfInputArguments nije potrebna,dovoljno je args.length (nije velika pogreska).
+Napisao si dvije metode koje citaju unos iz tipkovnice.Jedna cita visinu ,a druga sirinu.To je lose rjesenje i bilo bi puno bolje da napravis opcenitu metodu za citanje brojeva iz tipkovnice, npr. readKeyboardInput(Scanner s,String message).Uvijek tezi sto opcenitijem rjesenju.
+U getWidthHeight(BufferedReader reader) napisao si sljedeci odsjecak:
+else if(rectangleSide == 0.) {...}
+rectangleSide je double vrijednost i ona se nesmije usporedivati(==) sa nekom egzaktnom vrijednoscu.Ovdje je lijepi primjer nekih pogresaka :
+https://stackoverflow.com/questions/8081827/how-to-compare-two-double-values-in-java
+
+3.zadatak
+Nigdje u javadocu ne pise da korisnik treba utipkati 'kraj ', ako zeli zavrsiti s izvodenjem.
+
+napomena(nije pogreška): 
+Kod citanja s ulaza takoder je moguce koristiti Scanner() klasu.Ovako je odmah jasno da ces citati iz tipkovnice.Osim toga Scanner nudi metode za automatsko parsiranje dok BufferedReader ne nudi.Naravno postoje neke stvari u kojem je BufferedReader bolji.Procitaj si:
+https://stackoverflow.com/questions/2231369/scanner-vs-bufferedreader
+
+Evo to je to,nadam se da ti je pomoglo.Nije bilo velikih problema s citanjem koda.Kao gresku jedino bi istaknuo pogresku koju si napravio u 2. zadatku.Takoder pokusaj malo bolje testove raditi. Provjeri ispravnost svoje metode za vise vrijednosti.

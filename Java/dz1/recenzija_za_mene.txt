@@ -1,0 +1,20 @@
+Factorial
+  -prvi test oèekuje exception, i to je OK, ali veæ æe prva linija izazvati taj exception i nikada  neæe doæi dalje od toga. To bi morao razdvojiti na više testova
+  -nigdje ne testiraš koje brojeve zapravo dobivaš, samo jesu li oni u zadanom rasponu prije raèunanja
+  -trebao si koristiti tip long umjesto obiènog integera za raèunanje, ovako dobivaš krive brojeve zbog overflowa veæ nakon 12!. S boljim testovima bi to ulovio
+  -imaš nepotreban try blok za Scanner, on ne baca provjerene iznimke (checked exceptions, nisam siguran u kvalitetu prijevoda) pa try nije nužan, a ovdje ne radi baš ništa s obzirom da nema catch. Ako je ideja bila koristiti try-with-resources da bi zatvorio scanner na kraju, tu bi bilo bolje jednostavno pozvati close na kraju, smanjio bi jednu razinu indentacije. Nije greška s obzirom da još niste radili iznimke na vještini, ali pomoglo bi s formatiranjem.
+  -na nekim mjestima formatiranje nije baš konzistentno, npr. if u metodi factorial. Na jednom mjestu imaš razmak iza kljuène rijeèi if, a na drugom nemaš. Ni jedno ni drugo nije krivo, ali morao bi se odluèiti za jedno i tako raditi. Preporuèam da povremeno koristiš automatsko formatiranje u editoru da popravi takve sitnice, u Eclipseu to možeš napraviti sa ctrl+shift+F (popravi ili cijeli dokument ili samo oznaèeni dio ako postoji)
+  -isInInterval ne treba ternarni operator s obzirom da on veæ ispituje logièki izraz. Ovako ternarni operator vraæa true ako dobije true i false ako dobije false, nepotrebno
+  -isto vrijedi i za provjeru boolean izraza kao uvjeta u if, `isInInterval(n) == false` se moglo napisati kao `!isInInterval(n)`
+
+Rectangle
+  -opet moram spomenuti razmake, ne koristiš ih iza if, a imaš ih iza catch. Oboje su kljuène rijeèi, trebalo bi biti jednako. https://stackoverflow.com/questions/7457339/space-after-if-while-etc-and-before-the-paren
+  -isto kao i gore za Scanner i try blok 
+  -else bi trebao biti u istom redu kao i } if bloka naredbi
+  -bilo bi ljepše kad bi malo presložio if-ove, npr. ako nemaš 2 argumenta ispiši poruku i prekini izvoðenje, a dalje nastavi bez uvjeta jer æe se program ugasiti ako uvjet nije ispunjen. Tako smanjiš jednu razinu indentacije za glavni dio programa. 
+  -u javadocu razreda bi trebalo biti opisano ponašanje programa, dakle to da može prihvatiti 2 argumenta kroz komandnu liniju, a inaèe pita korisnika itd.
+
+UniqueNumbers
+  -sve sam veæ spomenuo, samo još da skrenem pažnju na razmake izmeðu argumenata funkcije, negdje ih imaš, negdje ne. (sorry, osjetljiv sam na to :D )
+
+Uglavnom je OK zadaæa, malo trebaš pripaziti na oblikovanje koda (izaberi stil i drži se toga) i JavaDoc razreda bi trebao biti malo opširniji s obzirom da je za sada svaki razred svoj program koji se drugaèije koristi.

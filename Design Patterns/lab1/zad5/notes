@@ -1,0 +1,72 @@
+
+2.1 Define a function pointer
+-----------------------------
+2 different types of function pointers : 
+    pointers to static methods(ordinary pointers)
+    pointers to non static functions
+
+All the pointes to non-static members functions need a hidden argument
+
+int (*pt2Function)(float, char, char) = NULL;                        // C
+int (TMyClass::*pt2Member)(float, char, char) = NULL;                // C++
+int (TMyClass::*pt2ConstMember)(float, char, char) const = NULL;     // C++
+
+2.2 Calling Convention
+-----------------------------
+Compiler assumes cdecl as default
+    cdecl is x86 calling convention
+    Calling convetions tells the compiler things like how to pass the arguments or how to generate the name of function
+
+Functions and function pointers with different calling conventio are incompatible with each other
+
+void __cdecl DoIt(float a, char b, char c);                             // Borland and Microsoft
+void         DoIt(float a, char b, char c)  __attribute__((cdecl));     // GNU GCC
+
+2.3 Assign an address to Function pointer
+-----------------------------
+
+// C
+int DoIt  (float a, char b, char c){ printf("DoIt\n");   return a+b+c; }
+int DoMore(float a, char b, char c)const{ printf("DoMore\n"); return a-b+c; }
+
+pt2Function = DoIt;      // short form
+pt2Function = &DoMore;   // correct assignment using address operator
+
+
+// C++
+class TMyClass
+{
+public:
+   int DoIt(float a, char b, char c){ cout << "TMyClass::DoIt"<< endl; return a+b+c;};
+   int DoMore(float a, char b, char c) const
+         { cout << "TMyClass::DoMore" << endl; return a-b+c; };
+
+   /* more of TMyClass */
+};
+
+pt2ConstMember = &TMyClass::DoMore; // correct assignment using address operator
+pt2Member = &TMyClass::DoIt; // note: <pt2Member> may also legally point to &DoMore
+
+
+
+2.4 Calling a Function using a Function Pointer
+------------------------
+
+// 2.5 calling a function using a function pointer
+int result1 = pt2Function    (12, 'a', 'b');          // C short way
+int result2 = (*pt2Function) (12, 'a', 'b');          // C
+
+TMyClass instance1;
+int result3 = (instance1.*pt2Member)(12, 'a', 'b');   // C++
+int result4 = (*this.*pt2Member)(12, 'a', 'b');       // C++ if this-pointer can be used
+
+TMyClass* instance2 = new TMyClass;
+int result4 = (instance2->*pt2Member)(12, 'a', 'b');  // C++, instance2 is a pointer
+delete instance2;
+
+
+
+
+
+
+

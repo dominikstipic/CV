@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="33bb4311-33a9-4f6f-aa61-353c764be6f1" name="Default Changelist" comment="selection painting">
+      <change afterPath="$PROJECT_DIR$/src/interfaces/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/ActionState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/TextState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB10/src/main/java/GLListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB10/src/main/java/GLListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB10/src/main/java/OpenGLMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB10/src/main/java/OpenGLMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/GLListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/OpenGLMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/models/Intersection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/models/Light.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/models/LightSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB9/src/main/java/models/LightSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/models/Patch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/models/RTScene.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/models/SceneObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/models/Sphere.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/myMath/matrix/demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/zad1/GLListener1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB9/src/main/java/zad1/GLListener1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/zad1/ModelObjectMain1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB9/src/main/java/zad1/ModelObjectMain1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/zad2/GLListener2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB9/src/main/java/zad2/GLListener2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/java/zad2/ModelObjectMain2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LAB9/src/main/java/zad2/ModelObjectMain2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/resources/a.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/resources/scene1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/resources/scene1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/resources/scene2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LAB9/src/main/resources/scene2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/ClipboardObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/ClipboardObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ClipboardStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ClipboardStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/textEditor/TextEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/TextEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/textEditor/TextEditorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/textEditor/TextEditorModel.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#initGui#0;class#App#0" />
+                <element signature="e#4334#4335#0" expanded="true" />
+                <element signature="e#4410#4411#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/textEditor/TextEditorModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1965">
+              <caret line="137" column="10" selection-start-line="137" selection-start-column="10" selection-end-line="137" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/textEditor/TextEditor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-239">
+              <caret line="228" column="38" lean-forward="true" selection-start-line="228" selection-start-column="38" selection-end-line="228" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#addActions#0;class#TextEditor#0" />
+                <element signature="method#addKeyListeners#0;class#TextEditor#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>moveCursor</find>
+      <find>end</find>
+      <find>dele</find>
+      <find>sys</find>
+      <find>print</find>
+      <find>paint</find>
+      <find>newL</find>
+      <find>enter</find>
+      <find>newl</find>
+      <find>inser</find>
+      <find>selection</find>
+      <find>System</find>
+      <find>deleteBef</find>
+      <find>newLine</find>
+      <find>new</find>
+      <find>deleteBefore</find>
+      <find>newLin</find>
+      <find>deleteBe</find>
+      <find>cursor</find>
+      <find>delete</find>
+      <find>al</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/demo/Main.java" />
+        <option value="$PROJECT_DIR$/src/textEditor/LocationRange.java" />
+        <option value="$PROJECT_DIR$/src/textEditor/CursorObsever.java" />
+        <option value="$PROJECT_DIR$/src/textEditor/CursorObserver.java" />
+        <option value="$PROJECT_DIR$/src/textEditorHelper/CursorDirection.java" />
+        <option value="$PROJECT_DIR$/src/textEditor/Location.java" />
+        <option value="$PROJECT_DIR$/src/interfaces/TextObserver.java" />
+        <option value="$PROJECT_DIR$/src/interfaces/Observer.java" />
+        <option value="$PROJECT_DIR$/src/interfaces/IObserver.java" />
+        <option value="$PROJECT_DIR$/src/demo/DemoMain.java" />
+        <option value="$PROJECT_DIR$/src/models/CharacterMetaData.java" />
+        <option value="$PROJECT_DIR$/src/Help.java" />
+        <option value="$PROJECT_DIR$/src/textEditor/Help.java" />
+        <option value="$PROJECT_DIR$/src/models/LocationRange.java" />
+        <option value="$PROJECT_DIR$/src/demo/Drawer.java" />
+        <option value="$PROJECT_DIR$/src/interfaces/ClipboardObserver.java" />
+        <option value="$PROJECT_DIR$/src/ClipboardStack/ClipboardStack.java" />
+        <option value="$PROJECT_DIR$/src/interfaces/State.java" />
+        <option value="$PROJECT_DIR$/src/models/TextState.java" />
+        <option value="$PROJECT_DIR$/src/models/ActionState.java" />
+        <option value="$PROJECT_DIR$/src/models/ClipboardStack.java" />
+        <option value="$PROJECT_DIR$/src/textEditor/TextEditor.java" />
+        <option value="$PROJECT_DIR$/src/App.java" />
+        <option value="$PROJECT_DIR$/src/textEditor/TextEditorModel.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="y" value="25" />
+    <option name="width" value="962" />
+    <option name="height" value="1055" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Oblikovni obrasci" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Oblikovni obrasci" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Oblikovni obrasci" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Oblikovni obrasci" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Oblikovni obrasci" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Oblikovni obrasci" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="textEditor" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559729494849" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="textEditor" />
+      <recent name="demo" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="DemoMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="demo.DemoMain" />
+      <module name="Oblikovni obrasci" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Help" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Help" />
+      <module name="Oblikovni obrasci" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <module name="Oblikovni obrasci" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.DemoMain" />
+      <item itemvalue="Application.Help" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.DemoMain" />
+        <item itemvalue="Application.Help" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="33bb4311-33a9-4f6f-aa61-353c764be6f1" name="Default Changelist" comment="" />
+      <created>1559029551028</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559029551028</updated>
+      <workItem from="1559029557662" duration="9861000" />
+      <workItem from="1559128453904" duration="27072000" />
+      <workItem from="1559211964352" duration="69000" />
+      <workItem from="1559212061571" duration="35492000" />
+      <workItem from="1559293262850" duration="3310000" />
+      <workItem from="1559324791456" duration="747000" />
+      <workItem from="1559372718452" duration="10000" />
+      <workItem from="1559373342957" duration="14000" />
+      <workItem from="1559562951805" duration="3590000" />
+      <workItem from="1559589532171" duration="7000" />
+      <workItem from="1559638993591" duration="687000" />
+      <workItem from="1559676426755" duration="4193000" />
+      <workItem from="1559681723055" duration="6237000" />
+      <workItem from="1559726285251" duration="2619000" />
+    </task>
+    <task id="LOCAL-00001" summary="Text selection delete">
+      <created>1559258942448</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1559258942449</updated>
+    </task>
+    <task id="LOCAL-00002" summary="newLine feature">
+      <created>1559261035372</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1559261035372</updated>
+    </task>
+    <task id="LOCAL-00003" summary="selection painting">
+      <created>1559261731484</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559261731484</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="93908000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="25" width="962" height="1055" extended-state="4" />
+    <layout>
+      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="1" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.34061137" />
+      <window_info anchor="bottom" id="TypeScript" order="0" />
+      <window_info anchor="bottom" id="Messages" order="1" sideWeight="0.49234137" weight="0.32181427" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.32937366" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.7954048" weight="0.3099352" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.39956802" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="8" sideWeight="0.49781182" weight="0.32683983" />
+      <window_info anchor="bottom" id="Spring" order="9" weight="0.32937366" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32937366" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.2045952" side_tool="true" weight="0.31533477" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32946146" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.23218143" />
+      <window_info anchor="bottom" id="Inspection Results" order="16" weight="0.32946146" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49892008" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" x="0" y="0" width="190" height="855" id="Documentation" order="8" sideWeight="0.5010799" side_tool="true" weight="0.6892779" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32857144" />
+      <window_info anchor="right" id="Database" order="10" weight="0.32943678" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="1" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.31838074" />
+      <window_info anchor="bottom" id="TypeScript" order="0" />
+      <window_info anchor="bottom" id="Messages" order="1" sideWeight="0.49234137" weight="0.32181427" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.32937366" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.7954048" visible="true" weight="0.31317493" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.39956802" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="8" sideWeight="0.49781182" weight="0.32683983" />
+      <window_info anchor="bottom" id="Spring" order="9" weight="0.32937366" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32937366" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.2045952" side_tool="true" weight="0.31533477" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32946146" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.23218143" />
+      <window_info anchor="bottom" id="Inspection Results" order="16" weight="0.32946146" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49892008" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" x="0" y="0" width="190" height="855" id="Documentation" order="8" sideWeight="0.5010799" side_tool="true" weight="0.6892779" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32857144" />
+      <window_info anchor="right" id="Database" order="10" weight="0.32943678" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Text selection delete" />
+    <MESSAGE value="newLine feature" />
+    <MESSAGE value="selection painting" />
+    <option name="LAST_COMMIT_MESSAGE" value="selection painting" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>model.getSelectionRange().getEnd()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>startLocation</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>line.get(column-1)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>line.get(column)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>line.toString()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>line</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>cursorLocation.getX()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>1/2</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>getFontWidth(line.get(lineColumn-1))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar:///usr/lib/jvm/java-11-oracle/lib/src.zip!/java.desktop/javax/swing/JComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="1324" column="20" lean-forward="true" selection-start-line="1324" selection-start-column="20" selection-end-line="1324" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/textEditorHelper/CursorDirection.java" />
+    <entry file="file://$PROJECT_DIR$/src/interfaces/IObserver.java" />
+    <entry file="file://$PROJECT_DIR$/src/demo/DemoMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="43" selection-start-line="43" selection-end-line="45" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#981#982#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/CharacterMetaData.java" />
+    <entry file="file://$PROJECT_DIR$/src/interfaces/CursorObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Help.java" />
+    <entry file="file://$PROJECT_DIR$/src/models/LocationRange.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-11-oracle/lib/src.zip!/java.desktop/javax/swing/RepaintManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="864" selection-start-line="864" selection-end-line="864" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-11-oracle/lib/src.zip!/java.base/java/util/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="558" selection-start-line="558" selection-end-line="558" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/demo/Drawer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interfaces/State.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interfaces/TextObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/interfaces/ClipboardObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-11-oracle/lib/src.zip!/java.base/java/lang/StringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="447" selection-start-line="447" selection-end-line="447" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/ActionState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#219#220#0" expanded="true" />
+            <element signature="e#268#269#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/TextState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/Location.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#185#186#0" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#291#292#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/textEditor/Help.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/ClipboardStack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/textEditor/TextEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-239">
+          <caret line="228" column="38" lean-forward="true" selection-start-line="228" selection-start-column="38" selection-end-line="228" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addActions#0;class#TextEditor#0" />
+            <element signature="method#addKeyListeners#0;class#TextEditor#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/textEditor/TextEditorModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1965">
+          <caret line="137" column="10" selection-start-line="137" selection-start-column="10" selection-end-line="137" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initGui#0;class#App#0" />
+            <element signature="e#4334#4335#0" expanded="true" />
+            <element signature="e#4410#4411#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
