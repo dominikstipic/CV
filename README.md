@@ -12,7 +12,7 @@ I was experimenting with real-time semantic segmentation models which are design
 * **Deep Learning Pipeline**:
 https://github.com/dominikstipic/DeepSat
 
-![alt text](https://github.com/dominikstipic/CV/blob/main/Segmentation/camvid.gif)
+![alt text](https://github.com/dominikstipic/CV/blob/main/Papers/camvid.gif)
 
 
 **Text Analysis and Retrieval**:
