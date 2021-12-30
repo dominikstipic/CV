@@ -8,8 +8,9 @@ This repository contains some of the projects on which I have been working on fo
 The seminar where I was exploring the applications of satellite and aerial imagery and usage of the deep learning methods in them. 
 I experimented with semantic segmentation models, specifically fully convolutional models, on [Inria Aerial Image Labeling](https://paperswithcode.com/dataset/inria-aerial-image-labeling) dataset where the task was to segment houses. The main purpose of this seminar was to explore the literature on remote sensing and to get familiar with semantic segmentation methods and architectures. 
 * **Real-time semantic segmentation models**:
-I was experimenting with real-time semantic segmentation models which are designed with the purpose to be used on embedding devices. This kind of models are great for experimentation because they have fewer parameters and great inference speed. The goals of this project were to get familiar with multiscale semantic segmentation architecture from [this](https://arxiv.org/abs/1903.08469) paper and to replicate results. To do that, I created [deep learning framework](https://github.com/dominikstipic/DSLearn) for easier experimentation and learning. This project is still under maintenance. 
-
+I was experimenting with real-time semantic segmentation models which are designed with the purpose to be used on embedding devices. This kind of models are great for experimentation because they have fewer parameters and great inference speed. The goals of this project were to get familiar with multiscale semantic segmentation architecture from [this](https://arxiv.org/abs/1903.08469) paper and to replicate results.
+* **Deep Learning Pipeline**:
+https://github.com/dominikstipic/DeepSat
 
 ![alt text](https://github.com/dominikstipic/CV/blob/main/Segmentation/camvid.gif)
 
