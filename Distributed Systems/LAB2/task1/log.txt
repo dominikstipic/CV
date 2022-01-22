@@ -1,0 +1,802 @@
+2020-12-14 at 21:21:01 CET
+-----
+
+
+-----
+Starting sensor G139Fgn on port 33599
+
+-----
+Starting sensor TLgcKCU on port 44003
+
+-----
+Starting sensor PMr5TmW on port 34165
+
+-----
+Starting sensor vFvbrP9 on port 42089
+
+-----
+Starting sensor gqMdUY4 on port 41471
+
+-----
+SERVER G139Fgn: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":6},"values":[6]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":0,"PMr5TmW":0,"G139Fgn":0,"TLgcKCU":1,"gqMdUY4":0},"values":[0,0,0,1,0]},"systemTime":12916008851313}
+
+-----
+SERVER PMr5TmW: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":6},"values":[6]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":0,"PMr5TmW":0,"G139Fgn":0,"TLgcKCU":1,"gqMdUY4":0},"values":[0,0,0,1,0]},"systemTime":12916008851313}
+
+-----
+SERVER gqMdUY4: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":6},"values":[6]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":0,"PMr5TmW":0,"G139Fgn":0,"TLgcKCU":1,"gqMdUY4":0},"values":[0,0,0,1,0]},"systemTime":12916008851313}
+
+-----
+SERVER vFvbrP9: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":6},"values":[6]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":0,"PMr5TmW":0,"G139Fgn":0,"TLgcKCU":1,"gqMdUY4":0},"values":[0,0,0,1,0]},"systemTime":12916008851313}
+
+-----
+SERVER G139Fgn: SHARE vFvbrP9
+DATA {"temperature":26.0,"pressure":991.0,"humidity":59.0,"co":193.0,"no2":277.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":7},"values":[7]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":1,"PMr5TmW":0,"G139Fgn":0,"TLgcKCU":0,"gqMdUY4":0},"values":[1,0,0,0,0]},"systemTime":12917047310446}
+
+-----
+SERVER gqMdUY4: SHARE vFvbrP9
+DATA {"temperature":26.0,"pressure":991.0,"humidity":59.0,"co":193.0,"no2":277.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":14},"values":[14]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":2,"PMr5TmW":0,"G139Fgn":0,"TLgcKCU":1,"gqMdUY4":0},"values":[2,0,0,1,0]},"systemTime":12917047310446}
+
+-----
+SERVER TLgcKCU: SHARE vFvbrP9
+DATA {"temperature":26.0,"pressure":991.0,"humidity":59.0,"co":193.0,"no2":277.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":14},"values":[14]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":2,"PMr5TmW":0,"G139Fgn":0,"TLgcKCU":1,"gqMdUY4":0},"values":[2,0,0,1,0]},"systemTime":12917047310446}
+
+-----
+SERVER gqMdUY4: SHARE G139Fgn
+DATA {"temperature":26.0,"pressure":991.0,"humidity":59.0,"co":193.0,"no2":277.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":30},"values":[30]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":1,"PMr5TmW":0,"G139Fgn":3,"TLgcKCU":1,"gqMdUY4":0},"values":[1,0,3,1,0]},"systemTime":12917270413207}
+
+-----
+SERVER vFvbrP9: SHARE G139Fgn
+DATA {"temperature":26.0,"pressure":991.0,"humidity":59.0,"co":193.0,"no2":277.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":30},"values":[30]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":1,"PMr5TmW":0,"G139Fgn":3,"TLgcKCU":1,"gqMdUY4":0},"values":[1,0,3,1,0]},"systemTime":12917270413207}
+
+-----
+SERVER TLgcKCU: SHARE G139Fgn
+DATA {"temperature":26.0,"pressure":991.0,"humidity":59.0,"co":193.0,"no2":277.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":30},"values":[30]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":1,"PMr5TmW":0,"G139Fgn":3,"TLgcKCU":1,"gqMdUY4":0},"values":[1,0,3,1,0]},"systemTime":12917270413207}
+
+-----
+SERVER PMr5TmW: SHARE vFvbrP9
+DATA {"temperature":26.0,"pressure":991.0,"humidity":59.0,"co":193.0,"no2":277.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":14},"values":[14]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":2,"PMr5TmW":0,"G139Fgn":0,"TLgcKCU":1,"gqMdUY4":0},"values":[2,0,0,1,0]},"systemTime":12917047310446}
+
+-----
+SERVER PMr5TmW: SHARE G139Fgn
+DATA {"temperature":26.0,"pressure":991.0,"humidity":59.0,"co":193.0,"no2":277.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":30},"values":[30]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":1,"PMr5TmW":0,"G139Fgn":3,"TLgcKCU":1,"gqMdUY4":0},"values":[1,0,3,1,0]},"systemTime":12917270413207}
+
+-----
+SERVER G139Fgn: SHARE PMr5TmW
+DATA {"temperature":24.0,"pressure":994.0,"humidity":56.0,"co":219.0,"no2":401.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":30},"values":[30]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":2,"PMr5TmW":3,"G139Fgn":0,"TLgcKCU":1,"gqMdUY4":0},"values":[2,3,0,1,0]},"systemTime":12917212113843}
+
+-----
+SERVER gqMdUY4: SHARE PMr5TmW
+DATA {"temperature":24.0,"pressure":994.0,"humidity":56.0,"co":219.0,"no2":401.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":40},"values":[40]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":3,"TLgcKCU":1,"gqMdUY4":0},"values":[2,4,3,1,0]},"systemTime":12917212113843}
+
+-----
+SERVER vFvbrP9: SHARE PMr5TmW
+DATA {"temperature":24.0,"pressure":994.0,"humidity":56.0,"co":219.0,"no2":401.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":40},"values":[40]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":3,"TLgcKCU":1,"gqMdUY4":0},"values":[2,4,3,1,0]},"systemTime":12917212113843}
+
+-----
+SERVER TLgcKCU: SHARE PMr5TmW
+DATA {"temperature":24.0,"pressure":994.0,"humidity":56.0,"co":219.0,"no2":401.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":40},"values":[40]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":3,"TLgcKCU":1,"gqMdUY4":0},"values":[2,4,3,1,0]},"systemTime":12917212113843}
+
+-----
+SERVER G139Fgn: SHARE gqMdUY4
+DATA {"temperature":26.0,"pressure":991.0,"humidity":59.0,"co":193.0,"no2":277.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":50},"values":[50]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":3,"TLgcKCU":1,"gqMdUY4":5},"values":[2,4,3,1,5]},"systemTime":12917631827321}
+
+-----
+SERVER PMr5TmW: SHARE gqMdUY4
+DATA {"temperature":26.0,"pressure":991.0,"humidity":59.0,"co":193.0,"no2":277.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":50},"values":[50]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":3,"TLgcKCU":1,"gqMdUY4":5},"values":[2,4,3,1,5]},"systemTime":12917631827321}
+
+-----
+SERVER vFvbrP9: SHARE gqMdUY4
+DATA {"temperature":26.0,"pressure":991.0,"humidity":59.0,"co":193.0,"no2":277.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":50},"values":[50]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":3,"TLgcKCU":1,"gqMdUY4":5},"values":[2,4,3,1,5]},"systemTime":12917631827321}
+
+-----
+SERVER TLgcKCU: SHARE gqMdUY4
+DATA {"temperature":26.0,"pressure":991.0,"humidity":59.0,"co":193.0,"no2":277.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":50},"values":[50]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":3,"TLgcKCU":1,"gqMdUY4":5},"values":[2,4,3,1,5]},"systemTime":12917631827321}
+
+-----
+SERVER PMr5TmW: SHARE G139Fgn
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":61},"values":[61]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":1,"gqMdUY4":5},"values":[2,4,6,1,5]},"systemTime":12919521927011}
+
+-----
+SERVER gqMdUY4: SHARE G139Fgn
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":61},"values":[61]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":1,"gqMdUY4":5},"values":[2,4,6,1,5]},"systemTime":12919521927011}
+
+-----
+SERVER vFvbrP9: SHARE G139Fgn
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":61},"values":[61]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":1,"gqMdUY4":5},"values":[2,4,6,1,5]},"systemTime":12919521927011}
+
+-----
+SERVER TLgcKCU: SHARE G139Fgn
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":61},"values":[61]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":1,"gqMdUY4":5},"values":[2,4,6,1,5]},"systemTime":12919521927011}
+
+-----
+SERVER G139Fgn: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":998.0,"humidity":39.0,"co":526.0,"no2":497.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":68},"values":[68]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":5},"values":[2,4,6,7,5]},"systemTime":12919938522258}
+
+-----
+SERVER PMr5TmW: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":998.0,"humidity":39.0,"co":526.0,"no2":497.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":68},"values":[68]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":5},"values":[2,4,6,7,5]},"systemTime":12919938522258}
+
+-----
+SERVER gqMdUY4: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":998.0,"humidity":39.0,"co":526.0,"no2":497.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":68},"values":[68]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":5},"values":[2,4,6,7,5]},"systemTime":12919938522258}
+
+-----
+SERVER vFvbrP9: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":998.0,"humidity":39.0,"co":526.0,"no2":497.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":68},"values":[68]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":2,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":5},"values":[2,4,6,7,5]},"systemTime":12919938522258}
+
+-----
+SERVER G139Fgn: SHARE vFvbrP9
+DATA {"temperature":18.0,"pressure":995.0,"humidity":75.0,"co":151.0,"no2":290.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":76},"values":[76]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":8,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":5},"values":[8,4,6,7,5]},"systemTime":12920350509583}
+
+-----
+SERVER PMr5TmW: SHARE vFvbrP9
+DATA {"temperature":18.0,"pressure":995.0,"humidity":75.0,"co":151.0,"no2":290.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":76},"values":[76]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":8,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":5},"values":[8,4,6,7,5]},"systemTime":12920350509583}
+
+-----
+SERVER gqMdUY4: SHARE vFvbrP9
+DATA {"temperature":18.0,"pressure":995.0,"humidity":75.0,"co":151.0,"no2":290.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":76},"values":[76]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":8,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":5},"values":[8,4,6,7,5]},"systemTime":12920350509583}
+
+-----
+SERVER TLgcKCU: SHARE vFvbrP9
+DATA {"temperature":18.0,"pressure":995.0,"humidity":75.0,"co":151.0,"no2":290.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":76},"values":[76]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":8,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":5},"values":[8,4,6,7,5]},"systemTime":12920350509583}
+
+-----
+SERVER G139Fgn: SHARE gqMdUY4
+DATA {"temperature":24.0,"pressure":994.0,"humidity":56.0,"co":219.0,"no2":401.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":89},"values":[89]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":8,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":9},"values":[8,4,6,7,9]},"systemTime":12921149372958}
+
+-----
+SERVER PMr5TmW: SHARE gqMdUY4
+DATA {"temperature":24.0,"pressure":994.0,"humidity":56.0,"co":219.0,"no2":401.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":89},"values":[89]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":8,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":9},"values":[8,4,6,7,9]},"systemTime":12921149372958}
+
+-----
+SERVER vFvbrP9: SHARE gqMdUY4
+DATA {"temperature":24.0,"pressure":994.0,"humidity":56.0,"co":219.0,"no2":401.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":89},"values":[89]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":8,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":9},"values":[8,4,6,7,9]},"systemTime":12921149372958}
+
+-----
+SERVER TLgcKCU: SHARE gqMdUY4
+DATA {"temperature":24.0,"pressure":994.0,"humidity":56.0,"co":219.0,"no2":401.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":89},"values":[89]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":8,"PMr5TmW":4,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":9},"values":[8,4,6,7,9]},"systemTime":12921149372958}
+
+-----
+SERVER G139Fgn: SHARE PMr5TmW
+DATA {"temperature":27.0,"pressure":989.0,"humidity":50.0,"co":0.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":102},"values":[102]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":8,"PMr5TmW":10,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":9},"values":[8,10,6,7,9]},"systemTime":12921420543004}
+
+-----
+SERVER gqMdUY4: SHARE PMr5TmW
+DATA {"temperature":27.0,"pressure":989.0,"humidity":50.0,"co":0.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":102},"values":[102]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":8,"PMr5TmW":10,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":9},"values":[8,10,6,7,9]},"systemTime":12921420543004}
+
+-----
+SERVER vFvbrP9: SHARE PMr5TmW
+DATA {"temperature":27.0,"pressure":989.0,"humidity":50.0,"co":0.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":102},"values":[102]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":8,"PMr5TmW":10,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":9},"values":[8,10,6,7,9]},"systemTime":12921420543004}
+
+-----
+SERVER TLgcKCU: SHARE PMr5TmW
+DATA {"temperature":27.0,"pressure":989.0,"humidity":50.0,"co":0.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":102},"values":[102]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":8,"PMr5TmW":10,"G139Fgn":6,"TLgcKCU":7,"gqMdUY4":9},"values":[8,10,6,7,9]},"systemTime":12921420543004}
+
+-----
+SERVER PMr5TmW: SHARE G139Fgn
+DATA {"temperature":31.0,"pressure":1002.0,"humidity":44.0,"co":0.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":113},"values":[113]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":8,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":7,"gqMdUY4":9},"values":[8,10,11,7,9]},"systemTime":12921983330058}
+
+-----
+SERVER gqMdUY4: SHARE G139Fgn
+DATA {"temperature":31.0,"pressure":1002.0,"humidity":44.0,"co":0.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":113},"values":[113]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":8,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":7,"gqMdUY4":9},"values":[8,10,11,7,9]},"systemTime":12921983330058}
+
+-----
+SERVER vFvbrP9: SHARE G139Fgn
+DATA {"temperature":31.0,"pressure":1002.0,"humidity":44.0,"co":0.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":113},"values":[113]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":8,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":7,"gqMdUY4":9},"values":[8,10,11,7,9]},"systemTime":12921983330058}
+
+-----
+SERVER TLgcKCU: SHARE G139Fgn
+DATA {"temperature":31.0,"pressure":1002.0,"humidity":44.0,"co":0.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":113},"values":[113]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":8,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":7,"gqMdUY4":9},"values":[8,10,11,7,9]},"systemTime":12921983330058}
+
+-----
+SERVER G139Fgn: SHARE vFvbrP9
+DATA {"temperature":33.0,"pressure":993.0,"humidity":40.0,"co":0.0,"no2":null,"so2":52.0,"scalar":{"source":"SCALAR","map":{"SCALAR":121},"values":[121]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":12,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":7,"gqMdUY4":9},"values":[12,10,11,7,9]},"systemTime":12923298080687}
+
+-----
+SERVER PMr5TmW: SHARE vFvbrP9
+DATA {"temperature":33.0,"pressure":993.0,"humidity":40.0,"co":0.0,"no2":null,"so2":52.0,"scalar":{"source":"SCALAR","map":{"SCALAR":121},"values":[121]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":12,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":7,"gqMdUY4":9},"values":[12,10,11,7,9]},"systemTime":12923298080687}
+
+-----
+SERVER gqMdUY4: SHARE vFvbrP9
+DATA {"temperature":33.0,"pressure":993.0,"humidity":40.0,"co":0.0,"no2":null,"so2":52.0,"scalar":{"source":"SCALAR","map":{"SCALAR":121},"values":[121]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":12,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":7,"gqMdUY4":9},"values":[12,10,11,7,9]},"systemTime":12923298080687}
+
+-----
+SERVER TLgcKCU: SHARE vFvbrP9
+DATA {"temperature":33.0,"pressure":993.0,"humidity":40.0,"co":0.0,"no2":null,"so2":52.0,"scalar":{"source":"SCALAR","map":{"SCALAR":121},"values":[121]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":12,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":7,"gqMdUY4":9},"values":[12,10,11,7,9]},"systemTime":12923298080687}
+
+-----
+SERVER G139Fgn: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":132},"values":[132]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":12,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":7,"gqMdUY4":13},"values":[12,10,11,7,13]},"systemTime":12923521713429}
+
+-----
+SERVER PMr5TmW: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":132},"values":[132]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":12,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":7,"gqMdUY4":13},"values":[12,10,11,7,13]},"systemTime":12923521713429}
+
+-----
+SERVER vFvbrP9: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":132},"values":[132]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":12,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":7,"gqMdUY4":13},"values":[12,10,11,7,13]},"systemTime":12923521713429}
+
+-----
+SERVER TLgcKCU: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":132},"values":[132]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":12,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":7,"gqMdUY4":13},"values":[12,10,11,7,13]},"systemTime":12923521713429}
+
+-----
+SERVER G139Fgn: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":998.0,"humidity":39.0,"co":526.0,"no2":497.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":139},"values":[139]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":12,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":14,"gqMdUY4":13},"values":[12,10,11,14,13]},"systemTime":12923702383658}
+
+-----
+SERVER PMr5TmW: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":998.0,"humidity":39.0,"co":526.0,"no2":497.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":139},"values":[139]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":12,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":14,"gqMdUY4":13},"values":[12,10,11,14,13]},"systemTime":12923702383658}
+
+-----
+SERVER gqMdUY4: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":998.0,"humidity":39.0,"co":526.0,"no2":497.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":139},"values":[139]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":12,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":14,"gqMdUY4":13},"values":[12,10,11,14,13]},"systemTime":12923702383658}
+
+-----
+SERVER vFvbrP9: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":998.0,"humidity":39.0,"co":526.0,"no2":497.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":139},"values":[139]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":12,"PMr5TmW":10,"G139Fgn":11,"TLgcKCU":14,"gqMdUY4":13},"values":[12,10,11,14,13]},"systemTime":12923702383658}
+
+-----
+SERVER G139Fgn: SHARE PMr5TmW
+DATA {"temperature":27.0,"pressure":1000.0,"humidity":42.0,"co":230.0,"no2":92.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":154},"values":[154]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":11,"TLgcKCU":14,"gqMdUY4":13},"values":[12,15,11,14,13]},"systemTime":12923806349841}
+
+-----
+SERVER gqMdUY4: SHARE PMr5TmW
+DATA {"temperature":27.0,"pressure":1000.0,"humidity":42.0,"co":230.0,"no2":92.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":154},"values":[154]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":11,"TLgcKCU":14,"gqMdUY4":13},"values":[12,15,11,14,13]},"systemTime":12923806349841}
+
+-----
+SERVER vFvbrP9: SHARE PMr5TmW
+DATA {"temperature":27.0,"pressure":1000.0,"humidity":42.0,"co":230.0,"no2":92.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":154},"values":[154]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":11,"TLgcKCU":14,"gqMdUY4":13},"values":[12,15,11,14,13]},"systemTime":12923806349841}
+
+-----
+SERVER TLgcKCU: SHARE PMr5TmW
+DATA {"temperature":27.0,"pressure":1000.0,"humidity":42.0,"co":230.0,"no2":92.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":154},"values":[154]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":11,"TLgcKCU":14,"gqMdUY4":13},"values":[12,15,11,14,13]},"systemTime":12923806349841}
+
+-----
+SERVER PMr5TmW: SHARE G139Fgn
+DATA {"temperature":33.0,"pressure":993.0,"humidity":40.0,"co":0.0,"no2":null,"so2":52.0,"scalar":{"source":"SCALAR","map":{"SCALAR":165},"values":[165]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":16,"TLgcKCU":14,"gqMdUY4":13},"values":[12,15,16,14,13]},"systemTime":12924589398488}
+
+-----
+SERVER gqMdUY4: SHARE G139Fgn
+DATA {"temperature":33.0,"pressure":993.0,"humidity":40.0,"co":0.0,"no2":null,"so2":52.0,"scalar":{"source":"SCALAR","map":{"SCALAR":165},"values":[165]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":16,"TLgcKCU":14,"gqMdUY4":13},"values":[12,15,16,14,13]},"systemTime":12924589398488}
+
+-----
+SERVER vFvbrP9: SHARE G139Fgn
+DATA {"temperature":33.0,"pressure":993.0,"humidity":40.0,"co":0.0,"no2":null,"so2":52.0,"scalar":{"source":"SCALAR","map":{"SCALAR":165},"values":[165]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":16,"TLgcKCU":14,"gqMdUY4":13},"values":[12,15,16,14,13]},"systemTime":12924589398488}
+
+-----
+SERVER TLgcKCU: SHARE G139Fgn
+DATA {"temperature":33.0,"pressure":993.0,"humidity":40.0,"co":0.0,"no2":null,"so2":52.0,"scalar":{"source":"SCALAR","map":{"SCALAR":165},"values":[165]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":16,"TLgcKCU":14,"gqMdUY4":13},"values":[12,15,16,14,13]},"systemTime":12924589398488}
+
+-----
+SERVER G139Fgn: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":175},"values":[175]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":16,"TLgcKCU":14,"gqMdUY4":17},"values":[12,15,16,14,17]},"systemTime":12925614315436}
+
+-----
+SERVER PMr5TmW: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":175},"values":[175]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":16,"TLgcKCU":14,"gqMdUY4":17},"values":[12,15,16,14,17]},"systemTime":12925614315436}
+
+-----
+SERVER vFvbrP9: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":175},"values":[175]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":16,"TLgcKCU":14,"gqMdUY4":17},"values":[12,15,16,14,17]},"systemTime":12925614315436}
+
+-----
+SERVER TLgcKCU: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":175},"values":[175]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":16,"TLgcKCU":14,"gqMdUY4":17},"values":[12,15,16,14,17]},"systemTime":12925614315436}
+
+-----
+SERVER G139Fgn: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":998.0,"humidity":39.0,"co":526.0,"no2":497.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":182},"values":[182]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":16,"TLgcKCU":18,"gqMdUY4":17},"values":[12,15,16,18,17]},"systemTime":12927005126100}
+
+-----
+SERVER PMr5TmW: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":998.0,"humidity":39.0,"co":526.0,"no2":497.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":182},"values":[182]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":16,"TLgcKCU":18,"gqMdUY4":17},"values":[12,15,16,18,17]},"systemTime":12927005126100}
+
+-----
+SERVER gqMdUY4: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":998.0,"humidity":39.0,"co":526.0,"no2":497.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":182},"values":[182]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":16,"TLgcKCU":18,"gqMdUY4":17},"values":[12,15,16,18,17]},"systemTime":12927005126100}
+
+-----
+SERVER vFvbrP9: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":998.0,"humidity":39.0,"co":526.0,"no2":497.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":182},"values":[182]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":12,"PMr5TmW":15,"G139Fgn":16,"TLgcKCU":18,"gqMdUY4":17},"values":[12,15,16,18,17]},"systemTime":12927005126100}
+
+-----
+SERVER G139Fgn: SHARE PMr5TmW
+DATA {"temperature":34.0,"pressure":500.0,"humidity":49.0,"co":256.0,"no2":228.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":196},"values":[196]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":12,"PMr5TmW":19,"G139Fgn":16,"TLgcKCU":18,"gqMdUY4":17},"values":[12,19,16,18,17]},"systemTime":12927225947536}
+
+-----
+SERVER gqMdUY4: SHARE PMr5TmW
+DATA {"temperature":34.0,"pressure":500.0,"humidity":49.0,"co":256.0,"no2":228.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":196},"values":[196]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":12,"PMr5TmW":19,"G139Fgn":16,"TLgcKCU":18,"gqMdUY4":17},"values":[12,19,16,18,17]},"systemTime":12927225947536}
+
+-----
+SERVER vFvbrP9: SHARE PMr5TmW
+DATA {"temperature":34.0,"pressure":500.0,"humidity":49.0,"co":256.0,"no2":228.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":196},"values":[196]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":12,"PMr5TmW":19,"G139Fgn":16,"TLgcKCU":18,"gqMdUY4":17},"values":[12,19,16,18,17]},"systemTime":12927225947536}
+
+-----
+SERVER TLgcKCU: SHARE PMr5TmW
+DATA {"temperature":34.0,"pressure":500.0,"humidity":49.0,"co":256.0,"no2":228.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":196},"values":[196]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":12,"PMr5TmW":19,"G139Fgn":16,"TLgcKCU":18,"gqMdUY4":17},"values":[12,19,16,18,17]},"systemTime":12927225947536}
+
+-----
+SERVER G139Fgn: SHARE vFvbrP9
+DATA {"temperature":25.0,"pressure":988.0,"humidity":67.0,"co":698.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":204},"values":[204]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":16,"TLgcKCU":18,"gqMdUY4":17},"values":[20,19,16,18,17]},"systemTime":12927384248824}
+
+-----
+SERVER PMr5TmW: SHARE vFvbrP9
+DATA {"temperature":25.0,"pressure":988.0,"humidity":67.0,"co":698.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":204},"values":[204]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":16,"TLgcKCU":18,"gqMdUY4":17},"values":[20,19,16,18,17]},"systemTime":12927384248824}
+
+-----
+SERVER gqMdUY4: SHARE vFvbrP9
+DATA {"temperature":25.0,"pressure":988.0,"humidity":67.0,"co":698.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":204},"values":[204]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":16,"TLgcKCU":18,"gqMdUY4":17},"values":[20,19,16,18,17]},"systemTime":12927384248824}
+
+-----
+SERVER TLgcKCU: SHARE vFvbrP9
+DATA {"temperature":25.0,"pressure":988.0,"humidity":67.0,"co":698.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":204},"values":[204]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":16,"TLgcKCU":18,"gqMdUY4":17},"values":[20,19,16,18,17]},"systemTime":12927384248824}
+
+-----
+SERVER PMr5TmW: SHARE G139Fgn
+DATA {"temperature":29.0,"pressure":988.0,"humidity":55.0,"co":133.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":217},"values":[217]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":21,"TLgcKCU":18,"gqMdUY4":17},"values":[20,19,21,18,17]},"systemTime":12927445707316}
+
+-----
+SERVER gqMdUY4: SHARE G139Fgn
+DATA {"temperature":29.0,"pressure":988.0,"humidity":55.0,"co":133.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":217},"values":[217]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":21,"TLgcKCU":18,"gqMdUY4":17},"values":[20,19,21,18,17]},"systemTime":12927445707316}
+
+-----
+SERVER vFvbrP9: SHARE G139Fgn
+DATA {"temperature":29.0,"pressure":988.0,"humidity":55.0,"co":133.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":217},"values":[217]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":21,"TLgcKCU":18,"gqMdUY4":17},"values":[20,19,21,18,17]},"systemTime":12927445707316}
+
+-----
+SERVER TLgcKCU: SHARE G139Fgn
+DATA {"temperature":29.0,"pressure":988.0,"humidity":55.0,"co":133.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":217},"values":[217]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":21,"TLgcKCU":18,"gqMdUY4":17},"values":[20,19,21,18,17]},"systemTime":12927445707316}
+
+-----
+SERVER G139Fgn: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":224},"values":[224]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":21,"TLgcKCU":22,"gqMdUY4":17},"values":[20,19,21,22,17]},"systemTime":12929182725488}
+
+-----
+SERVER PMr5TmW: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":224},"values":[224]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":21,"TLgcKCU":22,"gqMdUY4":17},"values":[20,19,21,22,17]},"systemTime":12929182725488}
+
+-----
+SERVER gqMdUY4: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":224},"values":[224]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":21,"TLgcKCU":22,"gqMdUY4":17},"values":[20,19,21,22,17]},"systemTime":12929182725488}
+
+-----
+SERVER vFvbrP9: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":224},"values":[224]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":21,"TLgcKCU":22,"gqMdUY4":17},"values":[20,19,21,22,17]},"systemTime":12929182725488}
+
+-----
+SERVER G139Fgn: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":236},"values":[236]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":21,"TLgcKCU":22,"gqMdUY4":23},"values":[20,19,21,22,23]},"systemTime":12929304352792}
+
+-----
+SERVER PMr5TmW: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":236},"values":[236]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":21,"TLgcKCU":22,"gqMdUY4":23},"values":[20,19,21,22,23]},"systemTime":12929304352792}
+
+-----
+SERVER vFvbrP9: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":236},"values":[236]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":21,"TLgcKCU":22,"gqMdUY4":23},"values":[20,19,21,22,23]},"systemTime":12929304352792}
+
+-----
+SERVER TLgcKCU: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":236},"values":[236]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":20,"PMr5TmW":19,"G139Fgn":21,"TLgcKCU":22,"gqMdUY4":23},"values":[20,19,21,22,23]},"systemTime":12929304352792}
+
+-----
+SERVER G139Fgn: SHARE PMr5TmW
+DATA {"temperature":31.0,"pressure":1000.0,"humidity":54.0,"co":284.0,"no2":495.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":248},"values":[248]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":20,"PMr5TmW":24,"G139Fgn":21,"TLgcKCU":22,"gqMdUY4":23},"values":[20,24,21,22,23]},"systemTime":12929728116678}
+
+-----
+SERVER gqMdUY4: SHARE PMr5TmW
+DATA {"temperature":31.0,"pressure":1000.0,"humidity":54.0,"co":284.0,"no2":495.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":248},"values":[248]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":20,"PMr5TmW":24,"G139Fgn":21,"TLgcKCU":22,"gqMdUY4":23},"values":[20,24,21,22,23]},"systemTime":12929728116678}
+
+-----
+SERVER vFvbrP9: SHARE PMr5TmW
+DATA {"temperature":31.0,"pressure":1000.0,"humidity":54.0,"co":284.0,"no2":495.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":248},"values":[248]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":20,"PMr5TmW":24,"G139Fgn":21,"TLgcKCU":22,"gqMdUY4":23},"values":[20,24,21,22,23]},"systemTime":12929728116678}
+
+-----
+SERVER TLgcKCU: SHARE PMr5TmW
+DATA {"temperature":31.0,"pressure":1000.0,"humidity":54.0,"co":284.0,"no2":495.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":248},"values":[248]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":20,"PMr5TmW":24,"G139Fgn":21,"TLgcKCU":22,"gqMdUY4":23},"values":[20,24,21,22,23]},"systemTime":12929728116678}
+
+-----
+SERVER PMr5TmW: SHARE G139Fgn
+DATA {"temperature":25.0,"pressure":988.0,"humidity":67.0,"co":698.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":259},"values":[259]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":20,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":22,"gqMdUY4":23},"values":[20,24,25,22,23]},"systemTime":12930600353535}
+
+-----
+SERVER gqMdUY4: SHARE G139Fgn
+DATA {"temperature":25.0,"pressure":988.0,"humidity":67.0,"co":698.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":259},"values":[259]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":20,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":22,"gqMdUY4":23},"values":[20,24,25,22,23]},"systemTime":12930600353535}
+
+-----
+SERVER vFvbrP9: SHARE G139Fgn
+DATA {"temperature":25.0,"pressure":988.0,"humidity":67.0,"co":698.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":259},"values":[259]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":20,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":22,"gqMdUY4":23},"values":[20,24,25,22,23]},"systemTime":12930600353535}
+
+-----
+SERVER TLgcKCU: SHARE G139Fgn
+DATA {"temperature":25.0,"pressure":988.0,"humidity":67.0,"co":698.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":259},"values":[259]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":20,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":22,"gqMdUY4":23},"values":[20,24,25,22,23]},"systemTime":12930600353535}
+
+-----
+SERVER G139Fgn: SHARE vFvbrP9
+DATA {"temperature":30.0,"pressure":505.0,"humidity":50.0,"co":178.0,"no2":0.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":267},"values":[267]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":26,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":22,"gqMdUY4":23},"values":[26,24,25,22,23]},"systemTime":12931358593132}
+
+-----
+SERVER PMr5TmW: SHARE vFvbrP9
+DATA {"temperature":30.0,"pressure":505.0,"humidity":50.0,"co":178.0,"no2":0.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":267},"values":[267]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":26,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":22,"gqMdUY4":23},"values":[26,24,25,22,23]},"systemTime":12931358593132}
+
+-----
+SERVER gqMdUY4: SHARE vFvbrP9
+DATA {"temperature":30.0,"pressure":505.0,"humidity":50.0,"co":178.0,"no2":0.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":267},"values":[267]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":26,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":22,"gqMdUY4":23},"values":[26,24,25,22,23]},"systemTime":12931358593132}
+
+-----
+SERVER TLgcKCU: SHARE vFvbrP9
+DATA {"temperature":30.0,"pressure":505.0,"humidity":50.0,"co":178.0,"no2":0.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":267},"values":[267]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":26,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":22,"gqMdUY4":23},"values":[26,24,25,22,23]},"systemTime":12931358593132}
+
+-----
+SERVER G139Fgn: SHARE gqMdUY4
+DATA {"temperature":18.0,"pressure":995.0,"humidity":75.0,"co":151.0,"no2":290.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":278},"values":[278]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":26,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":22,"gqMdUY4":27},"values":[26,24,25,22,27]},"systemTime":12931796347097}
+
+-----
+SERVER PMr5TmW: SHARE gqMdUY4
+DATA {"temperature":18.0,"pressure":995.0,"humidity":75.0,"co":151.0,"no2":290.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":278},"values":[278]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":26,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":22,"gqMdUY4":27},"values":[26,24,25,22,27]},"systemTime":12931796347097}
+
+-----
+SERVER vFvbrP9: SHARE gqMdUY4
+DATA {"temperature":18.0,"pressure":995.0,"humidity":75.0,"co":151.0,"no2":290.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":278},"values":[278]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":26,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":22,"gqMdUY4":27},"values":[26,24,25,22,27]},"systemTime":12931796347097}
+
+-----
+SERVER TLgcKCU: SHARE gqMdUY4
+DATA {"temperature":18.0,"pressure":995.0,"humidity":75.0,"co":151.0,"no2":290.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":278},"values":[278]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":26,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":22,"gqMdUY4":27},"values":[26,24,25,22,27]},"systemTime":12931796347097}
+
+-----
+SERVER G139Fgn: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":285},"values":[285]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":26,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":28,"gqMdUY4":27},"values":[26,24,25,28,27]},"systemTime":12932180259912}
+
+-----
+SERVER PMr5TmW: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":285},"values":[285]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":26,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":28,"gqMdUY4":27},"values":[26,24,25,28,27]},"systemTime":12932180259912}
+
+-----
+SERVER gqMdUY4: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":285},"values":[285]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":26,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":28,"gqMdUY4":27},"values":[26,24,25,28,27]},"systemTime":12932180259912}
+
+-----
+SERVER vFvbrP9: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":285},"values":[285]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":26,"PMr5TmW":24,"G139Fgn":25,"TLgcKCU":28,"gqMdUY4":27},"values":[26,24,25,28,27]},"systemTime":12932180259912}
+
+-----
+SERVER G139Fgn: SHARE PMr5TmW
+DATA {"temperature":31.0,"pressure":1001.0,"humidity":45.0,"co":11.0,"no2":null,"so2":52.0,"scalar":{"source":"SCALAR","map":{"SCALAR":300},"values":[300]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":26,"PMr5TmW":29,"G139Fgn":25,"TLgcKCU":28,"gqMdUY4":27},"values":[26,29,25,28,27]},"systemTime":12933410898947}
+
+-----
+SERVER gqMdUY4: SHARE PMr5TmW
+DATA {"temperature":31.0,"pressure":1001.0,"humidity":45.0,"co":11.0,"no2":null,"so2":52.0,"scalar":{"source":"SCALAR","map":{"SCALAR":300},"values":[300]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":26,"PMr5TmW":29,"G139Fgn":25,"TLgcKCU":28,"gqMdUY4":27},"values":[26,29,25,28,27]},"systemTime":12933410898947}
+
+-----
+SERVER vFvbrP9: SHARE PMr5TmW
+DATA {"temperature":31.0,"pressure":1001.0,"humidity":45.0,"co":11.0,"no2":null,"so2":52.0,"scalar":{"source":"SCALAR","map":{"SCALAR":300},"values":[300]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":26,"PMr5TmW":29,"G139Fgn":25,"TLgcKCU":28,"gqMdUY4":27},"values":[26,29,25,28,27]},"systemTime":12933410898947}
+
+-----
+SERVER TLgcKCU: SHARE PMr5TmW
+DATA {"temperature":31.0,"pressure":1001.0,"humidity":45.0,"co":11.0,"no2":null,"so2":52.0,"scalar":{"source":"SCALAR","map":{"SCALAR":300},"values":[300]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":26,"PMr5TmW":29,"G139Fgn":25,"TLgcKCU":28,"gqMdUY4":27},"values":[26,29,25,28,27]},"systemTime":12933410898947}
+
+-----
+SERVER PMr5TmW: SHARE G139Fgn
+DATA {"temperature":22.0,"pressure":991.0,"humidity":65.0,"co":163.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":311},"values":[311]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":26,"PMr5TmW":29,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":27},"values":[26,29,30,28,27]},"systemTime":12933674440019}
+
+-----
+SERVER gqMdUY4: SHARE G139Fgn
+DATA {"temperature":22.0,"pressure":991.0,"humidity":65.0,"co":163.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":311},"values":[311]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":26,"PMr5TmW":29,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":27},"values":[26,29,30,28,27]},"systemTime":12933674440019}
+
+-----
+SERVER vFvbrP9: SHARE G139Fgn
+DATA {"temperature":22.0,"pressure":991.0,"humidity":65.0,"co":163.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":311},"values":[311]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":26,"PMr5TmW":29,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":27},"values":[26,29,30,28,27]},"systemTime":12933674440019}
+
+-----
+SERVER TLgcKCU: SHARE G139Fgn
+DATA {"temperature":22.0,"pressure":991.0,"humidity":65.0,"co":163.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":311},"values":[311]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":26,"PMr5TmW":29,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":27},"values":[26,29,30,28,27]},"systemTime":12933674440019}
+
+-----
+SERVER G139Fgn: SHARE vFvbrP9
+DATA {"temperature":27.0,"pressure":1000.0,"humidity":42.0,"co":230.0,"no2":92.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":319},"values":[319]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":31,"PMr5TmW":29,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":27},"values":[31,29,30,28,27]},"systemTime":12935135561653}
+
+-----
+SERVER PMr5TmW: SHARE vFvbrP9
+DATA {"temperature":27.0,"pressure":1000.0,"humidity":42.0,"co":230.0,"no2":92.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":319},"values":[319]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":31,"PMr5TmW":29,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":27},"values":[31,29,30,28,27]},"systemTime":12935135561653}
+
+-----
+SERVER gqMdUY4: SHARE vFvbrP9
+DATA {"temperature":27.0,"pressure":1000.0,"humidity":42.0,"co":230.0,"no2":92.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":319},"values":[319]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":31,"PMr5TmW":29,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":27},"values":[31,29,30,28,27]},"systemTime":12935135561653}
+
+-----
+SERVER TLgcKCU: SHARE vFvbrP9
+DATA {"temperature":27.0,"pressure":1000.0,"humidity":42.0,"co":230.0,"no2":92.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":319},"values":[319]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":31,"PMr5TmW":29,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":27},"values":[31,29,30,28,27]},"systemTime":12935135561653}
+
+-----
+SERVER G139Fgn: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":330},"values":[330]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":31,"PMr5TmW":29,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":32},"values":[31,29,30,28,32]},"systemTime":12935240221796}
+
+-----
+SERVER PMr5TmW: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":330},"values":[330]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":31,"PMr5TmW":29,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":32},"values":[31,29,30,28,32]},"systemTime":12935240221796}
+
+-----
+SERVER vFvbrP9: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":330},"values":[330]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":31,"PMr5TmW":29,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":32},"values":[31,29,30,28,32]},"systemTime":12935240221796}
+
+-----
+SERVER TLgcKCU: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":330},"values":[330]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":31,"PMr5TmW":29,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":32},"values":[31,29,30,28,32]},"systemTime":12935240221796}
+
+-----
+SERVER G139Fgn: SHARE PMr5TmW
+DATA {"temperature":29.0,"pressure":1002.0,"humidity":49.0,"co":258.0,"no2":98.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":342},"values":[342]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":32},"values":[31,33,30,28,32]},"systemTime":12935598199275}
+
+-----
+SERVER gqMdUY4: SHARE PMr5TmW
+DATA {"temperature":29.0,"pressure":1002.0,"humidity":49.0,"co":258.0,"no2":98.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":342},"values":[342]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":32},"values":[31,33,30,28,32]},"systemTime":12935598199275}
+
+-----
+SERVER vFvbrP9: SHARE PMr5TmW
+DATA {"temperature":29.0,"pressure":1002.0,"humidity":49.0,"co":258.0,"no2":98.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":342},"values":[342]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":32},"values":[31,33,30,28,32]},"systemTime":12935598199275}
+
+-----
+SERVER TLgcKCU: SHARE PMr5TmW
+DATA {"temperature":29.0,"pressure":1002.0,"humidity":49.0,"co":258.0,"no2":98.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":342},"values":[342]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":30,"TLgcKCU":28,"gqMdUY4":32},"values":[31,33,30,28,32]},"systemTime":12935598199275}
+
+-----
+SERVER G139Fgn: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":349},"values":[349]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":30,"TLgcKCU":34,"gqMdUY4":32},"values":[31,33,30,34,32]},"systemTime":12936044793743}
+
+-----
+SERVER PMr5TmW: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":349},"values":[349]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":30,"TLgcKCU":34,"gqMdUY4":32},"values":[31,33,30,34,32]},"systemTime":12936044793743}
+
+-----
+SERVER gqMdUY4: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":349},"values":[349]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":30,"TLgcKCU":34,"gqMdUY4":32},"values":[31,33,30,34,32]},"systemTime":12936044793743}
+
+-----
+SERVER vFvbrP9: SHARE TLgcKCU
+DATA {"temperature":34.0,"pressure":1001.0,"humidity":35.0,"co":174.0,"no2":478.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":349},"values":[349]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":30,"TLgcKCU":34,"gqMdUY4":32},"values":[31,33,30,34,32]},"systemTime":12936044793743}
+
+-----
+SERVER PMr5TmW: SHARE G139Fgn
+DATA {"temperature":31.0,"pressure":997.0,"humidity":48.0,"co":492.0,"no2":68.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":363},"values":[363]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":35,"TLgcKCU":34,"gqMdUY4":32},"values":[31,33,35,34,32]},"systemTime":12936224803218}
+
+-----
+SERVER gqMdUY4: SHARE G139Fgn
+DATA {"temperature":31.0,"pressure":997.0,"humidity":48.0,"co":492.0,"no2":68.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":363},"values":[363]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":35,"TLgcKCU":34,"gqMdUY4":32},"values":[31,33,35,34,32]},"systemTime":12936224803218}
+
+-----
+SERVER vFvbrP9: SHARE G139Fgn
+DATA {"temperature":31.0,"pressure":997.0,"humidity":48.0,"co":492.0,"no2":68.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":363},"values":[363]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":35,"TLgcKCU":34,"gqMdUY4":32},"values":[31,33,35,34,32]},"systemTime":12936224803218}
+
+-----
+SERVER TLgcKCU: SHARE G139Fgn
+DATA {"temperature":31.0,"pressure":997.0,"humidity":48.0,"co":492.0,"no2":68.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":363},"values":[363]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":35,"TLgcKCU":34,"gqMdUY4":32},"values":[31,33,35,34,32]},"systemTime":12936224803218}
+
+-----
+SERVER G139Fgn: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":373},"values":[373]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":35,"TLgcKCU":34,"gqMdUY4":36},"values":[31,33,35,34,36]},"systemTime":12937290152672}
+
+-----
+SERVER PMr5TmW: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":373},"values":[373]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":35,"TLgcKCU":34,"gqMdUY4":36},"values":[31,33,35,34,36]},"systemTime":12937290152672}
+
+-----
+SERVER vFvbrP9: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":373},"values":[373]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":35,"TLgcKCU":34,"gqMdUY4":36},"values":[31,33,35,34,36]},"systemTime":12937290152672}
+
+-----
+SERVER TLgcKCU: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":373},"values":[373]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":35,"TLgcKCU":34,"gqMdUY4":36},"values":[31,33,35,34,36]},"systemTime":12937290152672}
+
+-----
+SERVER PMr5TmW: SHARE G139Fgn
+DATA {"temperature":30.0,"pressure":505.0,"humidity":50.0,"co":178.0,"no2":0.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":384},"values":[384]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":37,"TLgcKCU":34,"gqMdUY4":36},"values":[31,33,37,34,36]},"systemTime":12938807388097}
+
+-----
+SERVER gqMdUY4: SHARE G139Fgn
+DATA {"temperature":30.0,"pressure":505.0,"humidity":50.0,"co":178.0,"no2":0.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":384},"values":[384]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":37,"TLgcKCU":34,"gqMdUY4":36},"values":[31,33,37,34,36]},"systemTime":12938807388097}
+
+-----
+SERVER vFvbrP9: SHARE G139Fgn
+DATA {"temperature":30.0,"pressure":505.0,"humidity":50.0,"co":178.0,"no2":0.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":384},"values":[384]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":37,"TLgcKCU":34,"gqMdUY4":36},"values":[31,33,37,34,36]},"systemTime":12938807388097}
+
+-----
+SERVER TLgcKCU: SHARE G139Fgn
+DATA {"temperature":30.0,"pressure":505.0,"humidity":50.0,"co":178.0,"no2":0.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":384},"values":[384]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":31,"PMr5TmW":33,"G139Fgn":37,"TLgcKCU":34,"gqMdUY4":36},"values":[31,33,37,34,36]},"systemTime":12938807388097}
+
+-----
+SERVER G139Fgn: SHARE vFvbrP9
+DATA {"temperature":22.0,"pressure":989.0,"humidity":71.0,"co":73.0,"no2":425.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":392},"values":[392]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":38,"PMr5TmW":33,"G139Fgn":37,"TLgcKCU":34,"gqMdUY4":36},"values":[38,33,37,34,36]},"systemTime":12939006372232}
+
+-----
+SERVER PMr5TmW: SHARE vFvbrP9
+DATA {"temperature":22.0,"pressure":989.0,"humidity":71.0,"co":73.0,"no2":425.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":392},"values":[392]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":38,"PMr5TmW":33,"G139Fgn":37,"TLgcKCU":34,"gqMdUY4":36},"values":[38,33,37,34,36]},"systemTime":12939006372232}
+
+-----
+SERVER gqMdUY4: SHARE vFvbrP9
+DATA {"temperature":22.0,"pressure":989.0,"humidity":71.0,"co":73.0,"no2":425.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":392},"values":[392]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":38,"PMr5TmW":33,"G139Fgn":37,"TLgcKCU":34,"gqMdUY4":36},"values":[38,33,37,34,36]},"systemTime":12939006372232}
+
+-----
+SERVER TLgcKCU: SHARE vFvbrP9
+DATA {"temperature":22.0,"pressure":989.0,"humidity":71.0,"co":73.0,"no2":425.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":392},"values":[392]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":38,"PMr5TmW":33,"G139Fgn":37,"TLgcKCU":34,"gqMdUY4":36},"values":[38,33,37,34,36]},"systemTime":12939006372232}
+
+-----
+SERVER G139Fgn: SHARE PMr5TmW
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":43.0,"co":181.0,"no2":null,"so2":5.0,"scalar":{"source":"SCALAR","map":{"SCALAR":405},"values":[405]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":38,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":34,"gqMdUY4":36},"values":[38,39,37,34,36]},"systemTime":12939373743203}
+
+-----
+SERVER gqMdUY4: SHARE PMr5TmW
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":43.0,"co":181.0,"no2":null,"so2":5.0,"scalar":{"source":"SCALAR","map":{"SCALAR":405},"values":[405]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":38,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":34,"gqMdUY4":36},"values":[38,39,37,34,36]},"systemTime":12939373743203}
+
+-----
+SERVER vFvbrP9: SHARE PMr5TmW
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":43.0,"co":181.0,"no2":null,"so2":5.0,"scalar":{"source":"SCALAR","map":{"SCALAR":405},"values":[405]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":38,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":34,"gqMdUY4":36},"values":[38,39,37,34,36]},"systemTime":12939373743203}
+
+-----
+SERVER TLgcKCU: SHARE PMr5TmW
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":43.0,"co":181.0,"no2":null,"so2":5.0,"scalar":{"source":"SCALAR","map":{"SCALAR":405},"values":[405]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":38,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":34,"gqMdUY4":36},"values":[38,39,37,34,36]},"systemTime":12939373743203}
+
+-----
+SERVER G139Fgn: SHARE TLgcKCU
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":42.0,"co":70.0,"no2":676.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":412},"values":[412]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":38,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":40,"gqMdUY4":36},"values":[38,39,37,40,36]},"systemTime":12939459013462}
+
+-----
+SERVER PMr5TmW: SHARE TLgcKCU
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":42.0,"co":70.0,"no2":676.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":412},"values":[412]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":38,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":40,"gqMdUY4":36},"values":[38,39,37,40,36]},"systemTime":12939459013462}
+
+-----
+SERVER gqMdUY4: SHARE TLgcKCU
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":42.0,"co":70.0,"no2":676.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":412},"values":[412]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":38,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":40,"gqMdUY4":36},"values":[38,39,37,40,36]},"systemTime":12939459013462}
+
+-----
+SERVER vFvbrP9: SHARE TLgcKCU
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":42.0,"co":70.0,"no2":676.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":412},"values":[412]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":38,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":40,"gqMdUY4":36},"values":[38,39,37,40,36]},"systemTime":12939459013462}
+
+-----
+SERVER G139Fgn: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":424},"values":[424]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":38,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":40,"gqMdUY4":41},"values":[38,39,37,40,41]},"systemTime":12939678783922}
+
+-----
+SERVER PMr5TmW: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":424},"values":[424]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":38,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":40,"gqMdUY4":41},"values":[38,39,37,40,41]},"systemTime":12939678783922}
+
+-----
+SERVER vFvbrP9: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":424},"values":[424]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":38,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":40,"gqMdUY4":41},"values":[38,39,37,40,41]},"systemTime":12939678783922}
+
+-----
+SERVER TLgcKCU: SHARE gqMdUY4
+DATA {"temperature":19.0,"pressure":995.0,"humidity":70.0,"co":212.0,"no2":256.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":424},"values":[424]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":38,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":40,"gqMdUY4":41},"values":[38,39,37,40,41]},"systemTime":12939678783922}
+
+-----
+SERVER G139Fgn: SHARE vFvbrP9
+DATA {"temperature":31.0,"pressure":999.0,"humidity":40.0,"co":140.0,"no2":0.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":432},"values":[432]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":42,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":40,"gqMdUY4":41},"values":[42,39,37,40,41]},"systemTime":12941984099961}
+
+-----
+SERVER PMr5TmW: SHARE vFvbrP9
+DATA {"temperature":31.0,"pressure":999.0,"humidity":40.0,"co":140.0,"no2":0.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":432},"values":[432]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":42,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":40,"gqMdUY4":41},"values":[42,39,37,40,41]},"systemTime":12941984099961}
+
+-----
+SERVER gqMdUY4: SHARE vFvbrP9
+DATA {"temperature":31.0,"pressure":999.0,"humidity":40.0,"co":140.0,"no2":0.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":432},"values":[432]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":42,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":40,"gqMdUY4":41},"values":[42,39,37,40,41]},"systemTime":12941984099961}
+
+-----
+SERVER TLgcKCU: SHARE vFvbrP9
+DATA {"temperature":31.0,"pressure":999.0,"humidity":40.0,"co":140.0,"no2":0.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":432},"values":[432]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":42,"PMr5TmW":39,"G139Fgn":37,"TLgcKCU":40,"gqMdUY4":41},"values":[42,39,37,40,41]},"systemTime":12941984099961}
+
+-----
+SERVER PMr5TmW: SHARE G139Fgn
+DATA {"temperature":26.0,"pressure":500.0,"humidity":54.0,"co":660.0,"no2":551.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":446},"values":[446]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":42,"PMr5TmW":39,"G139Fgn":43,"TLgcKCU":40,"gqMdUY4":41},"values":[42,39,43,40,41]},"systemTime":12942507725818}
+
+-----
+SERVER gqMdUY4: SHARE G139Fgn
+DATA {"temperature":26.0,"pressure":500.0,"humidity":54.0,"co":660.0,"no2":551.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":446},"values":[446]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":42,"PMr5TmW":39,"G139Fgn":43,"TLgcKCU":40,"gqMdUY4":41},"values":[42,39,43,40,41]},"systemTime":12942507725818}
+
+-----
+SERVER vFvbrP9: SHARE G139Fgn
+DATA {"temperature":26.0,"pressure":500.0,"humidity":54.0,"co":660.0,"no2":551.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":446},"values":[446]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":42,"PMr5TmW":39,"G139Fgn":43,"TLgcKCU":40,"gqMdUY4":41},"values":[42,39,43,40,41]},"systemTime":12942507725818}
+
+-----
+SERVER TLgcKCU: SHARE G139Fgn
+DATA {"temperature":26.0,"pressure":500.0,"humidity":54.0,"co":660.0,"no2":551.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":446},"values":[446]},"vector":{"source":"G139Fgn","map":{"vFvbrP9":42,"PMr5TmW":39,"G139Fgn":43,"TLgcKCU":40,"gqMdUY4":41},"values":[42,39,43,40,41]},"systemTime":12942507725818}
+
+-----
+SERVER G139Fgn: SHARE TLgcKCU
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":42.0,"co":70.0,"no2":676.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":453},"values":[453]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":42,"PMr5TmW":39,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":41},"values":[42,39,43,44,41]},"systemTime":12942735082492}
+
+-----
+SERVER PMr5TmW: SHARE TLgcKCU
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":42.0,"co":70.0,"no2":676.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":453},"values":[453]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":42,"PMr5TmW":39,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":41},"values":[42,39,43,44,41]},"systemTime":12942735082492}
+
+-----
+SERVER gqMdUY4: SHARE TLgcKCU
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":42.0,"co":70.0,"no2":676.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":453},"values":[453]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":42,"PMr5TmW":39,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":41},"values":[42,39,43,44,41]},"systemTime":12942735082492}
+
+-----
+SERVER vFvbrP9: SHARE TLgcKCU
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":42.0,"co":70.0,"no2":676.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":453},"values":[453]},"vector":{"source":"TLgcKCU","map":{"vFvbrP9":42,"PMr5TmW":39,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":41},"values":[42,39,43,44,41]},"systemTime":12942735082492}
+
+-----
+SERVER G139Fgn: SHARE PMr5TmW
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":43.0,"co":346.0,"no2":null,"so2":121.0,"scalar":{"source":"SCALAR","map":{"SCALAR":467},"values":[467]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":42,"PMr5TmW":45,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":41},"values":[42,45,43,44,41]},"systemTime":12942921223153}
+
+-----
+SERVER gqMdUY4: SHARE PMr5TmW
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":43.0,"co":346.0,"no2":null,"so2":121.0,"scalar":{"source":"SCALAR","map":{"SCALAR":467},"values":[467]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":42,"PMr5TmW":45,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":41},"values":[42,45,43,44,41]},"systemTime":12942921223153}
+
+-----
+SERVER vFvbrP9: SHARE PMr5TmW
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":43.0,"co":346.0,"no2":null,"so2":121.0,"scalar":{"source":"SCALAR","map":{"SCALAR":467},"values":[467]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":42,"PMr5TmW":45,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":41},"values":[42,45,43,44,41]},"systemTime":12942921223153}
+
+-----
+SERVER TLgcKCU: SHARE PMr5TmW
+DATA {"temperature":32.0,"pressure":1000.0,"humidity":43.0,"co":346.0,"no2":null,"so2":121.0,"scalar":{"source":"SCALAR","map":{"SCALAR":467},"values":[467]},"vector":{"source":"PMr5TmW","map":{"vFvbrP9":42,"PMr5TmW":45,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":41},"values":[42,45,43,44,41]},"systemTime":12942921223153}
+
+-----
+SERVER G139Fgn: SHARE gqMdUY4
+DATA {"temperature":24.0,"pressure":994.0,"humidity":56.0,"co":219.0,"no2":401.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":477},"values":[477]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":42,"PMr5TmW":45,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":46},"values":[42,45,43,44,46]},"systemTime":12943029006616}
+
+-----
+SERVER PMr5TmW: SHARE gqMdUY4
+DATA {"temperature":24.0,"pressure":994.0,"humidity":56.0,"co":219.0,"no2":401.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":477},"values":[477]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":42,"PMr5TmW":45,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":46},"values":[42,45,43,44,46]},"systemTime":12943029006616}
+
+-----
+SERVER vFvbrP9: SHARE gqMdUY4
+DATA {"temperature":24.0,"pressure":994.0,"humidity":56.0,"co":219.0,"no2":401.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":477},"values":[477]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":42,"PMr5TmW":45,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":46},"values":[42,45,43,44,46]},"systemTime":12943029006616}
+
+-----
+SERVER TLgcKCU: SHARE gqMdUY4
+DATA {"temperature":24.0,"pressure":994.0,"humidity":56.0,"co":219.0,"no2":401.0,"so2":null,"scalar":{"source":"SCALAR","map":{"SCALAR":477},"values":[477]},"vector":{"source":"gqMdUY4","map":{"vFvbrP9":42,"PMr5TmW":45,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":46},"values":[42,45,43,44,46]},"systemTime":12943029006616}
+
+-----
+SERVER G139Fgn: SHARE vFvbrP9
+DATA {"temperature":22.0,"pressure":998.0,"humidity":84.0,"co":100.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":485},"values":[485]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":47,"PMr5TmW":45,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":46},"values":[47,45,43,44,46]},"systemTime":12944328284123}
+
+-----
+SERVER PMr5TmW: SHARE vFvbrP9
+DATA {"temperature":22.0,"pressure":998.0,"humidity":84.0,"co":100.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":485},"values":[485]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":47,"PMr5TmW":45,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":46},"values":[47,45,43,44,46]},"systemTime":12944328284123}
+
+-----
+SERVER gqMdUY4: SHARE vFvbrP9
+DATA {"temperature":22.0,"pressure":998.0,"humidity":84.0,"co":100.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":485},"values":[485]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":47,"PMr5TmW":45,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":46},"values":[47,45,43,44,46]},"systemTime":12944328284123}
+
+-----
+SERVER TLgcKCU: SHARE vFvbrP9
+DATA {"temperature":22.0,"pressure":998.0,"humidity":84.0,"co":100.0,"no2":null,"so2":0.0,"scalar":{"source":"SCALAR","map":{"SCALAR":485},"values":[485]},"vector":{"source":"vFvbrP9","map":{"vFvbrP9":47,"PMr5TmW":45,"G139Fgn":43,"TLgcKCU":44,"gqMdUY4":46},"values":[47,45,43,44,46]},"systemTime":12944328284123}
+
+-----
+SERVER G139Fgn: END
+
+-----
+SERVER PMr5TmW: END
+
+-----
+SERVER TLgcKCU: END
+
+-----
+SERVER gqMdUY4: END
+
+-----
+SERVER vFvbrP9: END
+
+-----
+Sensor G139Fgn is disconnecting
+
+-----
+Sensor PMr5TmW is disconnecting
+
+-----
+Sensor TLgcKCU is disconnecting
+
+-----
+Sensor gqMdUY4 is disconnecting
+
+-----
+Sensor vFvbrP9 is disconnecting
+
+-----
