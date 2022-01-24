@@ -1,0 +1,25 @@
+Test suite TrainingExercises-tests: RUNNING...
+
+myListEq
+  myListEq Cons 1 Empty Cons 1 Empty ==> True
+  myListEq Empty Empty ==> True
+  myListEq Cons 1 (Cons 2 (Cons 3 Empty)) Cons 3 (Cons 1 (Cons 2 Empty)) ==> True
+  myListEq Cons 1 (Cons 2 (Cons 3 Empty)) Cons 1 (Cons 1 (Cons 2 Empty)) ==> False
+  myListEq Cons 1 (Cons 2 (Cons 3 Empty)) Empty ==> False
+  myListEq Cons 1 (Cons 2 (Cons 3 Empty)) Cons 1 (Cons 2 Empty) ==> False
+treeToList
+  treeToList Ornament ==> []
+  treeToList Light {value = 1, left = Ornament, right = Ornament} ==> [1]
+  treeToList Light {value = 1, left = Light {value = 2, left = Ornament, right = Ornament}, right = Light {value = 4, left = Light {value = 3, left = Ornament, right = Ornament}, right = Ornament}} ==> [2,1,3,4]
+  treeToList Light {value = 1, left = Light {value = 2, left = Ornament, right = Ornament}, right = Light {value = 4, left = Light {value = 3, left = Ornament, right = Ornament}, right = Light {value = 1, left = Ornament, right = Ornament}}} ==> [2,1,3,4,1]
+treeEq
+  treeEq Light {value = 1, left = Ornament, right = Ornament} Light {value = 1, left = Ornament, right = Ornament} ==> True
+  treeEq Light {value = 1, left = Light {value = 2, left = Ornament, right = Ornament}, right = Light {value = 4, left = Light {value = 3, left = Ornament, right = Ornament}, right = Ornament}} Light {value = 4, left = Light {value = 1, left = Ornament, right = Ornament}, right = Light {value = 3, left = Light {value = 2, left = Ornament, right = Ornament}, right = Ornament}} ==> True
+  treeEq Light {value = 1, left = Light {value = 2, left = Ornament, right = Ornament}, right = Light {value = 2, left = Light {value = 3, left = Ornament, right = Ornament}, right = Ornament}} Light {value = 2, left = Light {value = 1, left = Ornament, right = Ornament}, right = Light {value = 3, left = Light {value = 2, left = Ornament, right = Ornament}, right = Ornament}} ==> True
+  treeEq Light {value = 1, left = Light {value = 2, left = Ornament, right = Ornament}, right = Light {value = 3, left = Light {value = 4, left = Ornament, right = Ornament}, right = Ornament}} Light {value = 5, left = Light {value = 6, left = Ornament, right = Ornament}, right = Light {value = 7, left = Light {value = 8, left = Ornament, right = Ornament}, right = Ornament}} ==> False
+  treeEq Light {value = 1, left = Ornament, right = Light {value = 3, left = Light {value = 4, left = Ornament, right = Ornament}, right = Ornament}} Light {value = 5, left = Light {value = 6, left = Ornament, right = Ornament}, right = Light {value = 7, left = Light {value = 8, left = Ornament, right = Ornament}, right = Ornament}} ==> False
+
+Finished in 0.0006 seconds
+15 examples, 0 failures
+Test suite TrainingExercises-tests: PASS
+Test suite logged to: dist/test/TE10-0.1.0.0-TrainingExercises-tests.log

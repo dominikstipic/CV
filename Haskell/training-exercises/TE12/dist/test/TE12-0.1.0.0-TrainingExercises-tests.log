@@ -1,0 +1,49 @@
+Test suite TrainingExercises-tests: RUNNING...
+
+te1211
+  te1211 "9567" ==> 1900
+  te1211 "2345" ==> 2500
+  te1211 "4284" ==> 1800
+  te1211 "1234" ==> 0
+te1211m
+  te1211m "9567" ==> 1900
+  te1211m "2345" ==> 2500
+  te1211m "4284" ==> 1800
+  te1211m "1234" ==> 0
+te1212
+  te1212 Tangerine ==> ["2345","4284"]
+  te1212 Kiwi ==> ["9567"]
+  te1212 Strawberry ==> ["4284","9567"]
+multiplyBy2
+  multiplyBy2 , 2 ==> 4
+  multiplyBy2 , 10 ==> 20
+  multiplyBy2 , -2 ==> -4
+  multiplyBy2 , 0 ==> 0
+add3
+  add3 , 2 ==> 5
+  add3 , 10 ==> 13
+  add3 , -2 ==> 1
+  add3 , 0 ==> 3
+  add3 , -3 ==> 0
+te1223
+  te1223 2 ==> 11
+  te1223 10 ==> 43
+  te1223 -2 ==> -5
+  te1223 0 ==> 3
+  te1223 -3 ==> -9
+te1224
+  te1224 2 ==> 11
+  te1224 10 ==> 43
+  te1224 -2 ==> -5
+  te1224 0 ==> 3
+  te1224 -3 ==> -9
+te1225
+  te1225 [] ==> []
+  te1225 [1,2] ==> [1,1,1,2]
+  te1225 [-1,0,4,6,9] ==> [-1,-1,-1,0,4,6,9,9,9]
+  te1225 [1,1,2,3,5] ==> [1,1,1,1,1,1,2,3,3,3,5,5,5]
+
+Finished in 0.0007 seconds
+34 examples, 0 failures
+Test suite TrainingExercises-tests: PASS
+Test suite logged to: dist/test/TE12-0.1.0.0-TrainingExercises-tests.log

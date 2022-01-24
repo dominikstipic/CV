@@ -1,0 +1,65 @@
+Test suite TrainingExercises-tests: RUNNING...
+
+te912a
+  te912a Pair 1 'a' ==> 1
+te912b
+  te912b Pair "abc" 'a' ==> "abc"
+te912c
+  te912c Pair [1,2,3] "something" ==> [1,2,3]
+te913a
+  te913a Pair 1 'a' ==> 'a'
+te913b
+  te913b Pair "abc" 'a' ==> 'a'
+te913c
+  te913c Pair [1,2,3] "something" ==> "something"
+te914a
+  te914a Pair 1 'a' ==> Pair 'a' 1
+te914b
+  te914b Pair "abc" 'a' ==> Pair 'a' "abc"
+te914c
+  te914c Pair [1,2,3] "something" ==> Pair "something" [1,2,3]
+te915
+  te915 [Pair 1 'a',Pair 4 'c'] ==> [Pair 2 'A',Pair 5 'C']
+  te915 [] ==> []
+  te915 [Pair 1 'a'] ==> [Pair 2 'A']
+  te915 [Pair 1 'a',Pair 4 'c'] ==> [Pair 2 'A',Pair 8 'C']
+te921a
+  te921a True ==> Just False
+  te921a True ==> Just True
+  te921a True ==> Nothing
+  te921a False ==> Just False
+  te921a False ==> Just True
+  te921a False ==> Nothing
+te921b
+  te921b 0 ==> Just 1000000
+  te921b 0 ==> Nothing
+te921c
+  te921c "Java" ==> Just "Haskell"
+  te921c "Java" ==> Nothing
+te922
+  te922 [Just True,Just True,Just True] ==> True
+  te922 [Just True,Just True,Nothing] ==> False
+  te922 [Just True,Just True,Just False] ==> False
+  te922 [Just False,Just True,Just True] ==> False
+  te922 [Just True,Nothing,Just True] ==> False
+te931
+  te931 [Just True,Just True,Just True] ==> [Just 5,Just 5,Just 5]
+  te931 [Just True,Just True,Nothing] ==> [Just 5,Just 5,Nothing]
+  te931 [Just True,Just True,Just False] ==> [Just 5,Just 5,Just 1]
+  te931 [Just False,Just True,Just True] ==> [Just 1,Just 5,Just 5]
+  te931 [Just True,Nothing,Just True] ==> [Just 5,Nothing,Just 5]
+te942
+  te942 Nil ==> 0
+  te942 Node {value = 1, left = Node {value = 2, left = Nil, right = Nil}, right = Node {value = 4, left = Nil, right = Nil}} ==> 7
+  te942 Node {value = 1, left = Node {value = 2, left = Node {value = 1, left = Node {value = 2, left = Nil, right = Nil}, right = Node {value = 4, left = Nil, right = Nil}}, right = Nil}, right = Node {value = 4, left = Nil, right = Nil}} ==> 14
+  te942 Node {value = 1, left = Node {value = 2, left = Node {value = 1, left = Node {value = 2, left = Nil, right = Nil}, right = Node {value = 4, left = Nil, right = Nil}}, right = Node {value = 1, left = Node {value = 2, left = Node {value = 1, left = Node {value = 2, left = Nil, right = Nil}, right = Node {value = 4, left = Nil, right = Nil}}, right = Nil}, right = Node {value = 4, left = Nil, right = Nil}}}, right = Node {value = 4, left = Nil, right = Nil}} ==> 28
+te943
+  te943   Nil ==> Nothing
+  te943   Node {value = 1, left = Node {value = 2, left = Nil, right = Nil}, right = Node {value = 4, left = Nil, right = Nil}} ==> Just 4
+  te943   Node {value = 1, left = Node {value = 2, left = Node {value = 1, left = Node {value = 2, left = Nil, right = Nil}, right = Node {value = 5, left = Nil, right = Nil}}, right = Nil}, right = Node {value = 4, left = Nil, right = Nil}} ==> Just 5
+  te943   Node {value = 1, left = Node {value = 2, left = Node {value = 1, left = Node {value = 2, left = Nil, right = Nil}, right = Node {value = 4, left = Nil, right = Nil}}, right = Node {value = 1, left = Node {value = 6, left = Node {value = 1, left = Node {value = 2, left = Nil, right = Nil}, right = Node {value = 4, left = Nil, right = Nil}}, right = Nil}, right = Node {value = 4, left = Nil, right = Nil}}}, right = Node {value = 4, left = Nil, right = Nil}} ==> Just 6
+
+Finished in 0.0012 seconds
+41 examples, 0 failures
+Test suite TrainingExercises-tests: PASS
+Test suite logged to: dist/test/TE09-0.1.0.0-TrainingExercises-tests.log

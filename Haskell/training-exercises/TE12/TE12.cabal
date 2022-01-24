@@ -1,0 +1,28 @@
+name:          TE12
+version:       0.1.0.0
+
+build-type:    Simple
+cabal-version: >=1.10
+
+library
+  exposed-modules:
+    TrainingExercises
+  build-depends:
+      base >=4 && <5
+    , containers
+  default-language:
+    Haskell2010
+
+test-suite TrainingExercises-tests
+  type:
+    exitcode-stdio-1.0
+  main-is:
+    Tests.hs
+  other-modules:
+    TrainingExercises
+  build-depends:
+      base  >=4 && <5
+    , hspec >=2 && <3
+    , containers
+  default-language:
+    Haskell2010
