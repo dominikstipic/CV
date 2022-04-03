@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="edit_profile" class="modal fade" id="editModal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header playdate-modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="edit-profile-modal-body" class="modal-body">
+                <div id="first-name-form-group" class="form-group">
+                    <label for="firstName" class="col-form-label">First name:</label>
+                    <input id="firstName" type="text" class="form-control" th:value="${currentUser.getFirstName()}"/>
+                </div>
+                <div id="last-name-form-group" class="form-group">
+                    <label for="lastName" class="col-form-label">Last name:</label>
+                    <input id="lastName" type="text" class="form-control" th:value="${currentUser.getLastName()}"/>
+                </div>
+                <div id="phone-form-group" class="form-group">
+                    <label for="phone" class="col-form-label">Phone:</label>
+                    <input id="phone" type="text" class="form-control" th:value="${userProfileInfo.getPhone()}"/>
+                </div>
+                <div id="country-form-group" class="form-group">
+                    <label for="country" class="col-form-label">Country:</label>
+                    <input id="country" type="text" class="form-control" th:value="${userProfileInfo.getCountry()}"/>
+                </div>
+                <div id="city-form-group" class="form-group">
+                    <label for="city" class="col-form-label">City:</label>
+                    <input id="city" type="text" class="form-control" th:value="${userProfileInfo.getCity()}"/>
+                </div>
+                <div id="about-form-group" class="form-group">
+                    <label for="about" class="col-form-label">About:</label>
+                    <input id="about" type="text" class="form-control" th:value="${userProfileInfo.getAbout()}"/>
+                </div>
+                <div id="old-email-form-group" class="form-group">
+                    <label for="oldEmail" class="col-form-label">Old Email:</label>
+                    <input id="oldEmail" type="email" class="form-control"/>
+                </div>
+                <div id="new-email-form-group" class="form-group">
+                    <label for="newEmail" class="col-form-label">New Email:</label>
+                    <input id="newEmail" type="email" class="form-control"/>
+                </div>
+                <div id="old-password-form-group" class="form-group">
+                    <label for="oldPassword" class="col-form-label">Old Password:</label>
+                    <input id="oldPassword" type="password" class="form-control"/>
+                </div>
+                <div id="new-password-form-group" class="form-group">
+                    <label for="newPassword" class="col-form-label">New Password:</label>
+                    <input id="newPassword" type="password" class="form-control"/>
+                </div>
+                <div id="confirm-password-form-group" class="form-group">
+                    <label for="confirmPassword" class="col-form-label">Confirm Password:</label>
+                    <input id="confirmPassword" type="password" class="form-control"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="submit-edit-profile" type="submit" onclick="editProfile()"
+                        class="btn btn-primary">Send
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:fragment="upload_modal" id="uploadModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-md">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header playdate-modal-header">
+                <h4 class="modal-title">Upload profile picture</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <span class="text-danger" id="imageError"></span>
+                        <img class="mb-3" id='img-upload'
+                             th:src="@{/users/{username}/image(username=${currentUser.getUsername()})}"/>
+                    </div>
+                </div>
+                <form method="POST" action="/profile/edit/avatar" enctype="multipart/form-data">
+                    <div class="form-group row">
+                        <div class="col-3">
+                            <div class="row">
+                                <label class="input-group-btn ml-2">
+                                <span class="btn btn-primary btn-file">Browse
+                                <input type="file" accept="image/*" id="imgInp" name="image"
+                                       style="display: none;">
+                                </span>
+                                </label>
+                            </div>
+                            <div class="row">
+                                <label class="input-group-btn ml-2">
+                                    <button type="submit" class="btn btn-primary" id="uploadButton" value="Upload">
+                                        Upload
+                                    </button>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <input id="current-file" type="text" class="form-control" readonly>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

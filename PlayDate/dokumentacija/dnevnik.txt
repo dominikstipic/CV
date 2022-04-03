@@ -1,0 +1,44 @@
+1. sastanak (10. 10. 2018.):
+- inicijalni sastanak s mentoricom i demonstratorom
+- definiranje zadatka i pravila rada na projektu
+- osvrt na temu projekta
+- određivanje sljedećih koraka u realizaciji projekta
+
+2. sastanak(17. 10. 2018.):
+- sastanak s mentoricom i demonstratorom
+- definiranje funkcionalnih, nefunkcionalnih i ostalih zahtjeva
+- detaljna razrada projektnog zadatka te razrješavanje nejasnoća vezanih uz projekt
+- kratka uputa o izradi dijagrama obrazaca uporabe i sekvencijskog dijagrama
+- potvrda o korištenju navedenih tehnologija
+- određivanje sljedećih koraka u realizaciji projekta
+
+3. sastanak(19. 10. 2018.):
+- sastanak s projektnim timom
+- detaljna razrada i definicija projektnog zadatka, argumentiranje funkcionalnih, nefunkcionalnih i ostalih zahtjeva
+- dizajn web-aplikacije te raspored elemenata na istoj
+- okvirno definiranje ER modela baze podataka
+- podjela korisnih resursa za ostvarenjee zadatka(tutoriali, knjige, bilješke...)
+- određivanje sljedećih koraka u realizaciji projekta
+
+4. sastanak(31.10. 2018.):
+- sastanak s mentoricom i demonstratorom
+- provjera ispravnosti ER modela baze podataka
+- dodatno pojašnjenje dijelova projektnog zadatka
+- određivanje sljedećih koraka u realizaciji projekta
+
+5. sastanak(06. 11. 2018.):
+- sastanak s projektnim timom
+- arhitektura sustava
+- potpuni dizajn web-aplikacije
+- određivanje sljedećih koraka u realizaciji projekta
+
+6. sastanak(14. 11. 2018.):
+- sastanak s mentoricom
+- razgovor i naputci o dokumentaciji
+- predložen dizajn sustava
+- rasprava o arhitekturi sustava
+- najava ispitivanja i predaja dokumentacije
+- upute za završavanje dokumentacije prvog ciklusa
+
+Uz navedene sastanke gdje su sudionici bili fizički prisutni, grupa je gotovo svakodnevno vodila razgovore vezane
+uz projektni zadatak na socijalnim mrežama te dijelila korisne linkove, tutoriale, knjige na Slacku.

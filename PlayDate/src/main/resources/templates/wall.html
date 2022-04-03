@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <div th:replace="fragments/header :: head-general"></div>
+
+    <title>PlayDate</title>
+
+    <div th:replace="fragments/header :: head-imports"></div>
+
+    <link rel="stylesheet" type="text/css"
+          th:href="@{https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.min.css}">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/wall/wall.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/post/post.css}"/>
+</head>
+
+<body id="wall">
+<th:block th:include="fragments/navigation :: navbar"></th:block>
+
+<!--Wall with Post -->
+<div class="row">
+    <div class="col-2">
+
+        <th:block th:if="${pageName != null && pageName.equals('PROFILE')}">
+            <div th:replace="fragments/profile :: profile"></div>
+        </th:block>
+
+        <div th:if="${pageName != null && pageName.equals('WALL')}" id="filter" class="row p-t-70 p-l-20">
+            <div id="filter-div" class="col-12 mb-3">
+                <label class="my-1 ml-1" for="filter-select">Filter by:</label>
+                <select onchange="filterChanged(this)" class="custom-select my-1 mr-sm-2" id="filter-select">
+                    <option value="ALL" th:selected="${filter.equals('ALL')}">ALL</option>
+                    <option value="TEXT" th:selected="${filter.equals('TEXT')}">TEXT</option>
+                    <option value="OFFER" th:selected="${filter.equals('OFFER')}">OFFER</option>
+                    <option value="DEMAND" th:selected="${filter.equals('DEMAND')}">DEMAND</option>
+                </select>
+            </div>
+        </div>
+        <div th:if="${pageName != null && pageName.equals('DIARY')}" class="row p-t-70 p-l-20"
+             th:with="myDiary=${user == null || user.getUsername().equals(currentUser.getUsername())}">
+            <div class="col-12 mb-3">
+                <h2 th:text="${myDiary ? ('My Diary') : (user.getFirstName() + ' ' + user.getLastName()+'''s Diary')}">
+                    Diary</h2>
+                <button th:if="${myDiary}" type="button"
+                        class="btn btn-primary" onclick="showCreateNewDiaryPost();" title="Add Post">Add Post
+                </button>
+            </div>
+        </div>
+        <div th:if="${pageName != null && pageName.equals('WISHLIST')}" class="row p-t-70 p-l-20"
+             th:with="myWishlist=${user == null || user.getUsername().equals(currentUser.getUsername())}">
+            <div class="col-12 mb-3">
+                <h2 th:text="${myWishlist ? ('My Wishlist') : (user.getFirstName() + ' ' + user.getLastName()+'''s Wishlist')}">
+                    Wishlist</h2>
+                <button th:if="${myWishlist}" type="button"
+                        class="btn btn-primary" onclick="showCreateNewWishlistPost();" title="Add Post">Add Post
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-10 content-posts active p-t-70" id="posts">
+        <div class="row justify-content-around align-items-center" th:if="${posts.size() == 0}">
+            <div class="col-5">
+                <h2 class="alert alert-warning playdate-alert text-center">No posts to show.</h2>
+            </div>
+        </div>
+        <div id="posts-container" class="container-fluid container-posts">
+
+            <th:block th:each="post : ${posts}">
+                <div th:replace="fragments/post :: post"></div>
+            </th:block>
+
+        </div>
+        <!--Close #posts-container-->
+        <div id="loading" th:if="${posts.size() >= 3}">
+            <img src="../static/img/load.gif" th:src="@{/img/load.gif}" alt="loader">
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer-navigation"></div>
+<div th:replace="fragments/footer :: footer-imports"></div>
+
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/js/bootstrap-switch.min.js}"></script>
+<script th:src="@{https://twemoji.maxcdn.com/twemoji.min.js}"></script>
+<script th:src="@{/js/post/post.js}"></script>
+<script th:src="@{/js/profile/profile.js}"></script>
+<script th:src="@{/vendor/prettydate/prettydate.js}"></script>
+<script th:src="@{/js/wall/lazy-load.js}"></script>
+<script th:src="@{/js/wall/socialyte.min.js}"></script>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    jQuery().ready(function () {
+        let t = $(window), o = $(document), e = $("#loading"), i = $("#posts").is(".active");
+        let isAdmin = /*[[${#authorization.expr('hasRole(''ROLE_ADMIN'')')}]]*/'';
+        let username = /*[[${user != null ? user.getUsername() : currentUser.getUsername()}]]*/'';
+        let currentUserUsername = /*[[${currentUser.getUsername()}]]*/'';
+        let pageName = /*[[${pageName != null ? pageName : 'WALL'}]]*/''; //WALL, WISHLIST, DIARY, PROFILE
+        let myPage = username === currentUserUsername;
+        let filterType = /*[[${filter != null ? filter : 'ALL'}]]*/''; //ALL, TEXT, OFFER, DEMAND
+        let page = 1;
+
+        let scrollInfo = {scrolled: false, isAdmin, currentUserUsername, username, pageName, myPage};
+
+        console.debug(username + ' ' + pageName + ' ' + filterType);
+
+        t.on("scroll", function () {
+            if (o.height() - t.height() - 80 < t.scrollTop() && i && !scrollInfo.scrolled) {
+                scrollInfo.scrolled = true;
+                e.show();
+
+                let apiURL = '';
+
+                switch (pageName) {
+                    case 'WALL':
+                        apiURL = '/posts/' + page;
+                        break;
+                    case 'WISHLIST':
+                        apiURL = '/users/' + username + '/wishlist/posts/' + page;
+                        break;
+                    case 'DIARY':
+                        apiURL = '/users/' + username + '/diary/posts/' + page;
+                        break;
+                    case 'PROFILE':
+                        apiURL = '/users/' + username + '/profile/posts/' + page;
+                        break;
+                    default:
+                        console.debug('INVALID PAGE NAME');
+                        return;
+                }
+                if (filterType !== 'ALL') apiURL += ('?filter=' + filterType);
+                scrollOnWall(apiURL, scrollInfo);
+                page++;
+            }
+        });
+    })
+    /*]]>*/
+</script>
+</body>
+</html>

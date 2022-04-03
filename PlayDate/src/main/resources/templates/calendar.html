@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <div th:replace="fragments/header :: head-general"></div>
+
+    <title>PlayDate</title>
+
+    <div th:replace="fragments/header :: head-imports"></div>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/fullcalendar/fullcalendar.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/fullcalendar/fullcalendar.print.min.css}" media='print'/>
+    <link rel="stylesheet" type="text/css" th:href="@{/vendor/datetimepicker-master/jquery.datetimepicker.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/calendar/calendar.css}"/>
+    <link rel="stylesheet" type="text/css"
+          th:href="@{https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css}">
+
+</head>
+<body>
+<nav th:replace="fragments/navigation :: navbar"></nav>
+<br><br><br>
+
+<div class="container">
+    <div class="page-header">
+        <br>
+        <h1 align="center" th:text="${user.getUsername()}"></h1>
+    </div>
+</div>
+
+<div class="container-calendar">
+    <div class="container-fluid w-75">
+        <br>
+        <div id="calendar"></div>
+    </div>
+</div>
+
+<br><br>
+
+</br>
+<form class="form-inline ml-lg-5 my-auto" style="color: #ffffff">
+    <input class="form-control mr-3" style="width: 380px" id="search-boxActivityMap"
+           type="text" placeholder="Add friends activity" aria-label="Search" autocomplete="off">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</form>
+<div class="ml-lg-5 my-auto">
+    <div class="dropdown-content pre-scrollable" id="dropdownActivityMap"></div>
+</div>
+<br><br>
+
+
+<div id="buttonGroup" class="btn-group-vertical">
+    <button type="button" class="btn btn-primary" th:text="${user.getUsername()}"></button>
+</div>
+
+<div class="ml-lg-5 my-auto">
+    <div class="dropdown-content pre-scrollable" id="aa"></div>
+</div>
+
+
+
+<input th:value="${currentPage}" readonly type="hidden" id="currentDate">
+<input th:value="${user.getId()}" readonly type="hidden" id="userID">
+
+<!----------------------------------------------------------->
+<form id="calendarForm" action="#" th:action="@{/calendar/{path}(path=${user.getId()})}" th:object="${entry}" method="post">
+    <input id="httpMetoda" type="hidden" name="_method" value="post"/>
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!---------------HEADER--------------------->
+                <div class="modal-header" id="modalHeader">
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!------------------------------------>
+
+                    <!---------------BODY--------------------->
+                    <label class="col-form-label">Begin date</label>
+                    <input th:field="*{start}" readonly class="form-control" id="beginField"
+                           onclick="beginDateTimePicker()">
+                    <label class="col-form-label">End date</label>
+                    <input th:field="*{end}" readonly type="text" class="form-control" id="endField"
+                           onclick="endDateTimePicker()">
+                    <label class="col-form-label">Title</label>
+                    <input th:field="*{title}" type="text" class="form-control" id="titleField" name="title" autocomplete="off"> <br>
+
+                    <div class="checkbox">
+            <span>
+              <input id="toggle-event" type="hidden" data-toggle="toggle">
+            </span>
+                        <script>
+                            $(function () {
+                                $('#toggle-event').change(function () {
+                                    var state = document.getElementById("toggle-event").checked;
+                                    if (state === true) {
+                                        document.getElementById("dropdownMenuLink").innerHTML = "DAILY";
+                                        $("#routineOptions").fadeIn(500);
+                                    } else {
+                                        document.getElementById("pauseFrom").value = null;
+                                        document.getElementById("pauseTo").value = null;
+                                        document.getElementById("dropdownMenuLink").innerHTML = null;
+                                        $("#routineOptions").fadeOut(500);
+                                    }
+                                });
+                            })
+                        </script>
+                        <!--<span><b>Routine options</b></span>-->
+                    </div>
+                    <br>
+
+                    <div id="routineOptions" style="display:none">
+
+                        <div class="dropdown show">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item"
+                                   onclick="document.getElementById('dropdownMenuLink').innerHTML='DAILY'">DAILY</a>
+                                <a class="dropdown-item"
+                                   onclick="document.getElementById('dropdownMenuLink').innerHTML='WEEKLY'">WEEKLY</a>
+                            </div>
+                        </div>
+
+                        <input th:field="*{repeatInterval}" type="hidden" class="form-control" id="routineTypeField">
+                        <label class="col-form-label">Pause from</label>
+                        <input th:field="*{pauseFrom}" readonly type="text" class="form-control" id="pauseFrom"
+                               onclick="pauseFromDateTimePicker()">
+                        <label class="col-form-label">Pause to</label>
+                        <input th:field="*{pauseTo}" readonly type="text" class="form-control" id="pauseTo"
+                               onclick="pauseToDateTimePicker()">
+                    </div>
+                    <!------------------------------------------------------------------------------------------------->
+                </div>
+                <!---------------FOOTER--------------------->
+                <div class="modal-footer" id="modalFooter">
+                    <input th:field="*{id}" readonly type="hidden" class="form-control" id="eventId">
+                    <button id="deleteButton" type="button" class="btn btn-secondary" onclick="deleteOptions()">Delete
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="saveButton" class="btn btn-primary" onclick="saveOptions()">Save changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------------Are you sure modal--------------------->
+    <div class="modal" id="warningModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Warning</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to perform this action?</p>
+                </div>
+                <div class="modal-footer">
+                    <input id="confirmAction" type="submit" class="btn btn-primary" onclick="sendPageDate()">
+                    <button id="closeAction" type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!---------------Error modal--------------------->
+<div class="modal" id="errorModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Error</h5>
+            </div>
+            <div class="modal-body">
+                <p id="errorModalMessage">Some fields are empty!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer-imports"></div>
+<script th:src="@{/js/calendar/calendar.js}"></script>
+<script th:src='@{/vendor/fullcalendar/lib/moment.min.js}'></script>
+<script th:src='@{/vendor/fullcalendar/fullcalendar.min.js}'></script>
+<script th:src="@{/vendor/datetimepicker-master/node_modules/php-date-formatter/js/php-date-formatter.min.js}"></script>
+<script th:src="@{/vendor/datetimepicker-master/jquery.datetimepicker.js}"></script>
+<script th:src="@{https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js}"></script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.js}"></script>
+</body>
+</html>

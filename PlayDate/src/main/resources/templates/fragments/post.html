@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<div th:id="${'post-'+post.getId()}" th:classappend="${post.getPostType()}" th:with="author=${post.getOwner()}"
+     class="card-post" th:fragment="post">
+    <div class="row">
+        <div class="col-xs-3 col-sm-2">
+            <a href="#" th:href="@{/user/{username}(username=${author.getUsername()})}" title="Profile">
+                <img src="../../img/default_profile_picture.jpg"
+                     th:src="@{/users/{username}/image(username=${author.getUsername()})}" alt="User name"
+                     th:alt="${author.getUsername()}" class="img-circle img-user">
+            </a>
+        </div>
+        <div class="col-xs-9 col-sm-10 info-user">
+            <div class="row">
+                <div class="col-5 p-l-0 mr-auto">
+                    <h3><a href="#" th:href="@{/user/{username}(username=${author.getUsername()})}"
+                           th:text="${author.getFirstName() + ' ' + author.getLastName()}" title="Profile">My User</a>
+                        <!--<span th:if="${!post.getPostType().equals(T(com.playdate.enumerations.PostType).TEXT)}" class="badge badge-info m-l-10" th:text="${post.getPostType()}"></span>-->
+                        <span th:if="${!post.getPostType().equals(T(com.playdate.enumerations.PostType).TEXT)}"
+                              th:id="${'post-'+post.getId()+'-resolve'}" class="badge m-l-10"
+                              th:classappend="${post.isResolved() ? 'badge-success resolved' : 'badge-warning not-resolved'}"
+                              th:text="${post.getPostType()}"></span>
+                        <span th:if="${post.isEdited()}" class="badge m-l-10 badge-success">Edited</span>
+                    </h3>
+                </div>
+                <div class="col-2 offset-10 ml-auto">
+                    <div class="row justify-content-end p-r-20"
+                         th:with="myPage=${user == null || user.getUsername().equals(currentUser.getUsername())}">
+                        <span th:if="${pageName != null && (pageName.equals('DIARY')|| (pageName.equals('WISHLIST') && myPage))}"
+                              th:id="${'post-' + post.getId()+'-wish'}"
+                              th:classappend="${post.getIsInWishlist() ? '' : 'hoverable'}"
+                              class="m-r-10 fa fa-star clickable"
+                              th:onclick="'addToWishlist(\'' + ${post.getId()} + '\', \'' + ${pageName.equals('WISHLIST')} + '\');'"
+                              title="Wish"></span>
+                        <span th:if="${!post.getPostType().equals(T(com.playdate.enumerations.PostType).TEXT) && currentUser.getUsername().equals(author.getUsername())}"
+                              th:id="${'post-'+post.getId()+'-resolve-icon'}"
+                              th:classappend="${post.isResolved() ? '' : 'hoverable'}"
+                              class="m-r-10 fa fa-check clickable"
+                              th:onclick="'resolvePost(event,\'' + ${post.getId()} + '\');'" title="Resolve"></span>
+                        <span th:if="${currentUser.getUsername().equals(author.getUsername())}"
+                              class="m-r-10 fa fa-cog hoverable"
+                              th:onclick="'showEditPost(\'' + ${post.getId()} + '\');'" title="Edit"></span>
+                        <span th:if="${currentUser.getUsername().equals(author.getUsername()) || #authorization.expr('hasRole(''ROLE_ADMIN'')')}"
+                              class="m-r-10 fa fa-trash hoverable"
+                              th:onclick="'deletePost(event,\'' + ${post.getId()} + '\');'" title="Remove"></span>
+                    </div>
+                    <!--<span sec:authorize="hasRole('ROLE_ADMIN')" class="m-r-10 fa fa-trash hoverable" th:onclick="'deletePost(event,\'' + ${post.getId()} + '\');'" title="Remove"></span>-->
+                </div>
+            </div>
+            <div class="row">
+                <p th:id="${'post-'+post.getId()+'-posted-before'}"><i
+                        th:text="${T(com.playdate.utility.Utility).formatPrettyDate(post.getDatePosted())}">2h</i></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 data-post">
+            <p th:id="${'post-'+post.getId()+'-content'}" th:text="${post.getContent()}">Lorem Ipsum Dolor si amet</p>
+
+            <div class="row">
+                <div class="col-6" th:if="${post.hasImage()}">
+                    <img th:src="@{/post/{post_id}/image (post_id=${post.getId()})}" class="img-post">
+                </div>
+                <div class="col-6" th:if="${post.hasVideo()}">
+                    <div class="row">
+                        <video width="100%" height="500px" controls>
+                            <source th:src="@{/post/{post_id}/video (post_id=${post.getId()})}">
+                            Your browser doesn't support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="reaction">
+                <div class="like-content">
+                    <button th:id="${'post-'+post.getId()+'-like'}" th:inline="text" class="btn-secondary like-review"
+                            th:with="isPostLikedByCurrentUser = ${post.isLikedByCurrentUser()}"
+                            th:classappend="${isPostLikedByCurrentUser ? 'liked' : 'not-liked'}"
+                            th:onclick="'likePost(event,\'' + ${post.getId()} + '\');'">
+                        <i class="fa fa-heart" aria-hidden="true"></i> [[${isPostLikedByCurrentUser ? 'You liked this' :
+                        'Like'}]]
+                    </button>
+                </div>
+                <!--&#x2764;<span th:id="${'post-'+post.getId()+'-likes'}">156</span>-->
+            </div>
+            <div th:id="${'post-'+post.getId()+'-comments'}" class="comments">
+                <div class="more-comments">View more comments</div>
+                <ul>
+                    <th:block th:each="comment : ${post.getComments()}">
+                        <li th:inline="text"><a
+                                th:href="@{/user/{username}(username=${comment.getOwner().getUsername()})}"><b
+                                th:text="${comment.getOwner().getFirstName() + ' ' + comment.getOwner().getLastName()}">User1</b></a>
+                            [[${comment.getContent()}]]
+                        </li>
+                    </th:block>
+                </ul>
+                <input th:id="${'post-'+post.getId()+'-comment'}"
+                       th:onkeypress="'addComment(event, \'' + ${post.getId()} + '\');'" type="text"
+                       th:disabled="${post.isResolved() ? 'disabled' : 'false'}"
+                       th:readonly="${post.isResolved() ? 'readonly' : 'false'}"
+                       th:placeholder="${post.isResolved() ? 'Post already resolved' : 'Add a comment'}"
+                       class="form-control" placeholder="Add a comment">
+            </div>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <div th:replace="fragments/header :: head-general"></div>
+
+    <title>Activity Map</title>
+
+    <div th:replace="fragments/header :: head-imports"></div>
+
+    <link rel="stylesheet" type="text/css"
+          th:href="@{https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.min.css}">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/wall/wall.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/post/post.css}"/>
+</head>
+<body>
+
+<th:block th:include="fragments/navigation :: navbar"></th:block>
+
+
+<div class="row m-t-100 m-l-20" style="z-index: 999999">
+    <div class="col-12">
+        <form class="form-inline ml-lg-5 my-auto" style="color: #ffffff">
+            <input class="form-control mr-3" style="width: 380px" id="search-boxActivityMap"
+                   type="text" placeholder="Add friends activity" aria-label="Search" autocomplete="off">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </form>
+
+        <div class="ml-lg-5 my-auto">
+            <div class="dropdown-content pre-scrollable" id="dropdownActivityMap"></div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="row text-center m-t-30 m-l-7" id="mapid" style="height:600px; width: 100%; z-index: 0;"></div>
+
+
+<div th:replace="fragments/footer :: footer-navigation"></div>
+<div th:replace="fragments/footer :: footer-imports"></div>
+
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/js/bootstrap-switch.min.js}"></script>
+<script th:src="@{https://twemoji.maxcdn.com/twemoji.min.js}"></script>
+<script th:src="@{/js/post/post.js}"></script>
+<script th:src="@{/js/profile/profile.js}"></script>
+<script th:src="@{/vendor/prettydate/prettydate.js}"></script>
+<script th:src="@{/js/wall/lazy-load.js}"></script>
+<script th:src="@{/js/wall/socialyte.min.js}"></script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    let username = /*[[${currentUser.getUsername()}]]*/'';
+
+    let latitude = 45;
+    let longitude = 15;
+    let zoomLevel = 8;
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+        });
+    }
+    var mapid = L.map('mapid').setView([latitude, longitude], zoomLevel);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(mapid);
+
+    var results = L.layerGroup().addTo(mapid);
+
+    fetchActivitiesFromUser(username);
+
+    function fetchActivitiesFromUser(username) {
+        $.ajax({
+            type: "GET",
+            url: '/user/' + username + '/activity',
+            success: function (posts) {
+                $.each(posts, function (i, post) {
+                    let st = `<div class="media clickable">
+                                <div class="mr-3">
+                                   <img  src="/users/${post.owner.username}/image" alt="Image" style="width: 40px; height: 40px">
+                                </div>
+                                    <div class="media-body">
+                                    <h5 class="mt-0">${post.owner.firstName} ${post.owner.lastName}</h5>
+                                    ${post.content}
+                                    </div>
+                                    <div >
+                                        <a class="fas fa-arrow-right fa-lg d-none d-lg-block py-1" href="/post/${post.postId}">
+                                        </a>
+                                    </div>
+                                </div>`;
+
+                    results.addLayer(L.marker({lat: post.latitude, lng: post.longitude}).bindPopup(st).openPopup());
+                });
+            }
+        });
+    }
+
+
+    $('#search-boxActivityMap').on('keyup', _.debounce(function (e) {
+        let query = $('#search-boxActivityMap').val();
+        let result = $('#dropdownActivityMap');
+
+        if (!query.trim().length) {
+            result.html("");
+            return;
+        }
+
+        console.debug(query);
+
+        $.ajax({
+            type: "GET",
+            url: "/search",
+            data: {query: query},
+            success: function (data) {
+                console.debug(data);
+                result.html("");
+
+                let users = data.users;
+                let groups = data.groups;
+
+                let newHtml = '<ul class="list-group">';
+                for (let i = 0; i < users.length; i++) {
+                    newHtml += `<a class="list-group-item list-group-item-action" onclick="fetchActivitiesFromUser('${users[i].username}')">
+                                            <div class="row mb-1 mt-1" >
+                                                <div class="col-auto">
+                                                    <img class="user-img" src="/users/${users[i].username}/image">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>${users[i].firstName} ${users[i].lastName}</div>
+                                                </div>
+                                            </div>
+                                        </a>`;
+                }
+                newHtml += '</ul>';
+
+                result.html(newHtml);
+            }
+        });
+    }, 200))
+</script>
+
+</body>
+
+</html>

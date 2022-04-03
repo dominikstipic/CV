@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<div id="slide" th:fragment="profile"
+     th:with="myProfile=${user == null || user.getUsername().equals(currentUser.getUsername())}">
+
+    <div id="profile" class="row p-t-70 p-l-20">
+        <div class="col-12 mb-3">
+            <div class="profile-userpic">
+                <img th:src="@{/users/{username}/image(username=${myProfile ? currentUser.getUsername() : user.getUsername()})}"
+                     class="img-responsive" alt="">
+                <th:block th:if="${myProfile}">
+                    <a>
+                        <div class="mx-auto clickable" data-toggle="modal" data-target="#uploadModal">
+                            <i class="fa fa-image fa-2x" style="color: white"></i>
+                        </div>
+                    </a>
+                </th:block>
+            </div>
+            <h2 class="text-center hidden-xs mx-auto"><a
+                    th:text="${userProfileInfo.getFirstName() + ' ' + userProfileInfo.getLastName()}" title="Profile">John
+                Doe
+            </a><a th:if="${myProfile}" href="#editModal" data-toggle="modal"
+                   title="Edit profile"><i class="fa fa-user-edit ml-2 hoverable"
+                                           style="color: black; font-size: 20px;"></i></a>
+                <a th:if="${!myProfile}" title="Follow">
+                    <i th:id="${'follow-unfollow-' + user.getId()}"
+                       th:onclick="'followUnfollow(event,\'' + ${user.getId()} + '\');'"
+                       class="fa"
+                       th:classappend="${userProfileInfo.getUserFollows() ? 'fa-user-minus' : 'fa-user-plus hoverable'}"></i>
+                </a>
+                <a th:if="${#authorization.expr('hasRole(''ROLE_ADMIN'')') && !myProfile}" title="Ban User">
+                    <i th:id="${'ban-' + user.getId()}" th:onclick="'banUnban(event,\'' + ${user.getId()} + '\');'"
+                       class="fa fa-user-lock clickable"
+                       th:classappend="${userProfileInfo.getBanned() ? '' : 'hoverable'}"></i>
+                </a>
+            </h2>
+            <div th:if="${!myProfile}" class="row justify-content-center">
+                <div class="col-6">
+                    <a class="btn btn-primary btn-block playdate-btn-href" th:href="@{/user/{username}/diary (username=${user.getUsername()})}">Diary</a>
+                </div>
+                <div class="col-6">
+                    <a class="btn btn-primary btn-block playdate-btn-href" th:href="@{/user/{username}/wishlist (username=${user.getUsername()})}">Wishlist</a>
+                </div>
+            </div>
+            <table class="table borderless">
+                <tbody>
+                <tr>
+                    <td>Name:</td>
+                    <td th:text="${userProfileInfo.getFirstName()}">John</td>
+                </tr>
+                <tr>
+                    <td>Surname:</td>
+                    <td th:text="${userProfileInfo.getLastName()}">Doe</td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td th:text="${userProfileInfo.getPhone()!= null ? userProfileInfo.getPhone() : '-'}">
+                        012-3456-789
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td th:text="${userProfileInfo.getEmail()}">john.doe@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td th:text="${userProfileInfo.getAge()}">25</td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td th:text="${userProfileInfo.getGender().equals(T(com.playdate.enumerations.Gender).MALE) ? 'M' : 'F'}">
+                        M
+                    </td>
+                </tr>
+                <tr>
+                    <td>Country:</td>
+                    <td th:text="${userProfileInfo.getCountry()!= null ? userProfileInfo.getCountry() : '-'}">
+                        Croatia
+                    </td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td th:text="${userProfileInfo.getCity()!= null ? userProfileInfo.getCity() : '-'}">Zagreb</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">About:</h5>
+                    <span th:text="${userProfileInfo.getAbout()!= null ? userProfileInfo.getAbout() : 'No information...'}">Hello, my name is John Doe, I'm a basketball player from Zagreb.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    </div>
+    <th:block th:if="${myProfile}">
+        <div th:replace="fragments/edit_profile :: edit_profile">
+        </div>
+        <div th:replace="fragments/edit_profile :: upload_modal">
+        </div>
+    </th:block>
+</div>
+</body>
+</html>

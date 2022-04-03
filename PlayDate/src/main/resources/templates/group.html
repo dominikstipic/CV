@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <div th:replace="fragments/header :: head-general"></div>
+
+    <title>PlayDate</title>
+
+    <div th:replace="fragments/header :: head-imports"></div>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/post/post.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/groups/groups.css}"/>
+</head>
+
+<body>
+  <nav th:replace="fragments/navigation :: navbar"></nav>
+
+  <div class="row content-posts" >
+            <div class="col-md-3">
+                <div class="card sticky-top align-self-start sticky-offset">
+                    <div class="card-body">
+                        <div class="h5" th:text="${group.groupName}"></div>
+                        <div class="h6 text-muted">Description</div>
+                        <div class="h7" th:text="${group.description}"></div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Followers</div>
+                            <div class="h5" th:text="${numOfFollowers}"></div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Admin</div>
+                            <img th:src="@{/users/{username}/image(username=${group.admin.getUsername()})}" class="img-user-mini img-rounded"></img>
+                            <a th:href="@{/user/{username}(username=${group.admin.getUsername()})}">
+                              <div class="h5" th:text="${group.admin.getUsername()}"></div>
+                            </a>
+                            <div class="h5" th:text="${group.admin.getEmail()}"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    <div class="col-md-6 gedf-main">
+    <!--Wall with Post -->
+    <style th:inline="text">
+    .jumbotron{
+        background: url([[@{/groups/{group}/banner(group=${group.id})}]]);
+        background-size: 100% 100%;
+        margin: auto;
+        height: 300px;
+        margin-bottom: 25px;
+      }
+      </style>
+      <div
+      class="jumbotron jumbotron-fluid"
+      style=
+      >
+      </div>
+
+      <div class="active" id="posts">
+          <div id="posts-container" class="container-fluid">
+
+              <th:block th:each="post : ${posts}">
+                  <div th:replace="fragments/post :: post"></div>
+              </th:block>
+
+          </div>
+          <!--Close #posts-container-->
+          <div id="loading" th:if="${posts.size() >= 3}">
+              <img src="../static/img/load.gif" th:src="@{/img/load.gif}" alt="loader">
+          </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+
+      <div class="card gedf-card sticky-top sticky-offset">
+          <div class="card-body" th:if="${#lists.contains(group.getMembers(), currentUser)}">
+              <h5 class="card-title">Add members</h5>
+              <form class="form-inline my-auto pb-10" style="color: #ffffff">
+                  <input class="form-control mr-3" style="width: 380px" id="search-boxActivityMap"
+                         type="text" placeholder="Add members to group:" aria-label="Search" autocomplete="off">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  <div class="ml-lg-5 my-auto">
+                      <div class="dropdown-content pre-scrollable" id="dropdownActivityMap"></div>
+                  </div>
+              </form>
+              <div>
+                <h5 class="card-title">Suggested Members: </h5>
+                <ul class="list-group mt-3">
+                  <th:block th:each="user : ${suggestedMembers}">
+                    <li class="list-group-item" style="display:inline-flex;">
+                      <div class="row" style="width: -webkit-fill-available">
+                        <div class="col-md-2">
+                            <img class="img-rounded img-user-mini" th:src="@{/users/${users.username}/image}">
+                        </div>
+                        <div class="text-center col-md-7">
+                            <a th:href="@{/user/{username}(username=${user.getUsername()})}">
+                            <div th:text="${user.getFullName()}"></div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 text-right">
+                          <form method="post" th:action="@{/group/{groupId}/add/{username}(username=${user.getUsername()}, groupId=${group.getId()})}">
+                            <button type="submit" class="btn btn-success">Add</button>
+                          </form>
+                        </div>
+                      </div>
+                    </li>
+                  </th:block>
+                </ul>
+              </div>
+          </div>
+          <div class="card-body" th:unless="${#lists.contains(group.getMembers(), currentUser)}">
+              <h5 class="card-title">Join Group</h5>
+              <form method="post" th:action="@{/group/{groupId}/add/{username}(username=${currentUser.getUsername()}, groupId=${group.getId()})}">
+                <button type="submit" class="btn btn-success">Join</button>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <div th:replace="fragments/create_post :: post_modal"></div>
+  <div th:replace="fragments/footer :: footer-imports"></div>
+  <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/js/bootstrap-switch.min.js}"></script>
+  <script th:src="@{https://twemoji.maxcdn.com/twemoji.min.js}"></script>
+  <script th:src="@{/js/post/post.js}"></script>
+  <script th:src="@{/js/groups/groups.js}"></script>
+  <script th:src="@{/vendor/prettydate/prettydate.js}"></script>
+  <script th:src="@{/js/wall/socialyte.min.js}"></script>
+  <script th:inline="javascript">
+  "use strict";
+  jQuery(document).ready(function () {
+      let t = $(window), o = $(document), e = $("#loading"), i = $("#posts").is(".active");
+      let scrolled = false;
+      let page = 1;
+      t.on("scroll", function () {
+          if (o.height() - t.height() - 80 < t.scrollTop() && i && !scrolled) {
+              scrolled = true;
+              e.show();
+
+              $.ajax({
+                  type: "GET",
+                  url: '/posts/'.concat(/*[[${groupId}]]*/ '', '/', String(page++)),
+                  success: function (posts) {
+                      setTimeout(
+                          function () {
+                              let postsHTML = '';
+                              $.each(posts, function (i, item) {
+                                  postsHTML += createPost(item);
+                              })
+
+                              $("#posts-container").append(postsHTML);
+                              twemoji.parse(document.body);
+                              $(".prettydate").prettydate();
+                              e.hide();
+                              scrolled = false;
+                          }, 1e3)
+                  }
+              });
+          }
+      })
+  });
+</script>
+<script th:inline="javascript">
+createNewPost = function(){
+    console.debug("Valid function");
+    if (!isPostFormDataValid()) return;
+
+    let data = extractPostFormData();
+
+    $.ajax({
+        url: '/group/'.concat(/*[[${groupId}]]*/ '', '/post/new'),
+        data: data,
+        enctype: 'multipart/form-data',
+        contentType: false,
+        processData: false,
+        cache: false,
+        type: 'POST',
+        success: function () {
+            appendSuccess('Post created!', 'create-post-message-area');
+            $('#publishBtn').prop('disabled', true).css('opacity', 0.5).css('background-color', '#999').css('border-color', '#999').css('outline', 'none').css('box-shadow', 'none');
+            $('#cancelBtn').hide();
+            reloadPage('#postModal');
+        }, error: function () {
+            appendError('An error occurred while creating the post!', 'create-post-message-area');
+        }
+    });
+
+}
+</script>
+<script th:inline="javascript">
+$(document).ready(function () {
+    $('#search-boxActivityMap').on('keyup', _.debounce(function (e) {
+        let query = $('#search-boxActivityMap').val();
+        let result = $('#dropdownActivityMap');
+
+        if (!query.trim().length) {
+            result.html("");
+            return;
+        }
+
+        $.ajax({
+            type: "GET",
+            url: "/search/group/".concat(/*[[${groupId}]]*/),
+            data: {query: query},
+            success: function (data) {
+                result.html("");
+
+                let users = data;
+                let newHtml = '<ul class="list-group">';
+                for (let i = 0; i < users.length; i++) {
+                    newHtml += `
+                                  <button type="submit" class="list-group-item list-group-item-action" onClick="addToGroup([[${groupId}]], '${users[i].username}')">
+                                            <div class="row mb-1 mt-1" >
+                                                <div class="col-auto">
+                                                    <img class="user-img" src="/users/${users[i].username}/image">
+                                                </div>
+                                                <div class="col-auto" style="color:darkslategray;">
+                                                    <div>${users[i].firstName} ${users[i].lastName}</div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    `;
+                }
+                newHtml += '</ul>';
+
+                result.html(newHtml);
+            }
+        });
+    }, 200));
+});
+</script>
+</body>
+</html>
