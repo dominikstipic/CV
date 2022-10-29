@@ -81,7 +81,10 @@ Analyze the performance of a distributed systems by queue theory.
 Analyzed dataset from the Settlers of Catan board game in order to find insight which could improve game performance. 
 
 ---------------
-[**Haskell**](https://github.com/dominikstipic/CV/blob/main/R/Settlers_of_Catan.pdf): Haskell assignments
+[**Haskell**](https://github.com/dominikstipic/CV/blob/main/R/Settlers_of_Catan.pdf): Haskell assignments.
+
+---------------
+[**Chatting System**](https://github.com/dominikstipic/CV/tree/dev/Chatting%20System): WebSocket chatting system writen in Spring Boot.
 
 ---------------
 
