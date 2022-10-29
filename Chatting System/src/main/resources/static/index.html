@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>Spring Boot WebSocket Chat Application | CalliCoder</title>
+<link rel="stylesheet" href="css/main.css" />
+</head>
+<body style="background-position: center; background-repeat: no-repeat; background-size: cover;">
+	<noscript>
+		<h2>Sorry! Your browser doesn't support Javascript</h2>
+	</noscript>
+
+
+	<div id="loginForm">
+		User Name:<br> 
+		<input id="usrName" type="text" name="firstname" placeholder="Username"> 
+		<input type="submit" value="Submit" onclick=connect()>
+	</div>
+	
+
+	<div id="chat" hidden>
+		<div id="menu">
+			<h2 id="welcome">Welcome, user </h2>
+			<button type="button" onclick="disconnect()">Exit</button>
+		</div>
+
+		<div id="chatbox">
+			<textarea rows="10" cols="50" readonly id="textArea"></textarea>
+		</div><br><br>
+
+		<input type="text" id="message" size="63" /> 
+		<input type="submit" onclick="sendMessage()" value="Send" />
+
+	</div>
+
+
+
+	<script type="text/javascript"
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
