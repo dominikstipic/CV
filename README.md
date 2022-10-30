@@ -79,6 +79,7 @@ Dynamic polymorphism in procedural and object-oriented languages.
 Robust architecture principle, strategy and observer design patterns.
 * [**LAB3**](http://www.zemris.fer.hr/~ssegvic/ooup/ooup3lab.shtml)
 Factory design principle and implementing GUI text editor from scratch.
+
 ---------------
 **Distributed Systems**
 * [**LAB1**](https://github.com/dominikstipic/CV/blob/main/Distributed%20Systems/LAB1/RS-2020_dz_1.pdf)
@@ -87,12 +88,16 @@ Implement distributed measurement system with one central server.
 Implement distributed peer-to-peer system with time synchronization.
 * [**LAB3**](https://github.com/dominikstipic/CV/blob/main/Distributed%20Systems/LAB3/RS-2020_dz_3.pdf):
 Analyze the performance of a distributed systems by queue theory.
+
 ---------------
-[**R programing language**](https://github.com/dominikstipic/CV/tree/main/Haskell)
+[**R programing language**](https://github.com/dominikstipic/CV/blob/main/R/Settlers_of_Catan.pdf)
 Analyzed dataset from the Settlers of Catan board game in order to find insight which could improve game performance. 
 
 ---------------
-[**Haskell**](https://github.com/dominikstipic/CV/blob/main/R/Settlers_of_Catan.pdf): Haskell assignments.
+[**Haskell**](https://github.com/dominikstipic/CV/tree/main/Haskell): Haskell assignments.
+
+---------------
+[**Linux**](https://github.com/dominikstipic/CV/tree/main/Linux): Projects using Linux OS.
 
 ---------------
 [**Chatting System**](https://github.com/dominikstipic/CV/tree/dev/Chatting%20System): WebSocket chatting system writen in Spring Boot.
