@@ -18,6 +18,17 @@ Segments humans from real-time video and changes background with chosen photo.
 ![alt text](https://github.com/dominikstipic/CV/blob/main/Papers/camvid.gif)
 
 ---------------
+* [**DataDrivenFinanceAPI**](https://github.com/dominikstipic/DataDrivenFinanceAPI): <br />
+Communicates with a Flask server which extracts data from Yahoo Finance and calculates estimates of stochastic statistics on time series or groups of time series. The idea of the project is to create a diversification service which finds a portfolio for given risk exposure and to create a database of all the relevant exchanges in the world.  
+Work in progress. 
+
+Backend: Java EE, Python Flask <br />
+Frontend: HTML, CSS, Javascript, Bootstrap <br />
+Other: Docker <br />
+
+![alt text](https://github.com/dominikstipic/DataDrivenFinanceAPI/blob/master/finance.png)
+
+---------------
 
 **Text Analysis and Retrieval**:
 * [**Are You Humn? Detecting Bots on Twitter Using BERT**](https://ieeexplore.ieee.org/document/9260074)
