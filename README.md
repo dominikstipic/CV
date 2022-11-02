@@ -103,6 +103,12 @@ Analyzed dataset from the Settlers of Catan board game in order to find insight 
 [**Chatting System**](https://github.com/dominikstipic/CV/tree/dev/Chatting%20System): WebSocket chatting system writen in Spring Boot.
 
 ---------------
+**People Managment System**(WIP): System for managing informations about people. 
+* Technology: Node.js, Docker, React, PostgreSQL, Python
+
+<img src="https://raw.githubusercontent.com/dominikstipic/CV/project/people-managment/Assets/PeopleManagment.png" >
+
+---------------
 
 
 **Fuzzy, Evolutionary and Neuro-computing**:
