@@ -102,7 +102,7 @@ Analyzed dataset from the Settlers of Catan board game in order to find insight 
 [**Chatting System**](https://github.com/dominikstipic/CV/tree/dev/Chatting%20System): WebSocket chatting system writen in Spring Boot.
 
 ---------------
-**People Managment System**(WIP): System for managing informations about people. 
+[**People Managment System**](https://github.com/dominikstipic/DataDrivenFinanceAPI): System for managing informations about people. 
 * Technology: Node.js, Docker, React, PostgreSQL, Python
 
 ![PeopleManagment](https://user-images.githubusercontent.com/40320696/210086200-434e1d5b-ffab-4a0d-9246-9ff076bd967e.png)
