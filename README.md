@@ -105,7 +105,7 @@ Analyzed dataset from the Settlers of Catan board game in order to find insight 
 **People Managment System**(WIP): System for managing informations about people. 
 * Technology: Node.js, Docker, React, PostgreSQL, Python
 
-<img src="https://raw.githubusercontent.com/dominikstipic/CV/main/Assets/PeopleManagment.png" >
+![PeopleManagment](https://user-images.githubusercontent.com/40320696/210086200-434e1d5b-ffab-4a0d-9246-9ff076bd967e.png)
 
 ---------------
 
