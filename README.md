@@ -62,9 +62,8 @@ Other: Docker <br />
 * [**HW4**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz4/hw04.pdf)
 * [**HW5**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz5/hw04.pdf)
 * [**HW6**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz6/hw06.pdf)
-* **HW7**
- * [**Part 1**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz7/hw07.pdf)
- * [**Part 2**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz7/hw07-part2.pdf)
+* [**HW7-Part 1**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz7/hw07.pdf)
+* [**HW7-Part 2**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz7/hw07-part2.pdf)
 * [**HW8**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz8/dz8.txt)
 * [**HW9**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz9/hw09.pdf)
 * [**HW10**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz10/hw10.pdf)
