@@ -12,7 +12,7 @@ I experimented with semantic segmentation models, specifically fully convolution
 I was experimenting with real-time semantic segmentation models which are designed with the purpose to be used on embedding devices. This kind of models are great for experimentation because they have fewer parameters and great inference speed. The goals of this project were to get familiar with multiscale semantic segmentation architecture from [this](https://arxiv.org/abs/1903.08469) paper and to replicate results.
 * [**Deep Learning Pipeline**](https://github.com/dominikstipic/DeepSat)
 End-to-end deep learning pipeline for computer vision taks.
-* [**Human Segmentor**](https://github.com/dominikstipic/CV/tree/main/Human_Segmentor)
+* [**Human Segmentor**](https://github.com/dominikstipic/HumanSegmentor)
 Segments humans from real-time video and changes background with chosen photo.
 
 ![alt text](https://github.com/dominikstipic/CV/blob/main/Assets/camvid.gif)
