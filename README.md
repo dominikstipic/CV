@@ -5,17 +5,17 @@
 The problem that this thesis deals with is the development of a system for semantic segmentation of buildings from satellite images that has the ability of out-of-distribution generalization. The dataset we are working on is high-resolution satellite images that came from the Inria Aerial Image Labeling Dataset competition. The semantic segmentation model which we use is based on the resolution pyramid method. For the improvement of out-of-distribution generalization, we use the domain translation and domain adaptation method. The domain adaptation model is based on a refined CycleGAN architecture that is similar to the CyCADA architecture. Initially, we develop software support for learning deep models based on MLOps principles to have the best possible control over the learning process, and then we use it to conduct further experiments. The research part of this paper deals with the development and comparison of methods for out-of-distribution generalization. Out-of-distribution data are images of cities whose landscape and architecture differ from the cities where the model was initially trained. In the experiments, we initially measure the covariate shift between different domains. We then try to reduce the covariate shift by using various augmentations aimed at breaking spurious correlations in the data. After that, we use the domain translation method and domain adaptation method to increase the performance of the model on out-of-distribution datasets. The main contribution of this work is the creation of the end-to-end ML pipeline for automatically learning deep models and for process control. Also, we show the results of the experiments with the proposed model for domain adaptation on out-of-distribution domains.
 * **BS thesis** - [**Convolutional Models for Person Localization in Sport Broadcasts**](http://www.zemris.fer.hr/~ssegvic/project/pubs/stipic19bs.pdf)
 Deep learning models based on convolutional neural networks achieve top results in the field of computer vision. In this paper, we consider architecture and algorithms for detecting and localizing objects. Later we apply the Mask R-CNN architecture to localize the athletes on the videotape of the football match. We then measure the performance of the Mask R-CNN detector on detecting athletes on the given football match videotape.
-* [**Optimization of the deep learning process**](https://github.com/dominikstipic/CV/blob/main/Papers/Seminar.pdf) 
+* [**Optimization of the deep learning process**](https://github.com/dominikstipic/CV/blob/main/Assets/Seminar.pdf) 
 The seminar where I was exploring the applications of satellite and aerial imagery and usage of the deep learning methods in them. 
 I experimented with semantic segmentation models, specifically fully convolutional models, on [Inria Aerial Image Labeling](https://paperswithcode.com/dataset/inria-aerial-image-labeling) dataset where the task was to segment houses. The main purpose of this seminar was to explore the literature on remote sensing and to get familiar with semantic segmentation methods and architectures. 
-* [**Real-time semantic segmentation models**](https://github.com/dominikstipic/CV/blob/main/Papers/SwiftNet_project.pdf)
+* [**Real-time semantic segmentation models**](https://github.com/dominikstipic/CV/blob/main/Assets/SwiftNet_project.pdf)
 I was experimenting with real-time semantic segmentation models which are designed with the purpose to be used on embedding devices. This kind of models are great for experimentation because they have fewer parameters and great inference speed. The goals of this project were to get familiar with multiscale semantic segmentation architecture from [this](https://arxiv.org/abs/1903.08469) paper and to replicate results.
 * [**Deep Learning Pipeline**](https://github.com/dominikstipic/DeepSat)
 End-to-end deep learning pipeline for computer vision taks.
-* [**Human Segmentor**](https://github.com/dominikstipic/CV/tree/main/Human_Segmentor)
+* [**Human Segmentor**](https://github.com/dominikstipic/HumanSegmentor)
 Segments humans from real-time video and changes background with chosen photo.
 
-![alt text](https://github.com/dominikstipic/CV/blob/main/Papers/camvid.gif)
+![alt text](https://github.com/dominikstipic/CV/blob/main/Assets/camvid.gif)
 
 ---------------
 * [**DataDrivenFinanceAPI**](https://github.com/dominikstipic/DataDrivenFinanceAPI): <br />
@@ -62,9 +62,8 @@ Other: Docker <br />
 * [**HW4**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz4/hw04.pdf)
 * [**HW5**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz5/hw04.pdf)
 * [**HW6**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz6/hw06.pdf)
-* **HW7**
- * [**Part 1**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz7/hw07.pdf)
- * [**Part 2**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz7/hw07-part2.pdf)
+* [**HW7-Part 1**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz7/hw07.pdf)
+* [**HW7-Part 2**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz7/hw07-part2.pdf)
 * [**HW8**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz8/dz8.txt)
 * [**HW9**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz9/hw09.pdf)
 * [**HW10**](https://github.com/dominikstipic/CV/blob/main/Java%20Course/dz10/hw10.pdf)
@@ -103,10 +102,10 @@ Analyzed dataset from the Settlers of Catan board game in order to find insight 
 [**Chatting System**](https://github.com/dominikstipic/CV/tree/dev/Chatting%20System): WebSocket chatting system writen in Spring Boot.
 
 ---------------
-**People Managment System**(WIP): System for managing informations about people. 
+[**People Managment System**](https://github.com/dominikstipic/DataDrivenFinanceAPI): System for managing informations about people. 
 * Technology: Node.js, Docker, React, PostgreSQL, Python
 
-<img src="https://raw.githubusercontent.com/dominikstipic/CV/main/Assets/PeopleManagment.png" >
+![PeopleManagment](https://user-images.githubusercontent.com/40320696/210086200-434e1d5b-ffab-4a0d-9246-9ff076bd967e.png)
 
 ---------------
 
