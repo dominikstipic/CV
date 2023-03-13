@@ -1,0 +1,353 @@
+---
+title: "Linearna regresija - Zadatak A"
+author: "Kristijan Rupić"
+date: "May 4, 2019"
+output: pdf_document
+header-includes:
+  - \usepackage{amsmath} \DeclareMathOperator{\artanh}{artanh} \usepackage{bm}
+---
+
+```{r setup, include=FALSE}
+# 
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r podaci}
+# TODO line break
+X = c(41, 39, 53, 67, 61, 67, 46, 50, 55, 72, 63, 59, 53, 62, 65, 48, 32, 64, 59, 54, 52, 64, 51, 62, 56, 38, 52, 40, 65, 61, 64, 64, 53, 51, 58, 65)
+Y = c(29, 19, 30, 27, 28, 27, 22, 29, 24, 33, 25, 20, 28, 22, 27, 22, 27, 28, 30, 29, 21, 36, 20, 29, 34, 21, 25, 24, 32, 29, 27, 26, 24, 25, 34, 28)
+
+summary(X)
+summary(Y)
+```
+
+## a)
+
+Prikaz podataka u Kartezijevom koordinatnom sustavu (scatter plot):
+
+```{r scatterplot}
+plot(X, Y, xlim = c(0, max(X)+5), ylim = c(0, max(Y)+5))
+```
+
+## b)
+
+Za obje varijable provjeravamo jesu li normalno distribuirane na 3 načina.
+
+### Q-Q Plot
+
+```{r qqplot}
+qqnorm(X, xlab = "Kvantili standardne normalne distribucije", ylab = "Kvantili uzorka X")
+qqline(X)
+qqnorm(Y, xlab = "Kvantili standardne normalne distribucije", ylab = "Kvantili uzorka Y")
+qqline(Y)
+```
+
+Vidimo da se obje varijable dobro poklapaju s normalnom distribucijom u okolini medijana.
+Kvantili varijable X padaju ispod linije i razrjeđuju se u vanjskim kvartilima, što znači da ima tanje repove od normalne distribucije.
+Varijabla Y se puno bolje poklapa s normalnom distribucijom, no pokazuje blagu zakrivljenost prema većim vrijednostima.
+
+### Lillieforsova inačica Kolmogorov-Smirnovljevog testa
+
+Kolmogorov-Smirnovljev je neparametarski test koji služi za kvantificiranje razlike između empirijske funkcije distribucije iz uzorka i referentne funkcije distribucije.
+Nulta hipoteza tog testa jest da uzorak dolazi iz referentne distribucije iz čega slijedi da očekujemo poklapanje empirijske funkcije distribucije s referentnom.
+Prevelika razlika među njima dovodi u sumnju nultu hipotezu i navodi nas da ju odbacimo. Postoji i inačica testa koja testira jednakost distribucija dvaju uzoraka.
+
+Empirijska funkcija distribucije iz uzorka $n$ i.i.d. varijabli $X_i$ jest:
+
+$$
+F_n(x) = \sum_{i=1}^{n}{I_{\left< -\infty, x \right]}(X_i)}
+$$
+a testna statistika, tj. maksimalno odstupanje od teoretske distribucije $F(x)$ je:
+$$
+D_n = \sup_x{|F_n(x) - F(x)|}
+$$
+Pod $H_0$ vrijedi:
+$$
+\sqrt{n} D_n \overset{d}\longrightarrow \sup_t {|B(F(t))|}
+$$
+gdje je $B(t)$ jednični Brownov most, tj. Brownovo gibanje na intervalu $\left[0, 1\right]$ s početkom i završetkom u vrijednosti 0.
+Desna strana ima Kolmogorovljevu distrubuciju pa smatramo da i ima i lijeva za veće vrijednosti $n$; ovo je dakle aproksimativan test.
+$H_0$ se odbacuje na razini značajnosti $\alpha$ kada $\sqrt{n} D_n > K_\alpha$.
+
+Problem s ovako formuliranim testom jest taj što zahtijeva točno specificiranu funkciju distribucije u nultoj hipotezi, tj. testira poklapanje s distribucijom s točno
+određenim parametrima. Kada ne bismo poznavali distribuciju uzorka ili njene parametre (a najčešće ne znamo), morali bismo ih procijeniti iz uzorka.
+Pokazuje se da KS test ne radi dobro s paramterima distribucije procijenjenim iz istog uzorka i da ga se ne smije koristiti na takav način.
+Ovo odgovara našoj situaciji jer i pod pretpostavkom normalnosti (s kojom su Q-Q plotovi uglavnom u skladu) i dalje ne znamo parametre naših distribucija.
+
+Kao jedno rješenje nudi se Lillieforsov test, koji je inačica KS testa upravo za slučaj testiranja normalnosti ali bez poznatih parametara teoretske distribucije.
+Postupak je kao i u naivnoj primjeni KS testa - procjene se $\mu$ i $\sigma$ iz uzorka te se računa maksimalno odstupanje od normalne distribucije
+$\mathcal{N}(\hat{\mu},\hat{\sigma^2})$. Razlika od KS testa je ta da se ne radi usporedba s kritičnim vrijednostima Kolmogorovljeve distribucije jer se maksimalno
+odstupanje smanjilo izborom normalne distribucije s procijenjenim parametrima za teoretsku distribuciju pod nultom hipotezom, pa testna statistika sada ima Lillieforsovu distribuciju koja se računa Monte Carlo metodama radi svoje složenosti.
+
+
+\begin{align*}
+H_0: \exists{\mu}\exists{\sigma^2}, F(x) &= \Phi(x, \mu, \sigma^2) \\
+H_1: \forall{\mu}\forall{\sigma^2}, F(x) &\ne \Phi(x, \mu, \sigma^2)
+\end{align*}
+
+Nemamo zadane razine značajnosti, stoga samo računamo p-vrijednosti.
+```{r nortest, include=FALSE}
+require(nortest)
+```
+```{r lilliefors}
+lillie.test(X)
+lillie.test(Y)
+```
+Vidimo da su p-vrijednosti vrlo velike i sigurno ne bismo odbacili nultu hipotezu za uobičajene vrijednosti $\alpha$. Da je p-vrijednost za $X$ manja od $Y$ slaže se s procjenom iz Q-Q plota, prema kojoj je $Y$ bliže normalnosti od $X$.
+
+### Pearson $\chi^2$ test
+
+Pearsonov $\chi^2$ test za prilagodbu distribuciji se sastoji od sljedećeg:
+
+Neka su podaci iz uzorka $X_i, i \in \{1, \dots, N\}$ i.i.d. grupirani u konačan broj $k$ kategorija $K_i$ koje čine particiju svih mogućih vrijednosti i neka su $o_i = |K_i|, i \in \{1,\dots,k\}$ opažene frekvencije, tj. broj podataka u svakoj od kategorija.
+Pod pretpostavkom $H_0$ o distribuciji podataka $p_i = P(X \in K_i)$ su teoretske vjerojatnosti upadanja vrijednosti $X$ u svaku od kategorija.
+Tada su $E_i = N p_i$ očekivane frekvencije svake od kategorija za uzorak veličine $N$.
+
+Ovom transformacijom podatka vektor opaženih frekvencija poprima pod $H_0$ multinomijalnu distribuciju s gustoćom vjerojatnosti
+$$ f(o_1, \dots, o_k; N; p_1, \dots, p_k) = \binom{N}{o_1 \dots o_k} \prod_{i=1}^{k}{p_i^{o_i}} $$
+Tada vrijednost test statistike:
+$$
+\chi^2=\sum_{i=1}^{k}{\frac{(o_i-e_i)^2}{e_i}}
+$$
+ima asimptotski $\chi^2(\nu)$ distribuciju s $\nu = k - 1 - r$ stupnjeva slobode, gdje je $r$ broj parametara teoretske distribucije procijenjen iz uzorka.
+
+Velika vrijednost statistike ukazuje na preveliko odstupanje opaženih frekvencija u odnosu na očekivane pod hipotezom $H_0$.
+Stoga $H_0$ odbacujemo na razini značajnosti $\alpha$ akko $\chi^2 \geq \chi^2_{1-\alpha}(\nu)$.
+
+Bitna pretpostavka radi kvalitete testa jest dovoljno velik $N$ i $e_i$. Obično se kao kriterij uzima $\forall i, e_i \geq 5$.
+Nedostatak testa je potreba za grupiranjem podataka koji dolaze iz kontinuiranih distribucija u kategorije, čime se u test unosi arbitrarnost koja može utjecati na zaključak.
+
+
+U našem slučaju, testiramo $X$ i $Y$ na normalnost, pa za obje moramo procjeniti $r = 2$ parametra iz uzorka. Procjenu parametara za nas vrši R funkcija `pearson.test`:
+
+```{r pearson}
+chi2x = pearson.test(X, adjust = TRUE)
+chi2x
+chi2x$n.classes
+pearson.test(X, adjust = FALSE)$p.value
+
+
+chi2y = pearson.test(Y, adjust = TRUE)
+chi2y
+chi2y$n.classes
+pearson.test(Y, adjust = FALSE)$p.value
+```
+Treba dodati nekoliko napomena. Funkcija sama procjenjuje broj kategorija u koje treba podijeliti podatke, a može se i podesiti ručno.
+Parametar `adjust` funkcije kontrolira radi li se korekcija oduzimanjem $r = 2$ od broja stupnjeva slobode; vidimo da dobivamo manje p-vrijednosti
+nakon korekcije. No dokumentacija funkcija dodaje opasku i da procjena parametara $\mu, \sigma^2$ na uobičajen način nije ispravna te referira čitatelja
+na literaturu [Moore1986]. Objašnjenje je da naivnom procjenom parametara testna statistika nije distribuirana točno kao $\chi^2(k - 3)$, već je za procjenu parametara potrebno riješiti sustav parcijalnih diferencijalnih jednadžbi za procjenitelje koji u slučaju normalne distribucije nemaju zatvorenu formu već se računaju numerički. Stvarna p-vrijednost se nalazi negdje između one sa i bez korekcije stupnjeva slobode pa ovdje računamo oboje.
+
+Vidimo da za $\alpha = 0.05$ ne bismo mogli odbaciti $H_0$ ni za $X$ ni za $Y$, a za $\alpha = 0.1$ bismo možda mogli odbaciti za $X$, ovisno o točnom iznosu stvarne p-vrijednosti. Vidimo da su ovi zaključci u skladu s onima dobivenim iz Q-Q plotova, gdje se može posumnjati u normalnost $X$, ali teže za $Y$.
+
+## c)
+
+Bivarijatna normalna razdioba je dvodimenzionalna generalizacija normalne razdiobe. Pošto se uvođenjem dodatnih komponenti mogu pojaviti zavisnosti među njima, nešto je složenijeg oblika od jednodimenzionalne. Gustoća joj je:
+
+$$
+f(x, y) = \frac{1}{2 \pi \sigma_X \sigma_Y \sqrt{1 - \rho^2}} \exp\left\{- \frac{1}{2(1-\rho^2)}
+  \left(
+  \left(\frac{x - \mu_X}{\sigma_X}\right)^2
+  - 2 \rho \left(\frac{x - \mu_X}{\sigma_X}\right) \left(\frac{y - \mu_Y}{\sigma_Y}\right)
+  + \left(\frac{y - \mu_Y}{\sigma_Y}\right)^2
+  \right)\right\}
+$$
+Primjećujemo pojavljivanje novog parametra $\rho$ koji odgovara koeficijentu korelacije $X$, $Y$: $\rho = \mathrm{corr}(X, Y) = \frac{\mathrm{cov}(X,Y)}{\sigma_X \sigma_Y}$. Za nekorelirane $X$, $Y$ je $\rho = 0$ te se kvadratna forma u eksponentu pretvara u "Pitagorin poučak" nad standardiziranim varijablama. Za savršeno korelirane $X$, $Y$ je $\rho = \pm 1$ te se kvadratna forma pretvara u kvadrat binoma.
+
+Računanjem marginalnih razdioba pokazuje se da su komponente normalno distribuirane s odgovarajućim parametrima:
+$X \sim \mathcal{N}(\mu_X, \sigma_X^2)$, $Y \sim \mathcal{N}(\mu_Y, \sigma_Y^2)$, neovisno o $\rho$.
+Iz toga slijedi da je nužan uvjet da bi združena distribucija $X$, $Y$ bila bivarijatna normalna da su obje normalno distribuirane.
+Obrat ne vrijedi, tj. moguće je da su $X$, $Y$ obje normalno distribuirane, ali da nisu združeno bivarijatno normalno distribuirane.
+Pošto nismo odbacili normalnost $X$ i $Y$ pomoću prethodnih testova, još uvijek je moguće da imaju bivarijatnu normalnu razdiobu.
+Da bismo procijenili njene parametre $\mu_{X,Y}, \sigma^2_{X,Y}$ koristimo činjenicu da marginalne razdiobe imaju iste parametre koji se pojavljuju u združenoj. Tako su:
+
+\begin{align*}
+\hat{\mu} &= \frac{1}{n} \sum_{i = 1}^{n}{x_i} \\
+\hat{\sigma^2} &= \frac{1}{n - 1} \sum_{i = 1}^{n}{(x_i - \hat{\mu})^2} \\
+\hat{\rho} &= \frac{1}{(n - 1) \hat{\sigma}_X \hat{\sigma}_Y} \sum_{i = 1}^{n}{(x_i - \hat{\mu}_X) (y_i - \hat{\mu}_Y)}
+\end{align*}
+
+Tražimo ove vrijednosti i njihove 95% pouzdane intervale. $\hat{\mu}$ imaju pod pretpostavkom normalnosti egzaktno normalnu distribuciju uzorkovanja
+sa standaradnim devijacijama $\sigma / \sqrt{n}$. $\hat{\sigma^2}$ imaju opet pod pretpostavkom normalnosti egzaktno $\chi^2(n-1)$ distribucije.
+$\hat{\rho}$ je problematičan; egzaktna distribucija uzorkovanja za $X$, $Y$ iz bivarijatne normalne razdiobe je poznata, ali daleko nepratkična
+za korištenje. Pošto nas ovdje zanima interval povjerenja za $\rho$, koristimo Fisherovu $z$-transformaciju:
+
+
+$$
+z = \operatorname{artanh} \hat{\rho} = \frac{1}{2}\ln\frac{1 + \hat{\rho}}{1 - \hat{\rho}}
+$$
+Vrijedi približno $Z \sim \mathcal{N}(\operatorname{artanh} \rho, 1/{\sqrt{N - 3}})$. Time se dobiva:
+$$
+P\left(\rho \in \left[
+  \tanh \left(\artanh \hat{\rho} - { z_{\alpha/2} }/{\sqrt{N-3}}\right),
+  \tanh \left(\artanh \hat{\rho} + { z_{\alpha/2} }/{\sqrt{N-3}}\right)
+\right]\right) = 1 - \alpha
+$$
+za interval povjerenja za $\rho$.
+
+```{r bivariate-estimate}
+mu_X = mean(X)
+mu_Y = mean(Y)
+
+var_X = var(X)
+var_Y = var(Y)
+
+alpha = 1 - 0.95
+N = length(X)
+z_alpha_2 = qnorm(1 - alpha/2)
+
+mu_X_sd = sqrt(var_X / N)
+mu_X_conf = c(mu_X - mu_X_sd, mu_X + mu_X_sd)
+mu_X
+mu_X_conf
+
+mu_Y_sd = sqrt(var_Y / N)
+mu_Y_conf = c(mu_Y - mu_Y_sd, mu_Y + mu_Y_sd)
+mu_Y
+mu_Y_conf
+
+chi2_qs = qchisq(c(alpha/2, 1 - alpha/2), df = N - 1)
+
+var_X_conf = c((N - 1) * var_X / chi2_qs[2], (N - 1) * var_X / chi2_qs[1])
+var_X
+var_X_conf
+
+var_Y_conf = c((N - 1) * var_Y / chi2_qs[2], (N - 1) * var_Y / chi2_qs[1])
+var_Y
+var_Y_conf
+
+rho = cor(X, Y)
+z = atanh(rho)
+z_sd = z_alpha_2 / sqrt(N - 3)
+rho_conf = c(tanh(z - z_sd), tanh(z + z_sd))
+# ekvivalentno gornjemu
+#rho_conf = cor.test(X, Y, method = "pearson", conf.level = 0.95)$conf.int # Fisher z-transform
+rho
+rho_conf
+```
+
+## d)
+
+ 
+<!--TODO FIX:
+$$
+  \frac{1}{2 \pi \sigma_x \sigma_y \sqrt{1 - \rho^2}} e ^ {- \frac{1}{2 (1 - \rho^2)} (x^2 - 2 \rho x y + y^2)} = c \\
+  z^2 = \frac{x^2 - 2 \rho x y + y^2}{1 - \rho^2} \\
+  
+  \frac{1}{2 \pi \sigma_x \sigma_y \sqrt{1 - \rho^2}} e^{-\frac{z^2}{2}} = c \\
+  
+  p = \frac{1}{\sigma_x \sigma_y \sqrt{1 - \rho^2}} \int_0^z{\int_0^{2\pi}{ \frac{e^{- \frac{r^2}{2}}}{2\pi} d\phi} r dr} \\
+  p = \frac{1}{\sigma_x \sigma_y \sqrt{1 - \rho^2}} \int_0^z{ r e^{- \frac{r^2}{2}} dr}, u = -r^2/2, du =- r dr\\
+  p = - \frac{1}{\sigma_x \sigma_y \sqrt{1 - \rho^2}} \int_0^{-z^2/2}{e^{u} du} \\
+  p = - \frac{1}{\sigma_x \sigma_y \sqrt{1 - \rho^2}} (e^{-z^2/2} - e^0) = \frac{1 - e^{-z^2/2}}{\sigma_x \sigma_y \sqrt{1 - \rho^2}} \\
+
+  c = \frac{\frac{1}{\sigma_x \sigma_y \sqrt{1 - \rho^2}} - p}{2 \pi}
+$$
+-->
+
+```{r mvtnorm, include=FALSE}
+require(mvtnorm)
+```
+
+```{r contour}
+x = seq(0, max(X) + 5, length.out = 100)
+y = seq(0, max(Y) + 5, length.out = 100)
+z = matrix(0, nrow = length(x), ncol = length(y))
+
+ps = seq(6, 31, 5)/36
+p_to_level = function(p) (1 - p) / (2 * pi * sqrt(var_X * var_Y * (1 - rho^2)))
+levels = lapply(ps, p_to_level)
+
+means = c(mu_X, mu_Y)
+covs = cov(cbind(X, Y))
+
+for (i in 1:length(x)) {
+  for (j in 1:length(y)) {
+    z[i, j] <- dmvnorm(c(x[i], y[j]), mean = means, sigma = covs);
+  }
+}
+
+plot(X, Y, xlim = c(min(X)-5, max(X)+5), ylim = c(min(Y)-5, max(Y)+5))
+contour(x, y, z, levels = levels, add = TRUE)
+
+points = cbind(X, Y)
+densities = dmvnorm(points, mean = means, sigma = covs)
+bins = list()
+
+levels2 = c(p_to_level(0), levels, p_to_level(1))
+for (i in 1:(length(levels2) - 1)) {
+  upper = levels2[i]
+  lower = levels2[i+1]
+  bins[[i]] = points[lower < densities & densities <= upper, 1:2]
+}
+```
+
+## e)
+
+$\hat{\rho}$ = `r rho`.
+
+\begin{align*}
+H_0: \rho &= 0 \\
+H_1: \rho &\ne 0, \alpha = 0.05
+\end{align*}
+
+```{r correlation-0}
+cor.test(X, Y, method = "pearson", alternative = "two.sided")
+```
+
+Na razini značajnosti 0.95 odbacujemo nultu hipotezu o nekoreliranosti $X$, $Y$.
+
+\begin{align*}
+H_0: \rho &= 0.5 \\
+H_1: \rho &\ne 0.5, \alpha = 0.05
+\end{align*}
+
+```{r correlation-0.5}
+z = atanh(0.5)
+z_sd = z_alpha_2 / sqrt(N - 3)
+rho_conf = c(tanh(z - z_sd), tanh(z + z_sd))
+rho
+rho_conf
+
+# p-value, two-sided alternative
+p_low = pnorm(atanh(rho), mean = atanh(0.5), sd = 1/sqrt(N-3))
+2 * min(p_low, 1 - p_low)
+```
+
+\begin{align}
+P\left(\hat{\rho} \in \left[
+  `r rho_conf[1]`, `r rho_conf[2]`
+\right] \mid H_0 \right) = `r 1 - alpha`
+\end{align}
+
+Pošto izračunata vrijenost $\hat{\rho}$ upada u interval povjerenja reda 0.95 pod $H_0$, ne odbacujemo nultu hipotezu na razini značajnosti 0.95.
+$p$-vrijednost je također vrlo velika.
+
+## f)
+
+Provodimo $\chi^2$ test za prilagodbu distribuciji koristeći kao razrede područja između izohipsi. Očekivane frekvencije znamo jer smo pomoću
+njih definirali izohipse. Sve očekivane frekvencije su $\ge$ 5, pa ne moramo združivati razrede. Nemamo zadanu razinu značajnosti pa samo računamo
+i komentiramo p-vrijednost.
+
+\begin{align*}
+H_0: (X, Y) \sim \mathcal{N}(\bm{\mu}, \bm{\Sigma}) \\
+H_1: (X, Y) \not\sim \mathcal{N}(\bm{\mu}, \bm{\Sigma})
+\end{align*}
+
+```{r chi2-bivariate}
+df = length(bins) - 1
+chi2_95 = qchisq(0.95, df = df)
+chi2_90 = qchisq(0.90, df = df)
+
+observed = sapply(bins, length)/2
+expected = N * diff(c(0, ps, 1))
+
+expected
+observed
+
+chi2_xy = sum((observed - expected)^2/expected)
+
+pchisq(chi2_xy, df=df, lower.tail = FALSE)
+c(chi2_xy, chi2_90, chi2_95)
+```
+
+Dobivena p-vrijednost je vrlo velika i ne bismo odbacili $H_0$ na razumnim razinama značajnosti.
