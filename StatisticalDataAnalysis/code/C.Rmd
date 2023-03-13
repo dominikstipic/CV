@@ -1,0 +1,183 @@
+---
+title: "C"
+author: "Luka Radivoj"
+date: "26/05/2019"
+output: pdf_document
+---
+
+```{r podaci}
+podaci=c(200, 5933,
+         200, 5404,
+         200, 4947,
+         200, 4963,
+         200, 3358,
+         200, 3878,
+         220, 1561,
+         220, 1494,
+         220, 747,
+         220, 768,
+         220, 609,
+         220, 777,
+         240, 258,
+         240, 299,
+         240, 209,
+         240, 144,
+         240, 180,
+         240, 184)
+
+i=1:length(podaci)
+x.index=1==i%%2
+y.index=0==i%%2
+
+x=podaci[x.index]
+y=podaci[y.index]
+
+```
+
+###(a) Prikaz podataka u Kartezijevom koordinatnom sustavu
+
+```{r}
+
+plot(x, y, xlab="temperatura", ylab="vijek trajanja")
+
+```
+
+Graf ne sugerira linearnu vezu između podataka. Dok imamo samo tri vrijednosti ordinate, ipak je vidljiv nagli opad vijeka trajanja s porastom temperature,
+ali i nejednoliko rasipanje vijeka trajanja za različite vrijednosti temperature. Ovo upućuje na nelinearnu vezu.
+
+###(b) Transformacija podataka
+
+Koristimo transformaciju podataka
+\begin{align*}
+  x' &= \frac{1}{x} \\
+  y' &= \log y
+\end{align*}
+i primjenjujemo linearnu regresiju na parove $(x', y')$.
+
+```{r}
+t.x=1/x
+t.y=log(y)
+plot(t.x,t.y, main="Transformirane vrijednosti", xlab="x'", ylab="y'")
+t.fit=lm(t.y~t.x)
+lines(t.x,t.fit$fitted.values,col='red')
+
+sse = sum(t.fit$residuals**2)
+ssr = sum((mean(t.y) - t.fit$fitted.values)**2)
+sst = sse + ssr
+R.t = 1 - sse/sst
+cat("R-squared value:", R.t)
+cat("\n")
+
+library(alr3)
+pureErrorAnova(t.fit)
+```
+Za \textit{lack-of-fit} je $p$-vrijednost vrlo visoka, stoga za razumne razine značajnosti ne možemo odbaciti hipotezu da je linearni model adekvatan.
+Već se i grafički vidi da transformirani podaci izgledaju linerano povezani, te je $R^2$ vrijednost vrlo blizu 1.
+
+###(c) Analiza reziduala
+
+### Residual vs. Fit plot
+```{r}
+plot(t.fit$fitted.values,xlab="Y",t.fit$residuals,ylab = "reziduali")
+abline(h=0,col='red')
+```
+Sve tri ordinate imaju vrijednosti raspršene s obje strane pravca, s time da srednja izgleda neuobičajeno.
+
+###Standardizirani reziduali
+
+### Normal Q-Q Plot
+
+```{r}
+n = length(t.x)
+hii = 1/n + (t.x-mean(t.x))**2/(sum((t.x-mean(t.x))**2))
+s = 1/(n-2) * sum((t.y-t.fit$fitted.values)**2)
+ti = t.fit$residuals/(s*sqrt(1-hii))
+
+qqnorm(ti,xlab = "Kvantili N(0,1)",ylab = "Kvantili uzorka")
+qqline(ti)
+```
+Kvantili transformiranih reziduala zadovoljavajuće se poklapaju s kvantilima normalne distribucije.
+
+### Kolmogorov Smirnov Test
+
+```{r}
+ks.test(ti,"pnorm",mean=0,sd=1)
+```
+Na temelju male $p$-vrijednosti bismo za uobičajene razine značajnosti odbacili nultu hipotezu da distribucija standardiziranih reziduala prati normalnu razdiobu $N(0,1)$
+ 
+### (d) Procjena intervala povjerenja parametra linearne regresije transformiranih podataka ($\alpha = 0.025$)
+```{r}
+confint(t.fit)
+```
+
+###(e) Model za originalne podatke
+
+Ako model za transformirane podatke glasi:
+\[
+  y' = \beta_0 + \beta_1 x',
+\]
+model za originalne podatke je tada:
+\begin{align*}
+  y &= e^{y'} = e^{\beta_0 + \beta_1 x'} = e^{\beta_0 + \frac{\beta_1}{x}} \\
+  y &= a b^\frac{1}{x}f \\
+  a &= `r exp(t.fit$coefficients[1])`, b = 1.93089 \times 10^{1622}.
+\end{align*}
+
+```{r}
+fun = function(x) { exp(t.fit$coefficients[1] + t.fit$coefficients[2] * 1/x) }
+plot(x, y,xlab="x - temperatura",ylab = "y - vijek trajanja",main = "Teorijska povezanost")
+curve(fun,add=TRUE)
+
+plot(y, exp(t.fit$fitted.values), xlab = "y - originalni podaci", ylab = "y' - procijenjeni podaci", main = "Odnos originalnih i procijenjenih podataka")
+curve(identity, add=TRUE)
+```
+Model daje zadovoljavajuće procjene za originalne podatke, ali varijabilnost podataka je jako velika za manje vrijednosti \(x\) pa je korisno pronaći
+i krivulje povjerenja za \(y\).
+
+###(f) Grafički prikaz intervala pouzdanosti 
+
+```{r}
+conf.plot = function (x,y,fit,alpha = 0.05,title,transform_x=NULL,transform_y_back=NULL){
+  n = length(x)
+  s = sum(fit$residuals**2)/(n-2)
+  t = qt(1-alpha/2,df = n-2)
+  tx = if (is.null(transform_x)) {x} else {transform_x(x)}
+  sxx = sum((tx-mean(tx))**2)
+  b0 = fit$coefficients[1]
+  b1 = fit$coefficients[2]
+  
+  y.hat = function(x) {b0 + b1*x}
+
+  is.mean = TRUE
+  se = function(x)  {t*s*sqrt((!is.mean)+1/n+(x-mean(x))**2/sxx)}
+  
+  bound = function(x, factor) {
+    if (!is.null(transform_x)) {
+      # x -> x'
+      x = transform_x(x)
+    }
+    y_bound = y.hat(x) + se(x) * factor
+    if (!is.null(transform_y_back)) {
+      # y' -> y
+      y_bound = transform_y_back(y_bound)
+    }
+    return(y_bound)
+  }
+  
+  plot(x,y,main = title)
+  curve(bound(x, +1), add=TRUE)
+  curve(bound(x, 0), col = "red", add=TRUE)
+  curve(bound(x, -1), add=TRUE)
+  
+  is.mean = FALSE
+  curve(bound(x, +1),col = "green",add=TRUE)
+  curve(bound(x, -1),col = "green",add=TRUE)
+}
+
+conf.plot(x,y,t.fit,title = "Originalni podaci", transform_x = function(x) {1/x}, transform_y_back = exp)
+conf.plot(t.x,t.y,t.fit,title = "Transformirani podaci")
+```
+
+Crvena krivulja - Regresijski pravac \(\hat{y} = b_0 + b_1x\) \newline
+Crna krivulja - Interval povjerenja za \(\mu_{y_i|x_i}\)  \newline
+Zelena krivulja - Interval povjerenja za \(y_i|x_i\) \newline
