@@ -93,7 +93,7 @@ Analyze the performance of a distributed systems by queue theory.
 Analyzed dataset from the Settlers of Catan board game in order to find insight which could improve game performance. 
 
 ---------------
-[**Statistical Data Analysis**](https://github.com/dominikstipic/CV/blob/main/StatisticalDataAnalysis.pdf)
+[**Statistical Data Analysis**](https://github.com/dominikstipic/CV/blob/main/StatisticalDataAnalysis/sapunjara-linearna-regresija.pdf)
 Statistical data analysis using regression model.
 
 ---------------
