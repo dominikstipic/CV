@@ -113,7 +113,6 @@ Statistical data analysis using regression model.
 
 ---------------
 
-
 **Fuzzy, Evolutionary and Neuro-computing**:
 1. [**Fuzzy sets**](https://github.com/dominikstipic/CV/blob/main/Fuzzy%2C%20Evolutionary%20and%20Neuro-computing/zad1.pdf)
 2. [**Fuzzy relations**](https://github.com/dominikstipic/CV/blob/main/Fuzzy%2C%20Evolutionary%20and%20Neuro-computing/zad2.pdf)
@@ -125,4 +124,6 @@ Statistical data analysis using regression model.
 
 <img src="https://user-images.githubusercontent.com/40320696/109402330-5464b800-7955-11eb-822f-e622bd73d9d2.gif" width="900" height="450">
 
-
+---------------
+[**Android application for training memory**](http://157.230.100.239:81):
+Android application where person can train their memory in variaty of formats.
