@@ -127,5 +127,5 @@ Statistical data analysis using regression model.
 <img src="https://user-images.githubusercontent.com/40320696/109402330-5464b800-7955-11eb-822f-e622bd73d9d2.gif" width="900" height="450">
 
 ---------------
-[**Android application for training memory**](http://157.230.100.239:81):
+[**Android applications**](http://157.230.100.239:81):
 Android application where person can train their memory in variaty of formats.
