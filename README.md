@@ -129,5 +129,5 @@ Statistical data analysis using regression model.
 ---------------
 [**Android applications**](http://157.230.100.239:81):
 Android application where person can train their memory in variaty of formats.
-[**VIDEO**]([https://github.com/dominikstipic/CV/blob/main/Fuzzy%2C%20Evolutionary%20and%20Neuro-computing/zad1.pdf](https://github.com/dominikstipic/shortURL/blob/master/repo/memory.mp4))
+[**VIDEO**](https://github.com/dominikstipic/CV/blob/main/Fuzzy%2C%20Evolutionary%20and%20Neuro-computing/zad1.pdf](https://github.com/dominikstipic/shortURL/blob/master/repo/memory.mp4)
 
