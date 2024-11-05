@@ -127,5 +127,6 @@ Statistical data analysis using regression model.
 ---------------
 [**Android applications**](http://157.230.100.239:81):
 Android application where person can train their memory in variaty of formats.
-[**VIDEO**](https://github.com/dominikstipic/shortURL/blob/master/repo/memory.mp4)
+[**VIDEO**](https://github.com/dominikstipic/shortURL/blob/master/repo/memory.mp4) 
+Voice and visual number guesser. (In progress)
 
