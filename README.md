@@ -130,3 +130,7 @@ Android application where person can train their memory in variaty of formats.
 [**VIDEO**](https://github.com/dominikstipic/shortURL/blob/master/repo/memory.mp4) 
 Voice and visual number guesser. (In progress)
 
+---------------
+[**pyGUJA**](https://github.com/dominikstipic/pyGUJA):
+Python GUI Applications for vizualizing analysis. 
+
