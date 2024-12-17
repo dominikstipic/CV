@@ -134,3 +134,11 @@ Voice and visual number guesser. (In progress)
 [**pyGUJA**](https://github.com/dominikstipic/pyGUJA):
 Python GUI Applications for vizualizing file capacity distribution in directories. 
 
+---------------
+[**shortURL**](https://github.com/dominikstipic/shortURL/tree/master):
+Flask Web Server with flexible(regex) endpoints 
+
+---------------
+[**Conceptor**]:
+GUI application for defining language concepts and persisting them into database. 
+
