@@ -142,3 +142,7 @@ Flask Web Server with flexible(regex) endpoints
 [**Conceptor**]:
 GUI application for defining language concepts and persisting them into database. 
 
+---------------
+[**Macroeconomy**]([https://github.com/dominikstipic/shortURL/tree/master](https://github.com/dominikstipic/macro)):
+Macro homeworks and tasks. 
+
