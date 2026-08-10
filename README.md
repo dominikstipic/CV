@@ -146,3 +146,7 @@ GUI application for defining language concepts and persisting them into database
 [**Macroeconomy**](https://github.com/dominikstipic/macro):
 Macro homeworks and tasks. 
 
+---------------
+[**Crawler**](https://github.com/dominikstipic/webium):
+A scalable Python-based web crawler designed to discover, collect, and analyze web resources. The crawler automatically traverses websites, extracts structured information from HTML documents, and identifies useful resources such as links, images, documents, contact information, and downloadable files.
+
